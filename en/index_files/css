@@ -1,0 +1,102 @@
+/* greek */
+@font-face {
+  font-family: 'Advent Pro';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Advent Pro Thin'), local('AdventPro-Thin'), url(http://fonts.gstatic.com/s/adventpro/v7/87-JOpSUecTG50PBYK4ysqaRobkAwv3vxw3jMhVENGA.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Advent Pro';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Advent Pro Thin'), local('AdventPro-Thin'), url(http://fonts.gstatic.com/s/adventpro/v7/87-JOpSUecTG50PBYK4ysj0LW-43aMEzIO6XUTLjad8.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Advent Pro';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Advent Pro Thin'), local('AdventPro-Thin'), url(http://fonts.gstatic.com/s/adventpro/v7/87-JOpSUecTG50PBYK4ysugdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* greek */
+@font-face {
+  font-family: 'Advent Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Advent Pro Light'), local('AdventPro-Light'), url(http://fonts.gstatic.com/s/adventpro/v7/sJaBfJYSFgoB80OL1_66m9cKKn5Xt5n-nnvkqIBMZms.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Advent Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Advent Pro Light'), local('AdventPro-Light'), url(http://fonts.gstatic.com/s/adventpro/v7/sJaBfJYSFgoB80OL1_66m0_0lycXMw8PhobHtu2Qgco.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Advent Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Advent Pro Light'), local('AdventPro-Light'), url(http://fonts.gstatic.com/s/adventpro/v7/sJaBfJYSFgoB80OL1_66m8u2Q0OS-KeTAWjgkS85mDg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Lato Hairline'), local('Lato-Hairline'), url(http://fonts.gstatic.com/s/lato/v14/eFRpvGLEW31oiexbYNx7Y_esZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Lato Hairline'), local('Lato-Hairline'), url(http://fonts.gstatic.com/s/lato/v14/GtRkRNTnri0g82CjKnEB0Q.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Raleway ExtraLight'), local('Raleway-ExtraLight'), url(http://fonts.gstatic.com/s/raleway/v12/cbAbzEjxTdN5KKmS-gA0tSEAvth_LlrfE80CYdSH47w.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Raleway ExtraLight'), local('Raleway-ExtraLight'), url(http://fonts.gstatic.com/s/raleway/v12/8KhZd3VQBtXTAznvKjw-k_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url(http://fonts.gstatic.com/s/raleway/v12/yQiAaD56cjx1AooMTSghGfY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url(http://fonts.gstatic.com/s/raleway/v12/0dTEPzkLWceF7z0koJaX1A.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+.weso-headings{
+  background-color : #29C7C0;
+  padding-top: 1em;
+  padding-bottom:2em;
+}
