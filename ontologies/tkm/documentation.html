@@ -1,0 +1,1649 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html 
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:mvcb="http://webns.net/mvcb/"
+  xml:lang="es"
+> 
+
+  <head>
+    <title>TKM: Technological Knowledge Management Ontology</title>
+    <meta http-equiv="content-type" content="text/xhtml+xml; charset=utf-8" />
+    <link rel="mvcb:generatorAgent" type="application/rdf+xml" title="DOAP" href="http://rdfohloh.wikier.org/project/specgen" />
+    <link rel="stylesheet" type="text/css" href="css/tkm-spec.css" />
+  </head>
+
+  <body>
+
+    <h1 id="title">Información sobre la Ontología TKM</h1>
+
+    <h2 id="subtitle">Documentación</h2>
+    <h3 id="mymw-doctype">Working Draft &mdash; 28 Diciembre 2010</h3>
+
+    <dl>
+
+      <dt>Versión actual:</dt>
+      <dd><a href="http://purl.org/weso/ontologies/TR/TKM-20101228/">http://purl.org/weso/ontologies/TR/TKM-20101228/</a></dd>
+
+      <dt>Última versión:</dt>
+      <dd><a href="http://purl.org/weso/ontologies/TR/TKM/">http://purl.org/weso/ontologies/TR/TKM/</a></dd>
+
+      <dt>Última actualización:</dt>
+      <dd>Date: 2010-12-28</dd>
+
+      <dt>Editores:</dt>
+      <dd>Jose María Alvarez Rodríguez, WESO-Universidad de Oviedo</dd>
+      <dd>Pablo Abella Vallina, WESO-Universidad de Oviedo</dd>
+      <dd><a href="http://www.di.uniovi.es/~labra">Jose Emilio Labra Gayo</a>, WESO-Universidad de Oviedo</dd>
+
+      <dt>Autores:</dt>
+      <dd>Jose María Alvarez Rodríguez, WESO-Universidad de Oviedo</dd>
+      <dd>Pablo Abella Vallina, WESO-Universidad de Oviedo</dd>
+      <dd><a href="http://www.di.uniovi.es/~labra">Jose Emilio Labra Gayo</a>, WESO-Universidad de Oviedo</dd>
+
+      <dt>Contribuciones:</dt>
+      <dd>Ver <a href="#acknowledgements">agradecimientos</a></dd>
+
+    </dl>
+
+    <!-- ===================================================================== -->
+
+    <hr />
+
+    <h2 id="abstract">Resumen</h2>
+    <p>
+      Esta especificación tiene como propósito distinguir y describir la gestión de
+	  conocimiento tecnológico de acuerdo a las tecnologías utilizadas para dar 
+	  soporte a la gestión, mantenimiento y explotación del mismo.
+    </p>
+	<p>El estudio y modelo realizado utilizando ontologías tiene como objetivo
+	modelar las relaciones existentes entre la gestión del conocimiento tecnológico y
+	las tecnologías que se utilizan para el mismo utilizando estrategias.
+	</p>
+	<p>Palabras clave: knowledge management, technología, comunicación, cooperación, catalogación.
+	</p>
+
+    <h2 id="status">Estado de este documento</h2>
+    <p>
+      <strong>Este documento es un trabajo en ejecución</strong>. El documento
+	  no es definitivo y se irá actualizando a lo largo del tiempo. Por ello,
+	  se recomienda consultar siempre la última versión del mismo. Se agradece 
+	  cualquier comentario, por favor envíelos a <a href="mailto:wesoviedo@gmail.com">wesoviedo@gmail.com</a>. Gracias.
+    </p>
+
+    <h2 id="contents">Índice</h2>
+    <ol id="toc">
+      <li><a href="#intro">Introducción</a>
+        <ol>
+          <li><a href="#s11">Gestión del Conocimiento</a></li>
+          <li><a href="#s12">Gestión de la Tecnología</a></li>
+          <li>
+            <a href="#s13">Uso de Ontologías para la Gestión del Conocimiento Tecnológico</a>
+            <ol>	
+			  <li><a href="#s131">Definición de ontología</a></li>
+			  <li><a href="#s132">Componentes de una ontología</a></li>
+			  <li><a href="#s133">Principios de diseño</a></li>	
+			  <li><a href="#s134">Ontologías y Lógica</a></li>	
+			  <li><a href="#s135">Lenguajes para Ontologías</a></li>				  
+			  <li><a href="#s136">Estrategia en la Gestión del Conocimiento Tecnológico</a></li>
+			  <li><a href="#s137">Tecnologías para el soporte de la Gestión del Conocimiento Tecnológico</a></li>
+			  <li><a href="#s138">Reutilización de vocabularios</a></li>
+            </ol>
+          </li>	
+      </ol>
+      </li>
+      <li><a href="#sec-glance">Ontología TKM</a></li>
+      <li>
+        <a href="#overview">Visión General de la ontología TKM ontología</a>
+        <ol>
+          <li><a href="#s31">Ejemplo</a></li>
+        </ol>
+      </li>
+	  <li><a href="#s5">Folksonomías y Ontologías</a></li>  
+		<ol>	  
+	      <li><a href="#s51">Definiciones</a></li>
+          <li><a href="#s52">Definición formal de Folksonomía</a></li>
+		  <ol>	
+			  <li><a href="#s521">Formalización de folksonomías mediante ontologías</a></li>
+              <li><a href="#s522">Diferencias entre folksonomías y ontologías</a></li>
+	       </ol>			
+		  <li><a href="#s53">Combinación con ontologías y enriquecimiento</a></li>
+		    <ol>	
+			  <li><a href="#s531">Combinación con ontologías </a></li>
+              <li><a href="#s532">Enriquecimiento</a></li>
+	       </ol>
+          <li><a href="#s54">Aprendizaje y realimentación automática de ontologías mediante folksonomías</a></li>
+		</ol>
+      <li><a href="#s6">Conclusiones</a></li>  
+	  <li><a href="#s7">Trabajo Futuro</a></li>        
+    </ol>
+
+    <h3>Apéndices</h3>
+    <ol id="appendix" style="list-style-type:upper-alpha;">
+      <li><a href="#references">Referencias (Normativo)</a></li>
+      <li><a href="#changes">Cambios en esta versión</a> (No-Normativo)</li>
+      <li><a href="#acknowledgements">Agradecimientos</a> (No-Normativo)</li>
+    </ol>
+
+    <hr />
+
+    <!-- ===================================================================== -->
+	 
+    <h2 id="intro">1 Introducción</h2>
+
+    <p>La gestión del conocimiento se ha convertido en un factor crítico para las organizaciones
+	como forma de reaprovechar los esfuerzos realizados previamente para conseguir mejoras
+	en términos de factores económicos. Son varios los factores que se han tenido en cuenta para la gestión del conocimiento, y, uno
+	de ellos es el relacionado con la tecnología.</p>
+	<p>Una organización, además de proveer mecanismos para gestionar su conocimiento debe poseer
+	las herramientas adecuadas para poder almacenarlo, compartirlo, explotarlo y transferirlo de la forma
+	más conveniente a sus intereses. De esta forma, las organizaciones se independizan del conocimiento
+	implícito de sus trabajadores y son capaces de poseer conocimiento por si mismas perdurando
+	en el tiempo.</p>
+	<p>Desde el punto de vista tecnológico, el conocimiento sobre determinadas áreas o temas es de
+	vital importancia para las organizaciones ya que, una buena gestión del conocimiento tecnológico
+	permite ahorrar tiempo y obtener ventajas competitivas.</p>
+	<p>Por lo tanto, se plantea como esencial la gestión del conocimiento pero además la tecnología
+	actúa desde dos diferentes vertientes:</p>
+	<ul>
+		<li>Medio para la gestión del conocimiento.</li>
+		<li>Conocimiento en sí mismo.</li>
+	</ul>
+	<p>En este documento se abordará la gestión del conocimiento tecnológico de las organizaciones
+	utilizando herramientas tecnológicas. El objetivo es proveer de un medio flexible y dinámico en el cual 
+	las organizaciones puedan dar soporte a sus necesidades de gestión del conocimiento, en particular
+	el conocimiento tecnológico, apoyándose en diferentes herramientas.</p>
+
+    <h3 id="s11">1.1 Gestión del Conocimiento</h3>
+
+    <p>La gestión del conocimiento (del inglés <em>Knowledge Management</em>) es un concepto aplicado en las organizaciones, 
+	que busca transferir el conocimiento y la experiencia existente entre sus miembros, de modo que pueda ser utilizado 
+	como un recurso disponible para otros en la organización.
+	</p>
+	<p>
+	Usualmente el proceso implica técnicas para capturar, organizar, almacenar el conocimiento de los trabajadores, 
+	para transformarlo en un activo intelectual que preste beneficios y se pueda compartir.
+	</p>
+
+	<p>En la actualidad, las tecnologías de información permiten contar con herramientas que apoyan la gestión del 
+	conocimiento en las empresas, apoyando en la recolección, la transferencia, la seguridad y la administración sistemática de 
+	la información, junto con los sistemas diseñados para ayudar a hacer el mejor uso de ese conocimiento.
+	</p>
+
+	<p>En detalle, se refiere a las herramientas y a las técnicas diseñadas para preservar la disponibilidad de la 
+	información llevada a cabo por los individuos dominantes y facilitar la toma de decisiones, así como reducir el riesgo. 
+	Es un mercado del software y un área en la práctica de la consultoría, relacionada a disciplinas tales como inteligencia competitiva. 
+	Un tema particular de la administración del conocimiento es que el conocimiento no se puede codificar fácilmente en forma digital, 
+	tal como la intuición de los individuos dominantes que viene con años de experiencia y de 
+	poder reconocer los diversos patrones del comportamiento que alguien con menos experiencia no puede reconocer.
+	</p>
+
+	<p>El proceso de la administración del conocimiento, también conocido en sus fases de desarrollo 
+	como "aprendizaje corporativo" o "aprendizaje organizacional", tiene principalmente los siguientes objetivos:
+	</p>
+	<ul>
+    <li>Identificar, recoger y organizar el conocimiento existente.</li>
+    <li>Facilitar la creación de nuevo conocimiento.</li>
+	<li>Apuntalar la innovación a través de la reutilización y apoyo de la habilidad de la gente a 
+	través de organizaciones para lograr un mejor desempeño en la empresa.</li>
+	</ul>
+
+	<p>La transferencia del conocimiento (un aspecto de la administración del conocimiento) 
+	ha existido siempre como proceso en las organizaciones. De manera informal por medio de las discusiones, 
+	sesiones, reuniones de reflexión, etc., y de manera formal por medio del aprendizaje, el entrenamiento profesional y 
+	los programas de capacitación. Como práctica emergente de negocio, la administración del conocimiento ha considerado 
+	la introducción del principal oficial del conocimiento, y el establecimiento de Intranets corporativos, 
+	de wikis, y de otras prácticas de la tecnología del conocimiento y de información.
+	</p>
+	
+	<p><em>Esta definición ha sido extraída de la <a href="http://wikipedia.org" title="Wikipedia">Wikipedia</a>, para más información consultar el <a href="http://es.wikipedia.org/wiki/Gestión_del_conocimiento">artículo original</a>.</em></p>
+
+    <h3 id="s12">1.2 Gestión de la Tecnología</h3>
+
+    <p>La gestión de la tecnología es el proceso por el cual se toma la tecnología actual para madurarla allí donde sea necesario o integrarla
+	en los diferentes sistemas a lo largo de un tiempo.</p>
+	<ul>
+		<li>Forma parte de la gestión de proyectos como factor para la gestión de ciclo de vida y mantenimiento de los mismos.</li>
+		<li>Se centra en comprender y manejar:
+			<ul>
+				<li>los riesgos de la nueva tecnología</li>
+				<li>la explotación de oportunidades del uso de la tecnología</li>
+				<li>la planificación para alcanzar la madurez en el uso de una tecnología.</li>
+			</ul>
+		</li>
+		<li>Trata de asegurar el funcionamiento de los sistemas.</li>
+		<li>Trata de explotar las ventajas competitivas procedentes del I+D.</li>
+		<li>y todo ello durante todo el ciclo de vida.</li>
+	</ul>
+	<p>El ámbito de la gestión tecnológica abarca los siguientes ámbitos:</p>
+	<ul>
+		<li>Investigación y desarrollo.</li>
+		<li>Explotación en proyectos para obtener nuevas capacidades.</li>
+		<li>Sistemas flexibles que soporten la adición de nuevos componentes.</li>
+		<li>Direccionamiento de los problemas de obsolescencia y reducción de costes de actualización.</li>
+		<li>Reutilización en diferentes ámbitos.</li>
+		<li>Integración en sistemas ya existentes.</li>	
+	</ul>
+	<p>La gestión tecnológica se basa en los siguientes principios clave que debemos tener en cuenta en la planificación de las actividades
+	para que pasen a formar parte de la cultura de la organización:</p>
+	<ul>
+		<li>Entender las oportunidades que brinda la tecnología para abordar nuevos proyectos.</li>
+		<li>Gestionar los riesgos tecnológicos en los proyectos.</li>
+		<li>Preparar a los equipos de trabajo para asumir nuevos retos tecnológicos.</li>
+		<li>Transferir el conocimiento del I+D a los entornos de producción.</li>
+    </ul>
+	<p>Ahora bien, la importancia de la gestión de la tecnología se debe realizar a través de una planificación
+	que permita identificar las necesidades y oportunidades tecnológicas en cualquier momento. Los equipos de desarrollo
+	y mantenimiento deben estar alertados de cómo trabajar con la tecnología para así dar soporte a los nuevos desarrollos y
+	actualizaciones de forma correcta.</p>
+	<p>Queda patente que la tecnología es la pieza clave que proporciona ventajas competitivas a las organizaciones
+	tanto para el desarrollo como para el mantenimiento de proyectos. La gestión tecnológica depende en gran medida
+	de una cooperación efectiva entra las distintas partes implicadas: personas, organizaciones, etc. con el objetivo
+	de identificar y gestionar los riesgos derivados del uso de la misma.</p>
+<p>Al igual que la gestión del conocimiento, la gestión de la tecnología es una pieza clave para la evolución y sostenibilidad
+de las empresas. Es por ello que el disponer de un mecanismo que permita la gestión del conocimiento tecnológico 
+es clave para la mejora competitiva de las organizaciones.</p>
+
+<p>Esta introducción no pretende ser un documento completo sobre la gestión del conocimiento o de la tecnología. Se intenta
+introducir al lector en la importancia que supone la gestión del conocimiento, y en específico del conocimiento tecnológico para
+las organizaciones. También sirve como punto de partida para entender el modelado de la ontología TKM.</p>
+
+<p>Para una mayor información sobre la gestión tecnológica se recomienda consultar los siguientes enlaces:</p>
+<ul>
+	<li><a href="http://www.aof.mod.uk/aofcontent/tactical/techman/content/tm_principles.htm" title="Gestión de la tecnología en el Departamento de Defensa de UK">Gestión de la tecnología en el Departamento de Defensa de UK</a></li>
+	<li><a href="http://www.ifm.eng.cam.ac.uk/ctm/" title="Centre for Technology Management ">Centre for Technology Management</a></li>
+</ul>
+    <h3 id="s13">1.3 Uso de Ontologías para la Gestión del Conocimiento Tecnológico</h3>
+<h4 id="s131">1.3.1 Definición de ontología</h4>
+    <p>El desarrollo de las ontologías se deriva directamente de la Filosofía, 
+Aristóteles acuña el término <em>Categoría</em> como palabra para describir las
+diferentes clases en las que se dividían las cosas del mundo. 
+El término <em>ontología</em> es relativamente moderno (siglo XIX), proviene del griego
+<em>Ontos</em> (Ser) y <em>Logos</em> (Palabra). Se empezó a utilizar para distinguir el
+estudio de la categorización del ser de la categorización que se hacía en
+biología, de hecho el trabajo de categorización surge en muchas áreas de la
+ciencia (filosofía, biología, medicina, lingüística, etc.).
+</p>
+<p>El cuerpo de un esquema de conocimiento, que se puede representar, está basado en una conceptualización: 
+objetos, conceptos y otras entidades que se asume existen en un determinado dominio y que mantiene unas relaciones entre sí.</p>
+<ul>
+<li>Una conceptualización es una vista abstracta y simplificada del mundo que
+representamos con un propósito. 
+</li>
+<li>Todos los sistemas basados en conocimiento están
+asociados a algún tipo de conceptualización ya sea explícita o implícita. 
+</li>
+<li>Una ontología es una especificación (explícita) de una
+conceptualización(<a href="http://www-ksl.stanford.edu/kst/what-is-an-ontology.html">What is an ontology?</a>)[<a href="#ref-GruberOnto">GruberOnto</a>].
+</li>
+</ul>
+<p>Las ontologías, por consiguiente, son sistemas basados en el conocimiento (SBC) que
+sirven como modelo unificado en la representación del mismo, adquiriendo incluso
+grado de ingeniería[<a href="#ref-BenjaminsKA">BenjaminsKA</a>,<a href="#ref-GomezOntology">GomezOntology</a>]. En muchos
+casos, la Web Semántica y por extensión las ontologías se apoyan en la
+reutilización de conocimiento compartido.</p>
+
+<p>
+<em>Reusar: construir nuevas aplicaciones ensamblando componentes previamente desarrollados.</em>
+</p>
+<p>
+<em>Compartir: aplicaciones de diferentes partes utilizan los mismos recursos.</em>
+</p>
+
+<p>
+Las definiciones realizadas para las ontologías son variadas y todas dejan claro
+que sirven para modelar cierto dominio (conjunto de conceptos y relaciones):
+</p>
+<ul>
+  <li> Una ontología define los términos básicos y las relaciones establecidas
+  en un cierto área.
+  </li>
+ <li> Especificación explícita de una conceptualización.
+   </li>
+  <li> Especificación formal y explícita de una conceptualización compartida.
+   </li>
+  <li> Teoría lógica que provee de forma explícita y parcialmente una conceptualización.
+   </li>
+   <li>...
+   </li>
+</ul>
+
+<p>
+En el artículo [<a href="#ref-StuderKR">StuderKR</a>] los autores agregan
+expresividad realizando la siguiente descripción completa de ontología:
+</p>
+<ul>
+  <li>Conceptualización, modelo abstracto de algún fenómeno del mundo,
+  proveniente de la identificación de los conceptos relevantes de dicho
+  fenómeno.</li>
+<li>Explícita, conceptos y restricciones usados se definen
+  explícitamente.
+</li>
+<li>Formal, capacidad de ser legible e interpretable por las
+  máquinas.</li>
+  <li>Compartida, captura conocimiento consensuado.
+  </li>
+</ul>
+
+<p>En nuestro caso, podemos fusionar las definiciones anteriormente dadas en una
+sola definición:</p>
+<p>
+<strong>
+Modelo conceptual organizado mediante una taxonomía que permite definir
+relaciones entre conceptos, funciones, instancias (elementos) y axiomas en un determinado
+dominio.
+</strong>
+</p>
+
+<p>
+Para completar la definición de ontología hay que tener en cuenta la
+nomenclatura que habitualmente se utiliza para nombrar a las distintas entidades
+posibles y que en algunos casos puede dar lugar a errores. 
+</p>
+<ul>
+  <li> Clase, concepto, categoría o tipo.</li>
+   <li> Instancia, individual.</li>
+   <li> Entidad, objeto (clase o instancia).</li>
+  <li> Propiedad, relación, slot, atributo, rol.</li>
+</ul>
+
+
+<h4 id="s132">1.3.2 Componentes de una ontología</h4>
+<p>
+Una ontología consta  de un conjunto no vacío de conceptos identificados como
+relevantes en el dominio a modelar, un conjunto de atributos para describir los
+conceptos que pueden proveer de distintas fuentes: propios, heredados, etc., un
+conjunto de funciones, un conjunto de axiomas que formalizan las condiciones que
+deben cumplir los distintos conceptos y un conjunto de instancias o
+realizaciones particulares de los conceptos.
+</p>
+<dl>
+<dt>Conceptos</dt>
+<dd>Cualquier entidad que se puede describir, tiene asociado un
+identificador único, puede poseer diferentes atributos y establecer relaciones
+con otros conceptos.</dd>
+<dt>Relaciones</dt> 
+<dd>Representan interacción entre los conceptos de dominio.
+Formalmente, se definen como subconjuntos del producto cartesiano de <em>n</em>
+conjuntos <em>R: C1 x C2 x ... x Cn</em>.
+<p>
+No todas las relaciones tienen el mismo significado, existen relaciones binarias
+de especialización como (<em>is-a</em>) o de composición (<em>part-whole</em>),
+que se modelan con las propiedades clásicas simétricas, reflexivas, etc.
+</p>
+</dd>
+
+<dt>Funciones</dt>
+<dd>Relaciones en las cuales el elemento <em>n-ésimo</em> es único para
+los <em>n-1</em> anteriores. Formalmente, se definen como <em>F:C1 x C2 x
+... x Cn</em>. Por ejemplo una relación <em>serPadreDe</em> se puede
+modelar como una función ya que el atributo que evalúa es único para cada caso.
+</dd>
+
+<dt>Axiomas</dt>
+<dd>Modelan "verdades" que siempre se cumplen en el modelo.
+Existen dos tipos de axiomas:
+<ul>
+  <li> Estructurales, condiciones relacionados con la estructura jerárquica de
+  la ontología. </li>
+  <li> No estructurales, establecen relaciones entre atributos de un concepto y
+  son específicos de cada dominio.</li>
+</ul>
+</dd>
+
+<dt>Instancias</dt>
+<dd>Representan realizaciones específicas del dominio de la ontología.</dd>
+</dl>
+
+<h4 id="s133">1.3.3 Principios de diseño</h4>
+
+<p>Las ontologías deben o deberían cumplir una serie de principios:</p>
+<dl>
+<dt>Claridad</dt>
+<dd>Proporcionado el significado pretendido a los términos
+definidos. Definiciones tan objetivas como sea posible.
+</dd>
+<dt>Completitud</dt>
+<dd>Las definiciones deberían recoger todas las condiciones
+necesarias y suficientes, además de poseer una buena documentación en lenguaje natural.
+</dd>
+<dt>Coherencia</dt>
+<dd>Los términos definidos deben ser coherentes, concluyendo
+ sólo aquellas inferencias consistentes con el modelo definido.
+ </dd>
+ <dt>Extensibilidad</dt>
+<dd>Anticipando la necesidad de reutilización y facilitando
+ la adición de nuevo conocimiento.</dd>
+ <dt>Mínimo compromiso ontológico</dt>
+ <dd>Minimizando el número de afirmaciones a
+ realizar sobre el dominio modelado, permitiendo así que otros agentes las
+ puedan refinar.</dd>
+
+<dt>Diversificación de jerarquías</dt>
+<dd>Haciendo uso de la herencia múltiple, usar
+tantos criterios de clasificación como sea posible. Así, añadir un nuevo concepto
+es sencillo utilizando los ya existentes y la capacidad de clasificación.</dd>
+
+<dt>Minimizar la distancia semántica entre hermanos</dt> 
+ <dd>Conceptos similares deben agruparse.</dd>
+ 
+<dt>Estandarización</dt> 
+<dd>Independencia simbólica, utilización de nombrado estándar.</dd>
+<dt>Granularidad</dt> 
+<dd>Coherencia en el grado de especificidad y evitar el uso de términos ambiguos.</dd>
+</dl>
+
+<p>Existen diversos procesos de desarrollo o metodologías que definen un
+procedimiento para la captura de conocimiento de un dominio y la pertinente
+construcción de ontologías. Por ejemplo: <em>Methontology Framework</em> o <em>
+method</em>. 
+</p>
+
+<h4 id="s134">1.3.4 Ontologías y Lógica</h4>
+<p>Description Logics  [<a href="#ref-BaaderDL">BaaderDL</a>] (DLs) son un conjunto de lógicas formales en el área de <em>Knowledge
+Representacion KR</em>, utilizadas para la representación y razonamiento del conocimiento en un
+dominio de forma no ambigua. Las DLs se basan un una semántica perfectamente definida que
+provee un conjunto de constructores y primitivas con un significado lógico preciso.
+</p>
+<p>
+Los pilares de la estas lógicas son dos conjuntos: uno de <em>atomic concepts</em> o predicados unarios
+y otro de <em>atomic roles</em> o predicados binarios. Una DL provee además un conjunto de operadores,
+llamados constructores, que permiten crear conceptos y roles más complejos a partir de los más
+sencillos. Tanto los conceptos atómicos como los complejos se denominan uniformemente conceptos
+y de igual forma, los roles atómicos y los complejos se denominan roles.
+</p>
+<p>
+Los conceptos se utilizan para representar conjuntos de objetos y los roles sirven para establecer
+relaciones binarias entre objetos. Podemos definir el conjunto de los números reales
+como la disyunción de números racionales e irracionales
+</p>
+
+
+<p>En general, una base de conocimiento basada en DL consiste en:</p>
+<ul>
+<li><em>TBox</em>, contiene los axiomas de inclusión de conceptos <em>C1 v C2</em>.</li>
+<li><em>RBox</em>, contiene los axiomas de inclusión de roles <em>R1 v R2</em>.</li>
+<li><em>Abox</em>, contiene axiomas (aserciones sobre conceptos) <em>C(a)</em>, las aserciones sobre los roles
+<em>R(a, b)</em>, a y b son nombres de objetos, <em>R</em> es un rol y <em>C</em> es un concepto</li>
+</ul>
+
+<p>
+Los constructores booleanos de conceptos son la disyunción o unión, conjunción o intersección
+y la negación. Una lógica descriptiva que provee, implícita o explícitamente, todos los operadores
+booleanos se considera cerrada (proposicionalmente). Las lógicas descriptivas "cerradas" serán las que sean interesantes
+para su procesamiento.</p> 
+<p>Aparte de los operadores booleanos,
+habitualmente las DLs proveen otros constructores para generar conceptos complejos a partir
+de roles. En este apartado, se encuentran los operadores existencial y universal.
+Las DLs que proveen estos cinco operadores se denominan <em>ALC</em>, pero esta lógica no permite
+axiomas de inclusión en roles y la componente RBox es vacía. Esto provoca que si bien se
+pueden realizar operaciones de razonamiento, la lógica a este nivel es poco expresiva. Añadiendo
+nuevos constructores a <em>ALC</em> obtenemos el conjunto de lógicas <em>ALCHR+</em> (también conocida
+como <em>SH</em>), que resultan de añadir la inclusión de axiomas (permitiendo diferentes tipos), sobre
+la RBox. Esta familia de lógicas, ver la siguiente tabla, es muy interesante porque posee
+un gran poder expresivo y puede ser probada sobre razonadores DL como (<a href="http://www.cs.man.ac.uk/~horrocks/FaCT/" title="FaCT">FaCT</a>, <a href="http://www.racer-systems.com/" title="Racer">Racer</a> o
+<a href="http://clarkparsia.com/pellet" title="Pellet">Pellet</a>).</p>
+
+    <div class="center">
+	<div class="thumb tnone">
+	<div class="thumbinner">
+		<img src="img/dl.png" alt="Familia de Lógicas SH" border="0" class="thumbimage" /> 
+	<div class="thumbcaption">Familia de Lógicas <em>SH</em>.</div>
+	</div>
+	</div>
+	</div>
+
+<p>La lógica DL es importante para la construcción de ontologías ya que nos permite construir
+bases de conocimiento formales, computables y no ambiguas. Aunque, no siempre necesitamos
+este nivel de lógica tanto para la descripción de dominios como para la Web Semántica, es necesario
+presentar y dar a conocer este conjunto de lógicas para poder validar nuestros modelos y
+mantener unos criterios formales en la construcción de ontologías.</p>
+ 
+<p>Finalmente, las ontologías como sistema basado en el conocimiento (SBC) y teniendo en cuenta la importancia
+de la utilización de <em>Description Logic</em> como lógica para la creación de ontologías, podemos
+distinguir los tres componentes heredados de la definición de DL. Pero desde el punto de vista
+del razonamiento y la inferencia, operaciones importantes en cualquier SBC, nos interesan los
+siguientes componentes:</p>
+<ul>
+<li><em>TBox</em>, parte terminológica (organizado jerárquicamente) o conocimiento intensional, consistente
+en conceptos, roles y construcciones más complejas por combinación de éstos. </li>
+<li><em>Abox</em> o parte extensional, es decir, las afirmaciones sobre individuos "concretos".</li>
+</ul>
+<p>
+Sobre estas dos
+componentes se podrá realizar razonamiento de dos formas:</p>
+<ol>
+<li>Razonamiento <em>TBox</em>, intensional o estructural: permite consultar la estructura de conocimiento
+(<em>Tbox</em>) e inferir información a partir de ella. El mecanismo de razonamiento estructural
+por excelencia es la subsunción de conceptos, permite calcular todos los subconceptos de
+un concepto dado o consultar si un concepto es subconcepto de otro.
+<p>
+Los razonamientos usuales en la <em>Tbox</em> son: 1) Consistencia (satisfacibilidad), comprueba
+si el conocimiento tiene sentido o no. 2) Subsunción, comprobación de sí todos los individuos
+que pertenecen a un concepto (el subsumido) también pertenecen a otro concepto
+(el que subsume). 3) Equivalencia, comprueba si dos clases denotan el mismo conjunto
+de instancias.
+</p>
+<p>
+Todos estos razonamientos son reducibles al problema de la satisfacibilidad de fórmulas
+lógicas siempre que usemos un lenguaje de definición de conceptos que sea cerrado con
+respecto a la negación.
+</p>
+</li>
+<li>
+Razonamiento <em>Abox</em> o extensional: permite inferir nuevas instancias a partir de las definidas
+de forma explícita en la <em>Abox</em>.
+Encontramos los siguientes tipos de razonamiento: 1) Comprobación de instancias, verifica
+que un determinado individuo es una instancia de un concepto específico. 2) Consistencia
+de la base de conocimiento, implica verificar cuando cada concepto que existe
+en la base de conocimiento admite, al menos, una instancia o individuo. 3) Realización,
+encuentra el concepto más específico del que, un individuo es instancia.
+</li>
+</ol>
+
+<p>Estas operaciones sobre ontologías son especialmente interesantes para la gestión del conocimiento
+tecnológico ya que se puede inferir nuevo conocimiento, chequear el ya existente, etc. Además, las ontologías
+permiten realizar operaciones como: </p>
+<dl>
+<dt>Mapping o mapeo de ontologías</dt>
+<dd>Especificación declarativa del solapamiento semántico entre
+dos ontologías. Las correspondencias entre entidades de ontologías diferentes son expresadas
+mediante axiomas en un determinado lenguaje de "mapeo2. Este proceso consta de
+tres fases: 1) descubrimiento. 2) representación. 3) ejecución. Existen diferentes enfoques
+para llevar a cabo esta operación como MAFRA, RDFT o C-OWL.
+</dd>
+<dt>Alignment o alineamiento de ontologías</dt>
+<dd>Proceso mediante el cual se descubren las similaridades
+entre dos ontologías. El resultado es un especificación de los puntos en común,
+realizada a través del algoritmo Match operator. Existen diferentes implementaciones como
+Anchor-PROMPT, GLUE, Semantic Matching o QOM.</dd>
+<dt>Merging o unión de ontologías</dt> 
+<dd>Creación de una ontología nueva tomando como fuente dos
+o más ontologías. La nueva ontología unifica y reemplaza las ontologías fuente. Podemos
+establecer dos enfoques para realizar esta operación: 1) Entrada de <em>n</em> ontologías
+y salida una sola ontología unión y reemplazo de las demás (por ejemplo: algoritmo
+PROMPT [<a href="#ref-NoyPrompt">NoyPrompt</a>]). 2) Entrada <em>n</em> ontologías que no son reemplazadas ,sino que se genera una
+ontología bridge que importa a las ontologías originales y específica las correspondencias
+mediante axiomas bridge (por ejemplo: OntoMerge).
+</dd>
+</dl>
+<p>
+A la hora de afrontar la implementación de estas operaciones sobre ontologías nos podemos
+encontrar dos tipos básicos de conflictos que impiden el éxito de la operación y requieren
+intervención humana para facilitar la realización automática de las operaciones.
+</p>
+<ul>
+<li> Conflictos entre "conceptualizaciones" distintas del mismo dominio. A su vez, podemos
+distinguir dos categorías: a) conflicto de ámbito, ocurre cuando dos clases tienen solapamiento
+en sus extensiones (el conjunto s de instancias), y no coincide exactamente.
+b) conflicto en la cobertura del modelo y su granularidad, ocurre si dos ontologías cubren
+parte de cierto dominio (por ejemplo: empleados de universidad y estudiantes) o bien
+es más específica que otra (por ejemplo: una ontología define "persona" y otra define
+"persona joven", etc.).</li>
+<li>Conflictos entre las especificaciones de los conceptos. También, podemos distinguir tres
+categorías: a) conflicto en el estilo de modelado, cada ontología específica los conceptos
+de una manera determinada (por ejemplo: tratamiento de las unidades de tiempo) o la
+descripción de los conceptos difiere (por ejemplo: utilización de subclases vs atributos).
+b) conflicto en la terminología, dos conceptos son equivalentes pero no utilizan el mismo
+nombre, problema de sinónimos, o viceversa, son diferentes y utilizan el mismo nombre,
+homónimos. c) conflicto de codificación, no se utilizan las mismas nomenclaturas,
+unidades de medida, etc.
+</li>
+</ul>
+
+<p>En conclusión, las ontologías nos proveen de una mecanismo flexible para el modelado de conocimiento así como
+para su explotación y operación. Estas características resultan interesantes para la gestión del conocimiento.</p>
+
+    <h4 id="s135">1.3.5 Lenguajes para ontologías</h4>
+	
+<p>En la definición de modelos de conocimiento sobre un dominio que describa las entidades y propiedades, 
+así como las relaciones lógicas que existen entre ellas existen diferentes vocabularios y lenguajes que se pueden utilizar, 
+entre ellos cabe destacar:</p>
+<ul>
+<li>RDF (<a href="http://www.w3.org/TR/REC-rdf-syntax/" title="RDF">W3C Recommendation 10 February 2004</a>). 
+El <em>Resource Description Framework</em> es el modelo de datos básico para la Web semántica. 
+Es un lenguaje lógico simple que permite especificar propiedades binarias y describir recursos a partir de éstas. 
+</li>
+<li>RDFS(<a href="http://www.w3.org/TR/rdf-schema/" title="RDFS">W3C Recommendation 10 February 2004</a>). El <em>RDF Vocabulary Description Language</em> 1.0 o RDF Schema 
+(está pensado como una extensión de RDF para la construcción de vocabularios y terminologías en la Web Semántica. 
+</li>
+<li>OWL(<a href="http://www.w3.org/TR/owl2-overview/" title="OWL">W3C Recommendation 27 Octubre 2009</a>). Es la recomendación del W3C para la construcción de 
+ontologías en la Web Semántica. Actualmente el W3C ha estandarizado una nueva versión del lenguaje OWL: OWL 2.0.
+</li>
+<li>RIF (<a href="http://www.w3.org/TR/rif-core/" title="OWL">W3C Recommendation 22 Junio 2010</a>). RIF es de nuevo una familia lenguajes con diferente expresividad 
+cuyo objetivo es convertirse en una lingua franca para el intercambio de conocimiento basado en reglas en la Web. 
+</li>
+<li>SKOS (<a href="http://www.w3.org/TR/skos-reference/" title="SKOS">W3C Recommendation 18 August 2009</a>). <em>Simple Knowledge Organization System</em> es un 
+vocabulario RDF para el modelado de vocabularios controlados, taxonomías y tesauros para la web semántica.
+</li>
+<li>GoodRelations . Ontología para el e-commerce de amplia aceptación. 
+Se trata de un vocabulario estandarizado de productos, precios y datos de compañías que pueden ser utilizados 
+en las páginas web para ser procesados automáticamente. De esta forma, mejora la visibilidad de los productos ofertados por una empresa.
+</li>
+<li>Otros como: <a href="http://wwww.wsml.org" title="WSML">WSML</a> (<em>Web Service Modelling Language</em>), <a href="http://www.supply-chain.org/resources/scor" title="SCOR">SCOR Model</a>  (<em>Supply-Chain Operations Referente-Model</em>), 
+<a href="http://www.omg.org/spec/SBVR/1.0/" title="SBVR">SBVR</a> (<em>Semantics of Business Vocabulary and Business Rules</em>), <a href="http://www.ebxml.org/" title="ebXML">ebXML</a>-<em>Electronic Business using eXtensible Markup Language</em> o 
+ <a href="http://www.xbrl.org/" title="XBRL">XBRL</a> (<em>extensible Business Reporting Language</em>).
+ </li>
+ </ul>
+
+ <p>También es interesante resaltar en el contexto de la web semántica y del razonamiento en la web
+la propuesta de SWRL [<a href="#ref-SWRL" title="SWRL">SWRL</a>] para la extensión de OWL-DL con la negación de cláusulas Horn.
+ Para la consulta de bases de datos basados en RDF está extendido el uso de SPARQL [<a href="#ref-SPARQL" title="SPARQL">SPARQL</a>],
+ es un lenguaje tipo SQL pero permitiendo la consulta de RDF a través de endpoints disponibles como servicios en la web. Con el uso de SPARQL han aparecido propuestas para la definición de reglas con este lenguaje 
+ (extensión SPARQL with Updates-SPARUL ) y que se ejecuten directamente sobre una base de datos en RDF como puede ser SPARQL-Rules! [<a href="#ref-SPARQLRules" title="SPARQL-Rules">SPARQLRules</a>],
+ también existen enfoques [<a href="#ref-OWLQuery" title="OWL-Query">OWLQuery</a>] para la consulta de ontologías OWL con SPARQL. 
+ Finalmente y con el objetivo de personalizar la vista de las aplicaciones por el usuario y su contextualización 
+ se ha aplicado el uso de reglas en formato JSON [<a href="#ref-JSONRules" title="JSON-Rules">JSONRules</a>]. 
+ </p>
+
+
+    <h4 id="s136">1.3.6 Estrategia en la Gestión del Conocimiento Tecnológico</h4>
+
+    <p>La gestión del conocimiento se puede abordar atendiendo a los distintos procesos que lo manejan. En nuestro caso, y siguiendo
+	a [<a href="#ref-SAITOKM">SAITOKM</a>] hemos optado por un enfoque basado en estrategias. De esta manera, de acuerdo a una actividad de se pueden manejar
+	distintas estrategias para la gestión del conocimiento independientemente del proceso en el que nos encontremos. La bondad
+	de este enfoque reside en su aplicabilidad a la gestión del conocimiento tecnológico y su flexibilidad para adaptarse
+	a futuros cambios.</p>
+	<p>En la siguiente tabla se puede ver una listado de los procesos que abarca la gestión del conocimiento según distintos autores.</p>
+	<table id="table4">
+			<thead>
+				<tr>
+					<td>Autores</td>
+					<td>Procesos del conocimiento</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="rblue">
+					<td class="bold">Alavi y Leidner, 2001  [<a href="#ref-Alavi2001">Alavi2001</a>]</td>
+					<td>Creación, almacenamiento y recuperación, transferencia y aplicación</td>
+				</tr>
+				<tr>
+					<td class="bold">Hoffman, 2001 [<a href="#ref-Hoffman2001">Hoffman2001</a>]</td>
+					<td>Creación, almacenamiento, distribución y aplicación</td>
+				</tr>
+				<tr class="rblue">
+					<td class="bold">Nonaka, 2001 [<a href="#ref-Nonaka2001">Nonaka2001</a>]</td>
+					<td>Socialización, externalización, combinación</td>
+				</tr>
+				<tr>
+					<td class="bold">Becerra-Fernández, 2004 [<a href="#ref-Becerra2004">Becerra2004</a>]</td>
+					<td>Descubrimiento, captura, compartición y aplicación</td>
+				</tr>
+				<tr class="rblue">
+					<td class="bold">Jashapara, 2004 [<a href="#ref-Jashapara2004">Jashapara2004</a>]</td>
+					<td>Organización, captura, evaluación, compartición, almacenamiento y presentación</td>
+				</tr>
+				<tr>
+					<td class="bold">Maier, 2004 [<a href="#ref-Maier2005">Maier2005</a>]</td>
+					<td>Decubrimiento, publicación, colaboración y aprendizaje</td>
+				</tr>
+				<tr class="rblue">
+					<td class="bold">Rao, 2005 [<a href="#ref-Rao2005">Rao2005</a>]</td>
+					<td>Creación, codificación, recuperación, aplicación, distribución, validación, seguimiento y personalización</td>
+				</tr>
+			</tbody>
+		</table>
+		
+	<p>Un punto importante en la gestión del conocimiento reside en conocer cómo se crea y a través de que medio. En este sentido,
+	distinguimos dos procesos clave de generación de nuevo conocimiento: <strong>Creación</strong> y <strong>Transferencia</strong> y dos medios de despliegue
+	por: <strong>Personalización</strong> o <strong>Codificación</strong>.</p>
+
+<table id="table3">
+			<thead>
+				<tr>
+					<td></td>
+					<td>Personalización</td>
+					<td>Codificación</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="rblue">
+					<td class="bold">Creación</td>
+					<td>Creación de conocimiento mediante personalización</td>
+					<td>Creación de conocimiento mediante codificación</td>
+				</tr>
+				<tr>
+					<td class="bold">Transferencia</td>
+					<td>Transferencia de conocimiento mediante personalización</td>
+					<td>Transferencia de conocimiento mediante codificación</td>
+				</tr>
+			</tbody>
+		</table>
+			
+	<p>Este enfoque será utilizado en el diseño de la ontología para el control del conocimiento tecnológico. Hay que destacar
+	que esta primera aproximación tiene, por una parte un enfoque práctico con el cual poder trabajar desde el principio y, por otra parte
+	extensible para adecuarlo a los procesos internos de una organización.</p>
+		
+    <h4 id="s137">1.3.7 Tecnologías para el soporte de la Gestión del Conocimiento Tecnológico</h4>
+
+    <p>Hoy en día la gestión del conocimiento, y en particular del conocimiento tecnológico, debe entenderse como un proceso
+en el cual se implican distintas herramientas tecnológicas que son utilizadas tanto por los usuarios de forma particular y privada
+como por los organizaciones para mantener su <em>know-how</em>. En este sentido y de acuerdo a las formas de generación y despliegue
+de nuevo conocimiento se puede establecer una división de herramientas tecnológicas en diferentes ámbitos y objetivos pero 
+que en realidad tienen una meta común: la gestión del conocimiento.</p>
+<p>Podemos establecer una primera distinción entre componentes y aplicaciones. Los componentes servirán para realizar ciertas tareas
+de gestión y se podrán integrar en las aplicaciones. Las aplicaciones se constituyen como la <em>suite</em> completa para la gestión
+del conocimiento. También es necesario clasificarlas de acuerdo a su objetivo que coincide
+con los procesos de gestión del conocimiento que antes comentábamos. De esta manera se establece la siguiente
+división: <strong>Colaboración</strong>, <strong>Descubrimiento</strong>, <strong>Difusión</strong> y <strong>Repositorio</strong>.</p>
+
+<p>A continuación se dispone de una tabla con la información acerca de los componentes tecnológicos.</p>
+	
+ <table id="table5">
+			<thead>
+				<tr>
+					<td></td>
+					<td>Personalización</td>
+					<td>Codificación</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="rblue">
+					<td rowspan="8" class="bold">Creación</td>
+					<td><em>Colaboración:</em></td>
+					<td><em>Descubrimiento:</em></td>
+				</tr>
+				<tr class="rblue">
+					<td>Conectividad</td>
+					<td>Almacenamiento</td>
+				</tr>
+				<tr class="rblue">
+					<td>Comunicación</td>
+					<td>Búsqueda</td>
+				</tr>
+				<tr class="rblue">
+					<td>Autoría</td>
+					<td>Análisis</td>
+				</tr>
+				<tr class="rblue">
+					<td>Colaboración</td>
+					<td>Data mining</td>
+				</tr>
+				<tr class="rblue">
+					<td>Comunidad</td>
+					<td>Text mining</td>
+				</tr>
+				<tr class="rblue">
+					<td>Creatividad</td>
+					<td>Web mining</td>
+				</tr>
+				<tr class="rblue">
+					<td>Workflow</td>
+					<td>Visualización</td>
+				</tr>
+				<tr>
+					<td rowspan="8" class="bold">Transferencia</td>
+					<td><em>Difusión:</em></td>
+					<td><em>Repositorio</em></td>
+				</tr>
+				<tr>
+					<td>Conectividad</td>
+					<td>Conectividad</td>
+				</tr>
+				<tr>
+					<td>Comunicación</td>
+					<td>Almacenamiento</td>
+				</tr>
+				<tr>
+					<td>Autoría</td>
+					<td>Autoría</td>
+				</tr>
+				<tr>
+					<td>Distribución</td>
+					<td>Búsqueda</td>
+				</tr>
+				<tr>
+					<td>E-learning</td>
+					<td>Workflow</td>
+				</tr>
+				<tr>
+					<td>Colaboración</td>
+					<td>Organización</td>
+				</tr>
+				<tr>
+					<td>Comunidad</td>
+					<td>Razonamiento</td>
+				</tr>
+			</tbody>
+		</table>
+		
+	<p>De la misma, las aplicaciones tecnológicas para la gestión del conocimiento quedan clasificadas en la siguiente tabla.</p>	
+	<table id="table6">
+			<thead>
+				<tr>
+					<td></td>
+					<td>Personalización</td>
+					<td>Codificación</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="rblue">
+					<td rowspan="4" class="bold">Creación</td>
+					<td><em>Colaboración:</em></td>
+					<td><em>Descubrimiento:</em></td>
+				</tr>
+				<tr class="rblue">
+					<td>Soporte para grupos</td>
+					<td>Soporte a las decisiones</td>
+				</tr>
+				<tr class="rblue">
+					<td>Gestión de proyectos</td>
+					<td>Descubrimiento y data mining</td>
+				</tr>
+				<tr class="rblue">
+					<td>Soporte para comunidades</td>
+					<td>Búsqueda y organización</td>
+				</tr>
+				<tr>
+					<td rowspan="4" class="bold">Transferencia</td>
+					<td><em>Difusión:</em></td>
+					<td><em>Repositorio:</em></td>
+				</tr>
+				<tr>
+					<td>Portales empresariales</td>
+					<td>DMS</td>
+				</tr>
+				<tr>
+					<td>LMS</td>
+					<td>CMS</td>
+				</tr>
+				<tr>
+					<td>Gestión de expertise</td>
+					<td>CMS</td>
+				</tr>
+			</tbody>
+		</table>
+	
+	<p>En conclusión, no se puede entender la gestión del conocimiento sin el soporte de la tecnología actual. En la ontología TKM se reflejará
+	esta situación para acomodar la gestión del conocimiento al entorno tecnológico de las organizaciones.</p>
+    <!-- ===================================================================== -->
+
+    <h2 id="sec-glance">2. Ontología TKM</h2>
+
+	<p>El diseño de la ontología TKM se ha basado en el estudio realizado en los punto anteriores, utilizando OWL 
+	y con el objetivo de dar soporte a las estrategias en las distintas actividades de una organización
+	en la gestión de su conocimiento tecnológico.</p>
+	<p>De forma descriptiva se puede resumir el diseño de la ontología en los siguientes puntos:</p>
+	<ul>
+	<li>Una organización en el momento de realización de un proyecto tiene diferentes
+	actividades que llevar a cabo que pueden ser dirigidas a través de distintas estrategias
+	de gestión del conocimiento tecnológico. Es interesante poder distinguir las distintas
+	estrategias en cada actividad para así poder comparar el conocimiento adquirido en cada
+	una de ellas.</li>
+	<li>Cada estrategia de gestión del conocimiento tecnológico dispone a su vez de una
+	estrategia de conocimiento y de la implementación de la gestión del conocimiento tecnológico
+	a través del uso de unas determinadas herramientas y prácticas.</li>
+	<li>La estrategia de conocimiento se encuadra en un dominio definido, en cual se enclavarán
+	los distintos recursos de conocimiento que pueden ya existir en la organización o bien
+	pueden ser necesarios para llevar a cabo la actividad. En cualquier caso, para evaluar
+	la capacidad de la organización para desarrollar esa tarea es conveniente disponer
+	de un mecanismo para comparar el conocimiento adquirido con el necesario (que pasará
+	a formar parte del adquirido en la siguiente actividad).</li>
+	<li>
+	<p>Cada recurso de conocimiento se puede definir atendiendo:</p>
+	<ul>
+		<li>al área de conocimiento en el que está centrado</li>
+		<li>al tipo de conocimiento del que se ha extraído: explícito, implícito, etc.</li>
+		<li>a cómo ha sido creado (herramientas y prácticas)</li>
+		<li>a cómo se ha desarrollado</li>
+		<li>a qué herramientas tecnológicas han dado soporte a su creación y desarrollo</li>
+	</ul>
+	<p>Además, todo recurso puede ser anotado por los usuarios utilizando etiquetas
+	diferentes y en diferentes momentos.</p>
+	</li>
+	<li>La implementación de la estrategia define una iniciativa que se realiza
+	para la gestión del conocimiento tecnológico a través de unos determinados instrumentos 
+	(herramientas y prácticas) con el objetivo de mejorar un proceso de negocio. También
+	se debe disponer de unos criterios de evaluación para asegurar la calidad de la implementación.
+	</li>
+	<li>Las tecnologías forman parte esencial de la gestión del conocimiento tecnológico. Por ello,
+	se ha de distinguir qué componentes, servicios o aplicaciones de negocios se han utilizado
+	para la generación de conocimiento.</li>
+	</ul>
+	
+	<p>Esta descripción textual de las necesidades de gestión del conocimiento
+	tecnológico nos conduce a un modelado de la ontología TKM con unas determinadas
+	clases y propiedades. Además, es conveniente por un lado reaprovechar el trabajo
+	de otras ontologías y vocabulario así como de disponer de un mecanismo para las propias
+	ontologías desarrolladas en este proyecto.</p>
+	
+	
+    <p>En la siguiente sección se puede observar gráficamente el diseño de la ontología TKM.</p>
+    <!-- ===================================================================== -->
+
+    <h2 id="overview">3. Visión General de la ontología TKM</h2>
+
+    <p>La ontología TKM se presenta gráficamente en el siguiente diagrama:</p>
+
+    <div class="center">
+	<div class="thumb tnone">
+	<div class="thumbinner">
+		<img src="v.01/diagramaontologia.png" alt="Diagrama de la ontología TKM" border="0" class="thumbimage" /> 
+	<div class="thumbcaption">Diagrama de la ontología TKM.</div>
+	</div>
+	</div>
+	</div>
+
+ 
+	<p>Un objetivo en el modelado de conocimiento utilizando ontologías consiste en reaprovechar vocabularios y ontologías
+	ya existentes y creados con propósito específico. Por ello, un buen diseño de una ontología integrará modelos provenientes
+	de distintas partes con el objetivo de reaprovechar esfuerzos y obtener el mejor diseño para aquellas partes que no forman
+	parte del contexto real a modelar.</p>
+	<p>Siguiendo esta directriz, la ontología TKM hace uso e integra diferentes vocabularios como se puede ver en el siguiente diagrama:</p>
+
+		<div class="center">
+	<div class="thumb tnone">
+	<div class="thumbinner">
+		<img src="v.01/diagramageneral.png" alt="Reaprovechando vocabularios en TKM" 
+		border="0" class="thumbimage" /> 
+	<div class="thumbcaption">Reaprovechando vocabularios en la ontología TKM.</div>
+	</div>
+	</div>
+	</div>
+	<p>La descripción de los vocabularios empleados (o candidatos) es la siguiente:</p>
+	<ul>
+		<li><a href="http://www.foaf-project.org/" title="FOAF">FOAF</a> (<em>Friend Of A Friend</em>): ontología que permite describir personas, vínculos entre ellos, y cosas que hacen y crean. 
+		Describe la información personal de forma sencilla y simplificada para que pueda ser procesada, compartida y reutilizada.</li>
+		<li><a href="http://trac.usefulinc.com/doap" title="DOAP">DOAP </a>(<em>Description Of A Project</em>): el mismo enfoque que FOAF pero para proyectos.</li>
+		<li><a href="http://www.epimorphics.com/web/category/category/developers/organization-ontology" title="Organizations ontology">Organizations Ontology</a>: es una ontología realizada para la descripción de las organizaciones: metainformación,
+		relaciones, proyectos, etc. Está desarrollada por los creadores de Jena (API Java de referencia para la web semántica) y 
+		con una clara orientación empresarial.</li>
+		<li><a href="http://sioc-project.org/" title="SIOC">SIOC</a> (<em>Semantically-Interlinked Online Communities</em>): es una iniciativa que provee una ontología
+		para la descripción de comunidades online. Reutiliza otros vocabularios del mundo de Linked Data y
+		ha sido enviada al W3C para su propuesta como recomendación. (http://sioc-project.org/)</li>
+		<li><a href="http://moat-project.org/" title="MOAT">MOAT</a> (<em>Meaning of A Tag</em>): provee un framework para la web semántica
+		en el cual se puedan publicar y enriquecer semánticamente contenidos
+		procedentes de diferentes sitios. Su uso está inspirado en la web 2.0. Consta de una ontología que sirve
+		para representar como diferentes recursos pueden estar enlazados a la misma etiqueta.</li>
+		<li>CPV (<em>Common Procurement Vocabulary</em>): es una clasificación de productos para describir el objeto de contratación de las licitaciones. Permitiendo así que las empresas puedan encontrar fácilmente aquellas licitaciones interesantes para su negocio y mejorando tanto la competitividad como las oportunidades de negocio en el mercado único europeo. El principal objetivo de esta clasificación es estandarizar los códigos utilizados por los organismos públicos de contratación. 
+		Además, el uso del CPV es obligatorio en Europa según la norma del parlamento europeo <em>Regulation (EC) No 2195/2002</em>.</li>
+	</ul>
+	
+	<p>Nota: por estabilidad en esta versión de la ontología se ha utilizado FOAF para especificar los agentes: organización, persona y proyecto.
+	En futuras versiones, se utilizarán las ontologías comentadas.</p>
+    <h3 id="s31">3.1. Ejemplo de Gestión del Conocimiento Tecnológico con TKM</h3>
+	<p>La mejor forma de comprobar la adecuación de la ontología TKM a la gestión del conocimiento tecnológico consiste
+	en realizar un ejemplo real. Primeramente se realizará la descripción textual de una situación, para después presentar
+	el modelo gráfico de instancias de la ontología así como su código fuente en notación Manchester.
+	</p>
+	<p>El escenario de uso de esta ontología es el siguiente:</p>
+	<ul>
+		<li>El grupo WESO está desarrollando un componente denominado ACOTA para la sugerencia de etiquetas en el contexto
+		del proyecto ORIGIN. Se encuentra ante una actividad de desarrollo, cuya estrategia es diferente
+		a las demás, es decir, los recursos o la información necesaria en esta etapa difieren de otras y de esta forma
+		la información sobre un determinado recurso no tiene que ser la misma. 
+		
+		Por ejemplo, el conocimiento sobre JSF en desarrollo no tiene porqué ser el mismo que en planificación o análisis de 
+		igual forma que el perfil de las personas no es el mismo ni en todas las actividades de un proyecto ni en la propia organización.</li>
+
+		<li>Este componente tiene que utilizar el framework RichFaces (de JSF) para la capa de presentación.</li>
+
+		<li>Uno de los miembros del grupo WESO, Pablo, tiene conocimiento de JSF pero no específicamente del RichFaces. Normalmente, Pablo
+		busca información en la web sobre la tecnología que tiene que utilizar y almacena los enlaces que consulta y le parecen 
+		interesantes en el servicio de Delicious. Hoy ha decidido buscar información sobre RichFaces por lo que habrá que ver
+		cómo se manifiesta esta actividad de captura, almacenamiento y explotación de conocimiento utilizando la ontología TKM.</li>
+	</ul>
+	
+    <p>A continuación se presenta un diagrama  que representa una instancia de la situación planteada utilizando la
+	ontología TKM:</p>
+	<div class="center">
+	<div class="thumb tnone">
+	<div class="thumbinner">
+		<img src="v.01/diagramainstancias.png" alt="Instancia TKM"  
+		border="0" class="thumbimage" /> 
+	<div class="thumbcaption">Diagrama de una instancia en la ontología TKM.</div>
+	</div>
+	</div>
+	</div>
+	<p>De la misma forma puede verse el ejemplo anterior utilizando la notación
+	Manchester para la visualización de ontologías:</p>
+    <div class="example" style="white-space: pre-wrap;">
+      <pre>
+         
+Individual: Delicious
+
+    Types: 
+        CollaborationApplication
+    
+    
+Individual: AcotaDevelopmentKnowledgeStrategy
+
+    Types: 
+        KnowledgeStrategy
+    
+    Facts:  
+        identifies  TechJ2EEDevelopment,
+        tkm:hasKnowledge  JSFKnowledgeResource,
+        tkm:requiresKnowledge  RichFacesKnowledgeResource
+    
+    
+Individual: RichFacesTag
+
+    Annotations: 
+        dc:date "28/12/2010"
+        rdfs:label "richfaces"
+    
+    Types: 
+        TKMTag
+    
+    Facts:  
+        tags:associatedTag  RichFacesTag,
+        tags:taggedOn  RichFacesTag
+    
+    
+Individual: JSFKnowledgeResource
+
+    Types: 
+        ExistingKnowledgeResource
+    
+    Facts:  
+        compares  RichFacesKnowledgeResource,
+        createdBy  AcotaCreation,
+        tkm:developedBy  AcotaPersonalization,
+        tkm:hasTypeTKM  Explicit,
+        tkm:isFocusOn  J2EEGUITechnology,
+        tags:taggedOn  AcotaPersonalization
+    
+    
+Individual: TKMAcotaApproach
+
+    Facts:  
+        tkm:hasTypeTKM  Explicit,
+        tkm:isFocusOn  J2EEGUITechnology
+    
+    
+Individual: RichFacesKnowledgeResource
+
+    Types: 
+        RequiredKnowledgeResource
+    
+    Facts:  
+        createdBy  AcotaCreation,
+        supportedBy  Delicious,
+        tkm:developedBy  AcotaPersonalization,
+        tkm:hasTypeTKM  Explicit,
+        tkm:isFocusOn  J2EEGUITechnology
+    
+    
+Individual: AcotaJ2EEDevelopmentInitiative
+
+    Types: 
+        Initiative
+    
+    Facts:  
+        uses  Delicious
+    
+    
+Individual: RichFacesAnnotation
+
+    Annotations: 
+        dc:date "28/12/2010"
+    
+    Types: 
+        TKMAnnotation
+    
+    Facts:  
+        tags:associatedTag  RichFacesTag,
+        tags:taggedResource  RichFacesKnowledgeResource
+    
+    
+Individual: Explicit
+
+    Types: 
+        TKMType
+    
+    Facts:  
+        tkm:isFocusOn  J2EEGUITechnology
+    
+    
+Individual: TechJ2EEDevelopment
+
+    Types: 
+        KnowledgeDomain
+    
+    Facts:  
+        contains  JSFKnowledgeResource,
+        contains  RichFacesKnowledgeResource
+    
+    
+Individual: J2EEGUITechnology
+
+    Types: 
+        TKMFocus
+    
+    
+Individual: AcotaCreation
+
+    Types: 
+        Creation
+    
+    
+Individual: AcotaImplementationStrategy
+
+    Types: 
+        TKMImplementationStrategy
+    
+    Facts:  
+        includes  AcotaJ2EEDevelopmentInitiative
+    
+    
+Individual: TKMAcotaDevelopmentStrategy
+
+    Types: 
+        TKMStrategy
+    
+    Facts:  
+        comprises  AcotaDevelopmentKnowledgeStrategy,
+        comprises  AcotaImplementationStrategy,
+        comprises  TKMAcotaApproach
+    
+    
+Individual: AcotaPersonalization
+
+    Types: 
+        Personalization
+    
+      </pre>
+    </div>
+	<p>Nota: la identificación del tipo de recurso anotado no se pone de manifiesto literalmente con las clases o propiedades
+	de la ontología TKM (que son las que se quieren demostrar). 
+	Se podrían utilizar propiedades de metainformación disponible en Dublin Core o bien reutilizar las propiedades
+	de las clases de TAG Ontology.</p>
+	<p>De igual forma, los metadatos relativos a las anotaciones como la fecha y su granularidad podrían ser parametrizados
+	según los objetivos de la organización y su futura explotación.</p>
+    <!-- ===================================================================== -->
+
+<h2 id="s5">5. Folksonomías y Ontologías</h2>
+	<p>El uso de folksonomías con ontologías se plantea como clave para el etiquetado de recursos
+	y gestión del conocimiento tecnológico, es por ello que a continuación se realizarán las definiciones
+	apropiadas para dar soporte a la combinación de ambos en la ontología TKM.</p>
+	<p>Las distintas partes a contemplar son las siguientes:</p>
+	<ul>
+		<li>Vocabularios controlados</li>
+		<li>Folksonomías</li>
+		<li>Enriquecimiento de folksnomías y combinación con ontologías</li>
+		<li>Aprendizaje, enriquecimiento y realimentación automática de ontologías a través de ontologías</li>
+	</ul>
+	<p>En esta primera versión de la especificación TKM se abordarán los tres primeros puntos. En posteriores
+	versiones se incluirá el estudio pertinente del último punto así como la revisión de los anteriores.</p>
+
+	<h2 id="s51">5.1 Definiciones</h2>
+<dl>
+<dt>Vocabularios controlados</dt>
+<dd>
+<p>
+Los vocabularios controlados son vocabularios pensados para evitar la repitición de términos. 
+Su eficacia aumenta a medida que la redundancia es eliminada o controlada (principio de entropía vs redundancia). 
+</p>
+<p> 
+La definición de los vocabularios controlados en el entorno digital tiene como prioridad la 
+mejora de la navegación y el desarrollo de sistemas de búsqueda basados en la exploración y en la recuperación. 
+</p>
+<p>
+Existen cuatro tipos de vocabularios controlados principalmente: las listas, los anillos de sinónimos, las taxonomías y los tesauros. 
+La diferencia resede en la menor o mayor complejidad estructural que presentan. 
+Por un lado, los listados y los anillos de sinónimos se limitan a incorporar la relación de equivalencia; 
+por el otro, las taxonomías incorporan relaciones de jerarquía y los tesaurus incorporan relaciones de equivalencia, jerarquía y asociativa.
+</p>
+</dd>
+<dt>Taxonomía</dt>
+<dd>
+<p>
+Una taxonomía es un conjunto organizado de términos utilizado para organizar información y pensado 
+principalmente para poder navegar por él. Su rasgo fundamental es su finalidad de exploración y su uso
+se centra en la categorización y la organización de la información en sitios web.
+</p>
+<p>
+La definición de taxonomía en el entorno digital tiene como prioridad la mejora de la navegación y 
+el desarrollo de sistemas de búsqueda basados en la exploración y en la recuperación. Las definiciones que vinculan las taxonomías al entorno corporativo destacan su valor estratégico en áreas como la gestión del capital intelectual y, en general, del conocimiento.
+</p>
+</dd>
+<dt>Tesauro</dt>
+<dd>
+<p>
+Un tesauro es un conjunto de palabras con términos equivalentes explícitamente identificados y no ambiguo. 
+Suele incluir relaciones semánticas de jerarquía y asociativas.
+</p>
+</dd>
+
+<dt>Folksonomía</dt>
+<dd>
+<p>El término "folksonomía" se utiliza habitualmente para indicar
+la posibilidad que ofrecen para efectuar búsquedas utilizando los entornos colaborativos
+como las redes sociales. Estamos ante un neologismo que define a un sistema de clasificación mediante etiquetado. 
+El propio término en sí surge de la combinación entre las palabras folk (pueblo, gente) y taxonomía, y fue acuñado por Thomas Vander Wal.
+</p>
+<p>
+Como sistema de clasificación, es abierto, generado y ampliado por sus usuarios, y sus elementos (tags)
+se usan para etiquetar recursos de cualquier tipo. No tienen estructura jerárquica y se pueden ver
+como una colección de elementos no documentados.
+</p>
+
+<p>
+La eficicacia de su uso reside en el entorno que se produce: colaborativo, descentralizado y espontáneo. Los contribuyentes
+a una folksonomía no son obligados a usar una terminología predefinida y pueden elegir sus propios términos para etiquetar
+recursos. Las folksonomías forman de la Web 2.0, siendo un mecanismo muy utilizado para la categorización colectiva.
+</p>
+<p>
+El aspecto más destacable es es su carácter plano: es decir, no hay jerarquía, ni relaciones directamente especificadas de jerarquía 
+entre esos términos. Sin embargo, se pueden agrupar las etiquetas relacionadas de manera automática basándose en métodos estadísticos. 
+Es por ello que las folksonomías se separan de las taxonomías formales y vocabularios controlados. Finalmente, y por todo lo comentado,
+su principal limitación se basa principalmente en la ambigüedad de las etiquetas. 
+</p>
+</dd>
+</dl>	
+<h2 id="s52">5.2 Definición formal de Folksonomía</h2>
+	<p>Formalmente una folksonomía se compone de un conjunto de anotaciones, 
+	cada una relacionada con tres entidades (usuarios, tags y recursos) que se relacionan entre sí de diferentes maneras. 
+	</p>
+	<ul>
+	<li>una folksonomía <em>F</em> es una tupla tal que <em>F = (U, T, R, A)</em></li>
+    <li>donde <em>U</em> es un conjunto de usuarios</li>
+    <li><em>T</em> es un conjunto de tags </li>
+    <li><em>R</em> es un conjunto de recursos</li> 
+    <li>y <em>A</em> es un conjunto de anotaciones tal que <em>A &lt;=U x T x R</em> </li>
+	</ul>
+	<p>Las combinaciones posibles se muestran en la siguiente tabla:</p>
+
+<table id="table1">
+			<thead>
+				<tr>
+					<td>Usuario</td>
+					<td>Tag</td>
+					<td>Recurso</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="rblue">
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>1</td>
+					<td>2</td>
+				</tr>
+				<tr class="rblue">
+					<td>1</td>
+					<td>2</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td><span class="tachado">1</span></td>
+					<td><span class="tachado">2</span></td>
+					<td><span class="tachado">2</span> (No aplicable)</td>
+				</tr>
+				<tr class="rblue">
+					<td>2</td>
+					<td>1</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>1</td>
+					<td>2</td>
+				</tr>
+				<tr class="rblue">
+					<td>2</td>
+					<td>2</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td><span class="tachado">2</span></td>
+					<td><span class="tachado">2</span></td>
+					<td><span class="tachado">2</span> (No aplicable)</td>
+				</tr>
+			</tbody>
+		</table>
+		
+
+<h2 id="s521">5.2.1 Formalización de folksonomías mediante ontologías</h2>
+
+
+<p>Se dispone de los siguientes enfoques:</p>
+<ul>
+<li><a href="http://tomgruber.org/writing/tagontology.htm" title="TagOntology">TagOntology</a>: propuesta de Tom Gruber para agregar semántica a los tags mediante el uso de una ontología <em>F</em> tal que:
+<em>F = (document, term, tagger, polarity)</em>. Sugiere acompañar de una valoración 
+(positiva o negativa, por defecto se considera positiva) en cada aserto que se realice en la folksononomía.
+<p>
+Tag ontology contempla los tres elementos (recursos, usuarios y tags) básicos en una folksonomía. 
+Esta ontología es usada, junto con SKOS y SIOC, en Gnizr, una plataforma de mashups para el 
+etiquetado social de bookmarks.
+</p> 
+</li>
+<li><a href="http://code.google.com/p/tagont/" title="TagOnt">TagOnt</a> propone otra formalización más compleja.
+	<div class="center">
+	<div class="thumb tnone">
+	<div class="thumbinner">
+		<img src="img/TagOntology.png" title="Formalización TagOnt" 
+		border="0" class="thumbimage" /> 
+	<div class="thumbcaption">Formalización de TagOnt.</div>
+	</div>
+	</div>
+	</div>
+	
+</li>
+<li>FolksOntology es la última aproximación publicada, aunque no se trata de una formalización como las anteriormente comentadas. 
+Aunque si recicla las aportaciones más interesantes de anteriores propuestas, 
+de manera que aplica una serie de técnicas para facilitar la obtención de ontologías de folksonomías particulares de manera casi automática.
+</li>
+<li><a href="http://scot-project.org/" title="SCOT project">SCOT</a> (<em>Social Semantic Cloud Of Tags</em>) es una ontología para representar la estructura y 
+la semántica de una coleccion de tags, así como para representar redes sociales basandose en el etiquetado de los usuarios. 
+</li>
+</ul>
+
+<h2 id="s522">5.2.2 Diferencias entre folksonomías y ontologías</h2>
+<p>Cada una de ellas presenta sus ventajas e inconvenientes como podemos deducir de su propia definición y según 
+el ámbito en el que vayan a ser utilizadas. En general, podemos establecer las siguientes diferencias:</p>
+
+<table id="table2">
+			<thead>
+				<tr>
+					<td></td>
+					<td>Folksonomia</td>
+					<td>Ontología</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="rblue">
+					<td class="bold">Estructura</td>
+					<td>Plana</td>
+					<td>Compleja</td>
+				</tr>
+				<tr>
+					<td class="bold">Creador</td>
+					<td>Cualquier Usuario</td>
+					<td>Expertos</td>
+				</tr>
+				<tr class="rblue">
+					<td class="bold">Evolución</td>
+					<td>Continua</td>
+					<td>Puntual</td>
+				</tr>
+				<tr>
+					<td class="bold">Lógica</td>
+					<td>Inexistente</td>
+					<td>Formal: DL, F-Logic, etc.</td>
+				</tr>
+				<tr class="rblue">
+					<td class="bold">Razonamiento</td>
+					<td>No existente. Modelos estadísticos (correlación, clustering, etc.)</td>
+					<td>Chequeo de consistencia, inferencia, etc.</td>
+				</tr>
+				<tr>
+					<td class="bold">Ambigüedad</td>
+					<td>Inexistente</td>
+					<td>Inexistente</td>
+				</tr>
+				<tr class="rblue">
+					<td class="bold">Polisemia y sinonimia</td>
+					<td>Difícil de controlar</td>
+					<td>Tratable</td>
+				</tr>
+				<tr>
+					<td class="bold">Documentación</td>
+					<td>No</td>
+					<td>Si, propiedades específicas</td>
+				</tr>
+				<tr class="rblue">
+					<td class="bold">Cobertura</td>
+					<td>Completa</td>
+					<td>Parcial</td>
+				</tr>
+				<tr>
+					<td class="bold">Coste de creación</td>
+					<td>Bajo y distribuido entre los usuarios</td>
+					<td>Alto y concentrado en expertos</td>
+				</tr>
+				<tr class="rblue">
+					<td class="bold">Reutilización</td>
+					<td>Baja. Significado asociado al recurso</td>
+					<td>Según dominio y nivel de abstracción</td>
+				</tr>
+				<tr>
+					<td class="bold">Adaptación a cambios</td>
+					<td>Alta, inherente</td>
+					<td>Baja, requiere estudio</td>
+				</tr>
+				<tr class="rblue">
+					<td class="bold">Significado y significante</td>
+					<td>Imposible, sólo significante</td>
+					<td>Posible</td>
+				</tr>
+			</tbody>
+		</table>
+		
+<p>No obstante, en un entorno de gestión del conocimiento tecnológico las folksonomías
+y las ontologías deben coexistir y combinarse para enriquecer la información y el conocimiento
+del que se dispone aprovechando la flexibilidad de las folksonomías para proveer un mecanismo
+ágil de almacenamiento, recuperación y explotación de los recursos.</p>
+<p>La ontología TKM provee de un mecanismo de integración entre folksonomías y ontologías con el doble objetivo de proveer un sistema de:</p>
+<ul>
+
+    <li>Búsqueda facetada por los términos de la folksonomía que en realidad se ejecute como una búsqueda semántica sobre la ontología.</li>
+    <li>Catalogación, etiquetado de recursos por los diferentes usuarios que se traduzca automáticamente a instancias de la ontología.</li>
+</ul>
+<p>En esta primera versión de la ontología TKM se ha recogido una primera versión del etiquetado de recursos
+como si de una folksonomía se tratase mediante la reutilización de los conceptos de la ontología
+TAG Ontology dando así soporte a los objetivos previamente comentados.</p>
+
+		<h2 id="s53">5.3 Combinación con ontologías y enriquecimiento</h2>
+		<h2 id="s531">5.3.1 Combinación con ontologías</h2>
+		<p>Las propuestas para combinar y formalizar semánticamente las folksonomía con ontologías son variadas como hemos en los apartados
+		anteriores. Con el objetivo presente de la reutilización, en la ontología TKM se ha intentado reaprovechar
+		el esfuerzo de estas propuestas adaptando su enfoque a la casuística de la gestión del conocimiento tecnológico. El resultado, como 
+		se puede ver en el diagrama de la ontología es un conjunto de clases que extiende la formalización de TAG Ontology.
+		</p>
+		<p>
+		La clase <em>TKMTag</em> es una subclase de Tag y reutiliza sus propiedades. La clase <em>TKMAnnotation</em> representa cada anotación de un usuario sobre
+		un recurso con un tag. Este tag se representa con una instancia de la clase <em>TKMTag</em> y utilizando la propiedad <code>rdfs:label</code> (cardinalidad 1), en definitiva
+		su URI depende del tag utilizado y de esta manera se crearán instancias por cada tag utilizado dando así soporte a la integración
+		de los tags como instancias de la ontología TKM.
+		</p>
+
+		<p>Además, actualmente existe una tendencia actual a utilizar la marcación semántica de productos, por ejemplo
+		en Google y Yahoo. También el estándar propuesto por el W3C (<a href="http://www.w3.org/TR/xhtml-rdfa-primer/" title="RDFa">RDFa</a>) y la ontología de GoodRelations juegan un papel 
+		relevante en este sentido. Las compañías con el objetivo de formalizar los vocabularios utilizados han lanzado
+		la iniciativa <a href="http://commontag.org/Home" title="Common Tag">Common Tag</a> para homogeneizar el modelado RDF de las folksonomías.
+		</p>
+		<p>Common Tag ofrece un modelo estructural simple, que establece que cualquier tipo de información accesible
+		mediante una URL puede ser etiquetado con una o más estructuras de etiquetas. 
+		Cada etiqueta contiene un puntero hacia otro recurso que identifica los conceptos descritos 
+		por el contenido, indicando de manera inambigua lo que el contenido significa. 
+		Alternativamente, la etiqueta puede asimismo contener información sobre la fecha de creación de la misma 
+		y que tipo de referencia "humanamente comprensible" debe usarse cuando se muestren 
+		los conceptos cubiertos por el contenido.</p>
+		<p>Es de suponer que la propuesta definida para la ontología TKM sea convergente hacia Common Tag, ya que el diseño 
+		es similar.</p>
+		<h2 id="s532">5.3.2 Enriquecimiento</h2>
+		<p>Como hemos comentado las folksonomías de por sí son planas. Cada símbolo sólo 
+		 contempla el nivel de la expresión y no del contenido. Pese a que se pueda pensar que esto
+		 supone una limitación en realidad es una de sus principales virtudes.
+		 Aún así, en determinados escenarios sería de utilidad enriquecer la folksonomía para ir un paso más allá, 
+		 y que los términos de la folksonomía tengan asociados uno o varios significados. 
+		 SKOS, y principalmente su clase skos:Concept, proporciona la posibilidad de tener conceptos 
+		 bien definidos para enriquecer una folksonomía. En la línea de SKOS, MOAT 
+		 ofrece un marco idóneo para asociar significados a las tags. El objetivo subyacente es <em>datasets</em> públicos
+		 desarrollados en la iniciativa <a href="http://esw.w3.org/SweoIG/TaskForces/CommunityProjects/LinkingOpenData" title="LOD">Linking Open Data</a> para extender la semántica de las tags.
+		 </p>
+		<p>Ejemplo de uso de MOAT (extraído de su propia página):</p>
+	
+   <div class="center">
+	<div class="thumb tnone">
+	<div class="thumbinner">
+		<img src="img/moat.png" alt="Ejemplo de uso de MOAT" border="0" class="thumbimage" /> 
+	<div class="thumbcaption">Ejemplo de uso de MOAT.</div>
+	</div>
+	</div>
+	</div>
+
+		<h2 id="s54">5.4 Aprendizaje y realimentación automática de ontologías mediante folksonomías</h2>
+	     <p>No disponible en esta versión.</p>
+
+	<h2 id="s6">6. Conclusiones</h2>
+	<p>Esta primera versión de la ontología TKM ha servido para:</p>
+	<ul>
+		<li>Entender el problema y la importancia de la gestión del conocimiento tecnológico en las organizaciones.</li>
+		<li>Explorar las formas de modelar la gestión del conocimiento mediante ontologías.</li>
+		<li>Aplicar un enfoque basado en estrategias para la gestión del conocimiento tecnológico.</li>
+		<li>Estudiar la aplicación de las folksonomías para la gestión del conocimiento.</li>
+		<li>Revisar la combinación de ontologías y folksonomías en la gestión del conocimiento.</li>
+		<li>Aplicar los lenguajes estándares de construcción de ontologías al dominio del problema.</li>
+		<li>Desarrollar una primera versión de la ontología TKM.</li>
+	</ul>
+	<p>También, cabe resaltar que a pesar de realizar una intensa búsqueda sobre ontologías que traten este problema
+	de la gestión tecnológica podemos asegurar que existen pocas aproximaciones por lo que resulta muy interesante 
+	el trabajo realizado así como sus futuras ampliaciones.</p>
+	<h2 id="s7">7. Trabajo Futuro</h2>
+	<p>Una vez realizada la primera versión de la ontología TKM se abren muchas posibilidades, entre las cuales podemos destacar.</p>	
+	<ul>
+		<li>Alinear la ontología TKM con otras propuestas en el contexto del proyecto ORIGIN.</li>
+		<li>Generalizar el enfoque de la ontología TKM para la gestión del conocimiento en general.</li>
+		<li>Investigar la mejor combinación de folksonomías y ontologías así como los vocabularios que den soporte a la misma.</li>
+		<li>Aplicar en un caso de uso real el modelo propuesto.</li>
+		<li>Estudiar la ampliación de la ontología para contemplar los procesos de gestión de conocimiento.</li>
+		<li>Estudiar y desarrollar los algoritmos necesarios para realimentar la ontología con el conocimiento almacenado.</li>
+		<li>Difundir los resultados de la investigación mediante publicaciones, presentaciones, etc.</li>
+		<li>Desarrollar aplicaciones que exploten el modelo de conocimiento de la ontología TKM.</li>
+		<li>Publicar la ontología TKM en el contexto de la iniciativa Linked Data.</li>
+		<li>Enriquecer la ontología TKM con los vocabularios procedentes de la inicitiva Linked Data.</li>
+	</ul>
+    <h2 id="references">A Referencias</h2>
+
+    <dl>
+      <dt class="label" id="ref-GruberOnto">GruberOnto</dt>
+      <dd>T. R. Gruber. Towards Principles for the Design of Ontologies Used for Knowledge Sharing.
+En N. Guarino y R. Poli, editores, Formal Ontology in Conceptual Analysis and Knowledge
+Representation. Kluwer Academic Publishers, Deventer, The Netherlands, 1993.</dd>
+
+     <dt class="label" id="ref-StuderKR">StuderKR</dt>
+      <dd>Rudi Studer, V. Richard Benjamins, y Dieter Fensel. Knowledge Engineering: Principles
+and Methods. Data Knowledge Engineering, 25(1-2):161–197, 1998.</dd>
+
+	
+	    <dt class="label" id="ref-BenjaminsKA">BenjaminsKA</dt>
+      <dd>	R. Benjamins y D. Fensel. The Ontological Engineering Initiative-KA, 1998.</dd>
+	  
+	  	    <dt class="label" id="ref-GomezOntology">GomezOntology</dt>
+      <dd> Asunción Gomez-Perez, Mariano Fernandez-Lopez, y Oscar Corcho, editores. Ontological
+Engineering: With Examples from the Areas of Knowledge Management, E-Commerce and the
+Semantic Web (2nd edition). Springer-Verlag, Heidelberg, 2007. ISBN 1846283965.</dd>
+	  
+	 
+	 	  	    <dt class="label" id="ref-BaaderDL">BaaderDL</dt>
+      <dd>Franz Baader, Diego Calvanese, Deborah L. McGuinness, Daniele Nardi, y Peter F. Patel-
+Schneider, editores. The Description Logic Handbook: Theory, Implementation, and Applications.
+Cambridge University Press, 2003. ISBN 0-521-78176-0.</dd>
+
+  	    <dt class="label" id="ref-NoyPrompt">NoyPrompt</dt>
+      <dd>Fridman Natasha Noy y M. A. Musen. PROMPT: Algorithm and Tool for Automated
+Ontology Merging and Alignment. En Proc. 17th Intl. Conf. on Artificial Intelligence (AAAI
+2000), páginas 450–455. Austin, Texas, USA, July–August 2000.</dd>
+  	   
+	   <dt class="label" id="ref-SWRL">SWRL</dt>
+      <dd>Ian Horrocks, , Peter F. Patel-Schneider, Harold Boley, et al. Swrl: A semantic web rule language combining owl and ruleml. W3C member submission, W3C, 2004. http://www.w3.org/Submission/SWRL/.</dd>
+
+	   <dt class="label" id="ref-SPARQL">SPARQL</dt>
+      <dd>Eric Prud'hommeaux and Andy Seaborne. Sparql query language for rdf. W3C recommendation, W3C, 2007. http://www.w3.org/TR/rdf-sparql-query/.</dd>
+
+
+	     <dt class="label" id="ref-SPARQLRules">SPARQLRules</dt>
+      <dd>Juan Carlos and Axel Polleres. Sparql rules. Technical report, Universidad Rey Juan Carlos, 2006.</dd>
+
+	   <dt class="label" id="ref-OWLQuery">OWLQuery</dt>
+      <dd>Evren Sirin and Bijan Parsia. Sparql-dl: Sparql query for owl-dl. In In 3rd OWL Experiences and Directions Workshop (OWLED-2007, 2007.</dd>
+
+  <dt class="label" id="ref-JSONRules">JSONRules</dt>
+      <dd>Adrian Giurca and Emilian Pascalau. Json rules. In KESE, 2008.</dd>
+
+	    <dt class="label" id="ref-SAITOKM">SAITOKM</dt>
+      <dd>Andre Saito, Katsuhiro Umemoto, Mitsuru Ikeda, (2007) "A strategy-based ontology of knowledge management technologies", Journal of Knowledge Management, Vol. 11 Iss: 1, pp.97 - 114.</dd>
+	  
+	    <dt class="label" id="ref-Alavi2001">Alavi2001</dt>
+      <dd>
+	  Alavi, M. and Leidner, D.E. (2001), ‘‘Review: knowledge management and knowledge management
+systems: conceptual foundations and research issues’’, Management Information Systems Quarterly,
+Vol. 25 No. 1, pp. 107-36.
+	  </dd>
+	  
+	  
+	  
+	    <dt class="label" id="ref-Hoffman2001">Hoffman2001</dt>
+      <dd>
+Hoffmann, I. (2001), ‘‘Knowledge management tools’’, in Mertins, K., Heisig, P. and Vorbeck, J. (Eds),
+Knowledge Management: Best Practices in Europe, Springer, Heidelberg, pp. 74-94.
+	  </dd>
+
+
+	    <dt class="label" id="ref-Becerra2001">Becerra2001</dt>
+      <dd>
+Becerra-Fernandez, I., Gonzalez, A. and Sabherwal, R. (2004), Knowledge Management: Challenges,
+Solutions and Technologies, Pearson Education, Upper Saddle River, NJ.
+	  </dd>
+
+
+
+    <dt class="label" id="ref-Nonaka2001">Nonaka2001</dt>
+      <dd>
+Nonaka, I., Reinmoller, P. and Toyama, R. (2001), ‘‘Integrated information technology systems for
+knowledge creation’’, in Dierkes, M., Berthoin Antal, A., Child, J. and Nonaka, I. (Eds), Handbook of
+Organizational Learning and Knowledge, Oxford University Press, Oxford, pp. 827-48.
+	  </dd>
+
+
+    <dt class="label" id="ref-Jashapara2004">Jashapara2004</dt>
+      <dd>
+Jashapara, A. (2004), Knowledge Management: An Integrated Approach, Pearson Education, Harlow.
+	  </dd>
+
+
+	    <dt class="label" id="ref-Maier2004">Maier2004</dt>
+      <dd>
+Maier, R. (2004), Knowledge Management Systems: Information and Communication Technologies for
+Knowledge Management, Springer-Verlag, Berlin.	  </dd>
+
+
+    <dt class="label" id="ref-Rao2005">Rao2005</dt>
+      <dd>
+Rao, M. (2005), ‘‘Overview: the social life of KM tools’’, in Rao, M. (Ed.), Knowledge Management Tools
+and Techniques: Practitioners and Experts Evaluate KM Solutions, Elsevier, Oxford, pp. 1-73.
+</dd>
+
+
+	  
+    </dl>
+	
+
+    <h3 id="references-other">A.2 Otras referencias</h3>
+
+    <dl>
+      <dt class="label" id="ref-rfc2119">IETF RFC 2119</dt>
+      <dd>
+        <em><a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119: Key words
+        for use in RFCs to Indicate Requirement Levels</a></em>. Internet
+        Engineering Task Force, 1997 (see http://www.ietf.org/rfc/rfc2119.txt).
+      </dd>
+	  
+
+    </dl>
+
+    <!-- ===================================================================== -->
+
+    <h2 id="changes">B Cambios en esta versión(No-Normativo)</h2>
+
+    <ul>
+      <li><p>Versión inicial</p></li> 
+    </ul>
+
+    <h2><a id="acknowledgements"></a>C Agradecimientos (No-Normativo)</h2>
+
+ <p>Este trabajo forma parte del entregable "E2.5 Ontología para la
+    gestión del conocimiento tecnológico" del proyecto consorciado ORIGIN parcialmente financiado por el 
+	programa de "Proyectos Integrados" del <a href="http://www.cdti.es/" title="CDTI">CDTI</a> en el "Marco del Fondo Tecnológico"
+    y en el cual el grupo WESO participa como subcontrata de la empresa <a href="http://www.treelogic.com/" title="Treelogic">Treelogic S.L.</a> 
+   </p> 
+
+  </body>
+
+</html>
+

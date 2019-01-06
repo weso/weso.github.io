@@ -1,0 +1,919 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dc "http://purl.org/dc/terms/" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY tags "http://www.holygoat.co.uk/owl/redwood/0.1/tags/" >
+    <!ENTITY tkm "http://purl.org/weso/ontologies/tkm#" >
+    <!ENTITY vs  "http://www.w3.org/2003/06/sw-vocab-status/ns#" >
+]>
+
+
+<rdf:RDF xmlns="&tkm;"
+     xml:base="&tkm;"
+     xmlns:tags="http://www.holygoat.co.uk/owl/redwood/0.1/tags/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:tkm="&tkm;">
+    <owl:Ontology rdf:about="&tkm;">
+        <rdfs:label rdf:datatype="&xsd;string">Technological Knowledge Management Ontology</rdfs:label>
+        <owl:versionInfo rdf:datatype="&xsd;string">0.1</owl:versionInfo>
+        <dc:created rdf:datatype="&xsd;date">2010-12-27</dc:created>
+        <dc:modified rdf:datatype="&xsd;date">2011-01-01</dc:modified>
+        <rdfs:comment rdf:datatype="&rdf;PlainLiteral">Borrador de la ontología de gestión del conocimiento tecnológico. Es una ontología para el modelado de las cuestiones relacionadas a la gestión del  conocimiento y expertise en el campo de la tecnología.</rdfs:comment>
+        <dc:license rdf:datatype="&xsd;anyURI">http://www.opendatacommons.org/licenses/pddl/1.0/</dc:license>
+        <rdfs:comment xml:lang="en">Draft of technological knowledge management ontology. It is an ontology for modelling the issues related to knowledge and expertise management in the technological domain.</rdfs:comment>
+        <dc:coverage xml:lang="en">ORIGIN Project</dc:coverage>
+        <dc:title xml:lang="en">Technological Knowledge Management Ontology</dc:title>
+        <dc:creator xml:lang="en">WESO Research Group</dc:creator>
+        <rdfs:comment xml:lang="es">Borrador de la ontología de gestión del conocimiento tecnológico. Es una ontología para el modelado de las cuestiones relacionadas a la gestión del  conocimiento y expertise en el campo de la tecnología.</rdfs:comment>
+        <dc:title xml:lang="es">Ontología de Gestión del Conocimiento Tecnológico</dc:title>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&dc;creator"/>
+    <owl:AnnotationProperty rdf:about="&dc;description"/>
+    <owl:AnnotationProperty rdf:about="&rdfs;label"/>
+    <owl:AnnotationProperty rdf:about="&dc;description"/>
+    <owl:AnnotationProperty rdf:about="&dc;license"/>
+    <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
+	<owl:AnnotationProperty rdf:about="&dc;created"/>
+    <owl:AnnotationProperty rdf:about="&owl;versionInfo"/>
+    <owl:AnnotationProperty rdf:about="&dc;coverage"/>
+    <owl:AnnotationProperty rdf:about="&dc;modified"/>
+    <owl:AnnotationProperty rdf:about="&dc;title"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+    <owl:ObjectProperty rdf:about="http://purl.org/weso/ontologies/tkm#compares">
+        <rdfs:domain rdf:resource="http://purl.org/weso/ontologies/tkm#ExistingKnowledgeResource"/>
+        <rdfs:range rdf:resource="http://purl.org/weso/ontologies/tkm#RequiredKnowledgeResource"/>
+    </owl:ObjectProperty>
+    
+
+    <owl:ObjectProperty rdf:about="http://purl.org/weso/ontologies/tkm#comprises">
+        <rdfs:range rdf:resource="http://purl.org/weso/ontologies/tkm#ImplementationStrategy"/>
+        <rdfs:range rdf:resource="http://purl.org/weso/ontologies/tkm#KnowledgeStrategy"/>
+        <rdfs:domain rdf:resource="http://purl.org/weso/ontologies/tkm#Strategy"/>
+    </owl:ObjectProperty>
+    
+
+    <owl:ObjectProperty rdf:about="http://purl.org/weso/ontologies/tkm#contains">
+        <rdfs:domain rdf:resource="http://purl.org/weso/ontologies/tkm#KnowledgeDomain"/>
+        <rdfs:range rdf:resource="http://purl.org/weso/ontologies/tkm#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#createdBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/weso/ontologies/tkm#createdBy">
+        <rdfs:range rdf:resource="http://purl.org/weso/ontologies/tkm#Goal"/>
+        <rdfs:domain rdf:resource="http://purl.org/weso/ontologies/tkm#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#developedBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/weso/ontologies/tkm#developedBy">
+        <rdfs:domain rdf:resource="http://purl.org/weso/ontologies/tkm#Goal"/>
+        <rdfs:range rdf:resource="http://purl.org/weso/ontologies/tkm#Support"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#hasKnowledge -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/weso/ontologies/tkm#hasKnowledge">
+        <rdfs:range rdf:resource="http://purl.org/weso/ontologies/tkm#ExistingKnowledgeResource"/>
+        <rdfs:domain rdf:resource="http://purl.org/weso/ontologies/tkm#KnowledgeStrategy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/weso/ontologies/tkm#hasType">
+        <rdfs:range rdf:resource="http://purl.org/weso/ontologies/tkm#KnowledgeType"/>
+        <rdfs:domain rdf:resource="http://purl.org/weso/ontologies/tkm#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#identifies -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/weso/ontologies/tkm#identifies">
+        <rdfs:range rdf:resource="http://purl.org/weso/ontologies/tkm#KnowledgeDomain"/>
+        <rdfs:domain rdf:resource="http://purl.org/weso/ontologies/tkm#KnowledgeStrategy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#improves -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/weso/ontologies/tkm#improves">
+        <rdfs:domain rdf:resource="http://purl.org/weso/ontologies/tkm#Initiative"/>
+        <rdfs:range rdf:resource="http://purl.org/weso/ontologies/tkm#Process"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#includes -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/weso/ontologies/tkm#includes">
+        <rdfs:range rdf:resource="http://purl.org/weso/ontologies/tkm#EvaluationCriteria"/>
+        <rdfs:domain rdf:resource="http://purl.org/weso/ontologies/tkm#ImplementationStrategy"/>
+        <rdfs:range rdf:resource="http://purl.org/weso/ontologies/tkm#Initiative"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#isFocusOn -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/weso/ontologies/tkm#isFocusOn">
+        <rdfs:range rdf:resource="http://purl.org/weso/ontologies/tkm#Focus"/>
+        <rdfs:domain rdf:resource="http://purl.org/weso/ontologies/tkm#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#requiresKnowledge -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/weso/ontologies/tkm#requiresKnowledge">
+        <rdfs:domain rdf:resource="http://purl.org/weso/ontologies/tkm#KnowledgeStrategy"/>
+        <rdfs:range rdf:resource="http://purl.org/weso/ontologies/tkm#RequiredKnowledgeResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#supportedBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/weso/ontologies/tkm#supportedBy">
+        <rdfs:range rdf:resource="http://purl.org/weso/ontologies/tkm#Instrument"/>
+        <rdfs:domain rdf:resource="http://purl.org/weso/ontologies/tkm#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#usedBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/weso/ontologies/tkm#usedBy">
+        <rdfs:domain rdf:resource="http://purl.org/weso/ontologies/tkm#Strategy"/>
+        <rdfs:range rdf:resource="&foaf;Project"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#usedIn -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/weso/ontologies/tkm#usedIn">
+        <rdfs:domain rdf:resource="http://purl.org/weso/ontologies/tkm#Strategy"/>
+        <rdfs:range rdf:resource="&foaf;Group"/>
+        <rdfs:range rdf:resource="&foaf;Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#uses -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/weso/ontologies/tkm#uses">
+        <rdfs:domain rdf:resource="http://purl.org/weso/ontologies/tkm#Initiative"/>
+        <rdfs:range rdf:resource="http://purl.org/weso/ontologies/tkm#Instrument"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&tkm;developedBy"/>
+    <owl:ObjectProperty rdf:about="&tkm;hasKnowledge"/>
+    <owl:ObjectProperty rdf:about="&tkm;hasType"/>
+    <owl:ObjectProperty rdf:about="&tkm;isFocusOn"/>
+    <owl:ObjectProperty rdf:about="&tkm;requiresKnowledge"/>
+    
+    <owl:ObjectProperty rdf:about="&tags;associatedTag"/>
+    
+
+
+    <!-- http://www.holygoat.co.uk/owl/redwood/0.1/tags/taggedOn -->
+
+    <owl:ObjectProperty rdf:about="&tags;taggedOn"/>
+    
+
+
+    <!-- http://www.holygoat.co.uk/owl/redwood/0.1/tags/taggedResource -->
+
+    <owl:ObjectProperty rdf:about="&tags;taggedResource"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="&owl;topObjectProperty"/>
+    
+
+    <rdf:Property rdf:about="&vs;term_status" />
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+    <!-- http://purl.org/weso/ontologies/tkm#Application -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#Application">
+        <rdfs:label>Aplicaciones.</rdfs:label>
+        <rdfs:label xml:lang="en">Applications.</rdfs:label>
+        <rdfs:label xml:lang="es">Aplicaciones.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/weso/ontologies/tkm#Technology"/>
+        <rdfs:comment>Aplicaciones para la gestión del conocimiento tecnológico.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Application to technological knowledge management.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Aplicaciones para la gestión del conocimiento tecnológico.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#BusinessApplication -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#BusinessApplication">
+        <rdfs:label>Aplicaciones de negocio.</rdfs:label>
+        <rdfs:label xml:lang="en">Business application.</rdfs:label>
+        <rdfs:label xml:lang="es">Aplicaciones de negocio.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/weso/ontologies/tkm#Technology"/>
+        <rdfs:comment>Aplicaciones de negocio: ERP, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Business applications: ERP, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Aplicaciones de negocio: ERP, etc.</rdfs:comment>
+        <dc:description xml:lang="es">También se podría distinguir entre: Colaboración (comunidades de usuarios), Difusión (e-commerce), Repositorio (contact center) y Descubrimiento (CRM Analítico). En esta versión de la ontología no se va a profundizar en este apartado.</dc:description>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#Codification -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#Codification">
+        <rdfs:label>Codificación.</rdfs:label>
+        <rdfs:label xml:lang="en">Codification.</rdfs:label>
+        <rdfs:label xml:lang="es">Codificación.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/weso/ontologies/tkm#Support"/>
+        <rdfs:comment>Soporte a la creación de conocimiento a través de la codificación.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Support to the creation of knowledge through codification.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Soporte a la creación de conocimiento a través de la codificación.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#CollaborationApplication -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#CollaborationApplication">
+        <rdfs:label>Aplicaciones Colaborativas.</rdfs:label>
+        <rdfs:label xml:lang="en">Collaborative Applications.</rdfs:label>
+        <rdfs:label xml:lang="es">Aplicaciones Colaborativas.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/weso/ontologies/tkm#Application"/>
+        <rdfs:comment>Aplicaciones colaborativas para la gestión del conocimiento tecnológico: gestión de proyectos, comunidades, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Collaborative Applications for the technological knowledge management: project management, community support, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Aplicaciones colaborativas para la gestión del conocimiento tecnológico: gestión de proyectos, comunidades, etc.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#CollaborationTechnology -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#CollaborationTechnology">
+        <rdfs:label>Componentes de Colaboración.</rdfs:label>
+        <rdfs:label xml:lang="en">Collaboration Components.</rdfs:label>
+        <rdfs:label xml:lang="es">Componentes de Colaboración.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/weso/ontologies/tkm#ComponentTechnology"/>
+        <rdfs:comment>Componentes de colaboración: creatividad, conectividad, comunicación, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Collaboration componentes: creativity, conectivity, communication, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Componentes de colaboración: creatividad, conectividad, comunicación, etc.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#ComponentTechnology -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#ComponentTechnology">
+        <rdfs:label xml:lang="en">Component technologies.</rdfs:label>
+        <rdfs:label>Componentes tecnológicos.</rdfs:label>
+        <rdfs:label xml:lang="es">Componentes tecnológicos.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/weso/ontologies/tkm#Technology"/>
+        <rdfs:comment>Tecnologías utilizadas.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Technologies used.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Tecnologías utilizadas.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#Creation -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#Creation">
+        <rdfs:label xml:lang="en">Creation Knowledge Intent.</rdfs:label>
+        <rdfs:label>Objetivo de conocimiento por creación.</rdfs:label>
+        <rdfs:label xml:lang="es">Objetivo de conocimiento por creación.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/weso/ontologies/tkm#Goal"/>
+        <rdfs:comment>Modo mediante el cual se alcanza un objetivo de conocimiento a través de los recursos de conocimiento asociados a un dominio por creación.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The way used to get a knowledge intent using the knowledge resources in a specific domain by creation.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Modo mediante el cual se alcanza un objetivo de conocimiento a través de los recursos de conocimiento asociados a un dominio por creación.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#DiscoveryApplication -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#DiscoveryApplication">
+        <rdfs:label>Aplicaciones de descubrimiento.</rdfs:label>
+        <rdfs:label xml:lang="en">Discovery applications.</rdfs:label>
+        <rdfs:label xml:lang="es">Aplicaciones de descubrimiento.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/weso/ontologies/tkm#Application"/>
+        <rdfs:comment>Aplicaciones de descubrimiento de conocimiento tecnológico: DSS, Organización y búsqueda, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Discovery applications: LMS, Expertise management, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Aplicaciones de descubrimiento de conocimiento tecnológico: DSS, Organización y búsqueda, etc.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#DiscoveryTechnology -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#DiscoveryTechnology">
+        <rdfs:label>Componentes de descubrimiento.</rdfs:label>
+        <rdfs:label xml:lang="en">Discovery Components.</rdfs:label>
+        <rdfs:label xml:lang="es">Componentes de descubrimiento.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/weso/ontologies/tkm#ComponentTechnology"/>
+        <rdfs:comment>Componentes de descubrimiento: data mining, text mining, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Discovery Components: data mining, text mining, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Componentes de descubrimiento: data mining, text mining, etc.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#DisseminationApplication -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#DisseminationApplication">
+        <rdfs:label>Aplicaciones de difusión.</rdfs:label>
+        <rdfs:label xml:lang="en">Dissemination applications.</rdfs:label>
+        <rdfs:label xml:lang="es">Aplicaciones de difusión.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/weso/ontologies/tkm#Application"/>
+        <rdfs:comment>Aplicaciones de difusión de conocimiento tecnológico: Portals, LMS, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Dissemination applications: Portals, LMS, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Aplicaciones de difusión de conocimiento tecnológico: Portals, LMS, etc.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#DisseminationTechnology -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#DisseminationTechnology">
+        <rdfs:label>Componentes de Difusión.</rdfs:label>
+        <rdfs:label xml:lang="en">Dissemination Components.</rdfs:label>
+        <rdfs:label xml:lang="es">Componentes de Difusión.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/weso/ontologies/tkm#ComponentTechnology"/>
+        <rdfs:comment>Componentes de difusión: publicación de contenidos, e-learning, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Dissemination components: publishing, e-learning, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Componentes de difusión: publicación de contenidos, e-learning, etc.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#EvaluationCriteria -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#EvaluationCriteria">
+        <rdfs:label>Criterios de Evaluación.</rdfs:label>
+        <rdfs:label xml:lang="en">Evaluation Criteria.</rdfs:label>
+        <rdfs:label xml:lang="es">Criterios de Evaluación.</rdfs:label>
+        <rdfs:comment>Criterios de evaluación de la estrategia de gestión del conocimiento tecnológico.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Evaluation Criteria for the strategy Technological Knowledge Management</rdfs:comment>
+        <rdfs:comment xml:lang="es">Criterios de evaluación de la estrategia de gestión del conocimiento tecnológico.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#ExistingKnowledgeResource -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#ExistingKnowledgeResource">
+        <rdfs:label xml:lang="en">Existing Knowledge Resource.</rdfs:label>
+        <rdfs:label>Recurso de Conocimiento Existente.</rdfs:label>
+        <rdfs:label xml:lang="es">Recurso de Conocimiento Existente.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/weso/ontologies/tkm#Resource"/>
+        <rdfs:comment>Expresa la información sobre un recurso de conocimiento existente.</rdfs:comment>
+        <rdfs:comment xml:lang="en">It refers to a existing knowledge resource.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Expresa la información sobre un recurso de conocimiento existente.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#Focus -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#Focus">
+        <rdfs:label xml:lang="en">Focus.</rdfs:label>
+        <rdfs:label>Focus.</rdfs:label>
+        <rdfs:label xml:lang="es">Focus.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment>Define el objetivo del enfoque utilizado en la estrategia: Gente, Tecnología, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="en">It defines the goal of the approach used in the strategy: People, Technology, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Define el objetivo del enfoque utilizado en la estrategia: Gente, Tecnología, etc.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#Goal -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#Goal">
+        <rdfs:label xml:lang="en">Knowledge Goal</rdfs:label>
+        <rdfs:label>Objetivo de Conocimiento.</rdfs:label>
+        <rdfs:label xml:lang="es">Objetivo de Conocimiento.</rdfs:label>
+        <rdfs:comment>Es el objetivo de conocimiento que se intenta conseguir a través de los recursos de conocimiento en un dominio determinado y que pueden ser alcanzados por creación o por transferencia.</rdfs:comment>
+        <rdfs:comment xml:lang="en">It is the goal to be reached through knowledge resources in a knowledge domain. They can be reach by creation or transfer.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Es el objetivo de conocimiento que se intenta conseguir a través de los recursos de conocimiento en un dominio determinado y que pueden ser alcanzados por creación o por transferencia.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#ImplementationStrategy -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#ImplementationStrategy">
+        <rdfs:label>Estrategia de Implementación.</rdfs:label>
+        <rdfs:label xml:lang="en">Implementation Strategy.</rdfs:label>
+        <rdfs:label xml:lang="es">Estrategia de Implementación.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/weso/ontologies/tkm#Strategy"/>
+        <rdfs:comment>Implementación de la gestión del conocimiento tecnológico.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Implementation of the technological knowledge management.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Implementación de la gestión del conocimiento tecnológico.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#Initiative -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#Initiative">
+        <rdfs:label>Iniciativa.</rdfs:label>
+        <rdfs:label xml:lang="en">Initiative.</rdfs:label>
+        <rdfs:label xml:lang="es">Iniciativa.</rdfs:label>
+        <rdfs:comment>Iniciativas para implementar la estrategia de gestión del conocimiento tecnológico.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Initiatives to implement the strategy of technological knowledge management.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Iniciativas para implementar la estrategia de gestión del conocimiento tecnológico.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#Instrument -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#Instrument">
+        <rdfs:label>Instrumentos.</rdfs:label>
+        <rdfs:label xml:lang="en">Instruments.</rdfs:label>
+        <rdfs:label xml:lang="es">Instrumentos.</rdfs:label>
+        <rdfs:comment>Instrumentos para implementar las iniciativas llevadas a cabo durante la implementación de la estrategia de gestión del conocimiento tecnológico.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Instruments to implement the carried out initiatives during the implementation of the technological knowledge management.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Instrumentos para implementar las iniciativas llevadas a cabo durante la implementación de la estrategia de gestión del conocimiento tecnológico.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#KnowledgeDomain -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#KnowledgeDomain">
+        <rdfs:label>Dominio de Conocimiento.</rdfs:label>
+        <rdfs:label xml:lang="en">Knowledge Domain.</rdfs:label>
+        <rdfs:label xml:lang="es">Dominio de Conocimiento.</rdfs:label>
+        <rdfs:comment>La estrategia se implementa sobre un determinado dominio de conocimiento. En este caso, la tecnología puede ser uno de ellos.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The knowledge strategy is implemented with a specific knowledge domain. In this case, the technological field could be one of them.</rdfs:comment>
+        <rdfs:comment xml:lang="es">La estrategia se implementa sobre un determinado dominio de conocimiento. En este caso, la tecnología puede ser uno de ellos.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#KnowledgeStrategy -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#KnowledgeStrategy">
+        <rdfs:label>Estrategia de Conocimiento.</rdfs:label>
+        <rdfs:label xml:lang="en">Knowledge Strategy.</rdfs:label>
+        <rdfs:label xml:lang="en">Strategy.</rdfs:label>
+        <rdfs:label xml:lang="es">Estrategia de Conocimiento.</rdfs:label>
+        <rdfs:label xml:lang="es">Estrategia de gestión del conocimiento tecnológico.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/weso/ontologies/tkm#Strategy"/>
+        <rdfs:comment>Identifica los distintos dominios de conocimiento asociados a una estrategia de gestión del conocimiento tecnológico comparando los recursos de conocimiento existentes y necesarios para conseguir unos determinados objetivos.</rdfs:comment>
+        <rdfs:comment xml:lang="en">It identifies the different knowledge domains related to a specific strategy of technological knowledge management. It compares the existing and the required knowledge resources to get a specific knowledge intents.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Identifica los distintos dominios de conocimiento asociados a una estrategia de gestión del conocimiento tecnológico comparando los recursos de conocimiento existentes y necesarios para conseguir unos determinados objetivos.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#KnowledgeType -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#KnowledgeType">
+        <rdfs:label>KnowledgeType.</rdfs:label>
+        <rdfs:label xml:lang="en">KnowledgeType.</rdfs:label>
+        <rdfs:label xml:lang="es">KNowledgeType</rdfs:label>
+        <rdfs:comment>Tipo de Conocimiento a utilizar: Explícito, Implícito, Humano, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Type of knowledge to be used: Explicit, Implicit, Human, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Tipo de Conocimiento a utilizar: Explícito, Implícito, Humano, etc.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#Personalization -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#Personalization">
+        <rdfs:label>Personalización.</rdfs:label>
+        <rdfs:label xml:lang="en">Personalization.</rdfs:label>
+        <rdfs:label xml:lang="es">Personalización.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/weso/ontologies/tkm#Support"/>
+        <rdfs:comment>Soporte a la creación de conocimiento a través de la personalización.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Support to the creation of knowledge through personalization.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Soporte a la creación de conocimiento a través de la personalización.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#Practice -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#Practice">
+        <rdfs:label>Prácticas.</rdfs:label>
+        <rdfs:label xml:lang="en">Practices.</rdfs:label>
+        <rdfs:label xml:lang="es">Prácticas.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/weso/ontologies/tkm#Instrument"/>
+        <rdfs:comment xml:lang="en">Practices used: lessons learnt, teamwork, repositories, etc.</rdfs:comment>
+        <rdfs:comment>Prácticas utilizadas: lecciones aprendidas, trabajo en equipo, repositorios de información, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Prácticas utilizadas: lecciones aprendidas, trabajo en equipo, repositorios de información, etc.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#Process -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#Process">
+        <rdfs:label>Proceso.</rdfs:label>
+        <rdfs:label xml:lang="en">Process.</rdfs:label>
+        <rdfs:label xml:lang="es">Proceso.</rdfs:label>
+        <rdfs:comment>Proceso de gestión del conocimiento tecnológico.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Process of technological knowledge management.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Proceso de gestión del conocimiento tecnológico.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#RepositoryApplication -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#RepositoryApplication">
+        <rdfs:label>Repositorio de aplicaciones.</rdfs:label>
+        <rdfs:label xml:lang="en">Repository applications.</rdfs:label>
+        <rdfs:label xml:lang="es">Repositorio de aplicaciones.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/weso/ontologies/tkm#Application"/>
+        <rdfs:comment>Repositorio de aplicaciones de gestión del conocimiento tecnológico: DMS, CMS, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Repository applications for the technological knowledge management: DMS, CMS, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Repositorio de aplicaciones de gestión del conocimiento tecnológico: DMS, CMS, etc.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#RepositoryTechnology -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#RepositoryTechnology">
+        <rdfs:label>Componentes de repositorio.</rdfs:label>
+        <rdfs:label xml:lang="en">Repository components.</rdfs:label>
+        <rdfs:label xml:lang="es">Componentes de repositorio.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/weso/ontologies/tkm#ComponentTechnology"/>
+        <rdfs:comment>Componentes de repositorios: almácenes, razonamiento, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Repository components: storage, reasoning, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Componentes de repositorios: almácenes, razonamiento, etc.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#RequiredKnowledgeResource -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#RequiredKnowledgeResource">
+        <rdfs:label>Recurso de Conocimiento Requerido.</rdfs:label>
+        <rdfs:label xml:lang="en">Required Knowledge Resource.</rdfs:label>
+        <rdfs:label xml:lang="es">Recurso de Conocimiento Requerido.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/weso/ontologies/tkm#Resource"/>
+        <rdfs:comment>Expresa la información sobre un recurso de conocimiento requerido.</rdfs:comment>
+        <rdfs:comment xml:lang="en">It refers to a required knowledge resource.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Expresa la información sobre un recurso de conocimiento requerido.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#Resource -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#Resource">
+        <rdfs:label>Recurso de conocimiento.</rdfs:label>
+        <rdfs:label xml:lang="en">Knowledge Resource..</rdfs:label>
+        <rdfs:label xml:lang="es">Recurso de conocimiento.</rdfs:label>
+        <rdfs:comment>Expresa la información sobre un recurso de conocimiento utilizado en un momento determinado dentro de un dominio para conseguir un nuevo objetivo de conocimiento.</rdfs:comment>
+        <rdfs:comment xml:lang="en">It refers to a knowledge resource used in a specific time within a knowledge domain to get a new knowledge intent.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Expresa la información sobre un recurso de conocimiento utilizado en un momento determinado dentro de un dominio para conseguir un nuevo objetivo de conocimiento.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#Strategy -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#Strategy">
+        <rdfs:label xml:lang="en">Strategy</rdfs:label>
+        <rdfs:comment xml:lang="en">Strategy</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#Support -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#Support">
+        <rdfs:label>Soporte a TKM.</rdfs:label>
+        <rdfs:label xml:lang="en">Support.</rdfs:label>
+        <rdfs:label xml:lang="es">Soporte a TKM.</rdfs:label>
+        <rdfs:comment>Modos de soporte al conocimiento.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Ways to support knowledge.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Modos de soporte al conocimiento.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <owl:Class rdf:about="&tkm;Annotation">
+        <rdfs:subClassOf rdf:resource="&tags;Tagging"/>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#Tag">
+        <rdfs:label>TKM Tag.</rdfs:label>
+        <rdfs:label xml:lang="en">Tag.</rdfs:label>
+        <rdfs:label xml:lang="es">Tag.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tags;Tag"/>
+        <rdfs:comment>Etiquetas para los recursos en el ámbito de la gestión del conocimiento tecnológico.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Tags for the resources in the scope of the technological knowledge management.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Etiquetas para los recursos en el ámbito de la gestión del conocimiento tecnológico.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#Technology">
+        <rdfs:label>Tecnologías.</rdfs:label>
+        <rdfs:label xml:lang="en">Tecnologies.</rdfs:label>
+        <rdfs:label xml:lang="es">Tecnologías.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/weso/ontologies/tkm#Instrument"/>
+        <rdfs:comment>Tecnologías utilizadas: internet, libros, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Technologies used: internet, books, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Tecnologías utilizadas: internet, libros, etc.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#Transfer -->
+
+    <owl:Class rdf:about="http://purl.org/weso/ontologies/tkm#Transfer">
+        <rdfs:label xml:lang="en">Knowledge intent by transfer.</rdfs:label>
+        <rdfs:label>Objetivo de conocimiento mediante transferencia.</rdfs:label>
+        <rdfs:label xml:lang="es">Objetivo de conocimiento mediante transferencia.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/weso/ontologies/tkm#Goal"/>
+        <rdfs:comment>Modo mediante el cual se alcanza un objetivo de conocimiento a través de los recursos de conocimiento asociados a un dominio por transferencia.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The way used to get a knowledge intent using the knowledge resources in a specific domain.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Modo mediante el cual se alcanza un objetivo de conocimiento a través de los recursos de conocimiento asociados a un dominio por transferencia.</rdfs:comment>
+	<vs:term_status xml:lang="en">unstable</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://www.holygoat.co.uk/owl/redwood/0.1/tags/Tag -->
+
+    <owl:Class rdf:about="&tags;Tag"/>
+    
+
+
+    <!-- http://www.holygoat.co.uk/owl/redwood/0.1/tags/Tagging -->
+
+    <owl:Class rdf:about="&tags;Tagging"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Group -->
+
+    <owl:Class rdf:about="&foaf;Group"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Organization -->
+
+    <owl:Class rdf:about="&foaf;Organization"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Project -->
+
+    <owl:Class rdf:about="&foaf;Project"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#AcotaCreation -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/weso/ontologies/tkm#AcotaCreation">
+        <rdf:type rdf:resource="http://purl.org/weso/ontologies/tkm#Creation"/>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="http://purl.org/weso/ontologies/tkm#AcotaDevelopmentKnowledgeStrategy">
+        <rdf:type rdf:resource="http://purl.org/weso/ontologies/tkm#KnowledgeStrategy"/>
+        <tkm:hasKnowledge rdf:resource="http://purl.org/weso/ontologies/tkm#JSFKnowledgeResource"/>
+        <tkm:requiresKnowledge rdf:resource="http://purl.org/weso/ontologies/tkm#RichFacesKnowledgeResource"/>
+        <identifies rdf:resource="http://purl.org/weso/ontologies/tkm#TechJ2EEDevelopment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#AcotaImplementationStrategy -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/weso/ontologies/tkm#AcotaImplementationStrategy">
+        <rdf:type rdf:resource="http://purl.org/weso/ontologies/tkm#ImplementationStrategy"/>
+        <includes rdf:resource="http://purl.org/weso/ontologies/tkm#AcotaJ2EEDevelopmentInitiative"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#AcotaJ2EEDevelopmentInitiative -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/weso/ontologies/tkm#AcotaJ2EEDevelopmentInitiative">
+        <rdf:type rdf:resource="http://purl.org/weso/ontologies/tkm#Initiative"/>
+        <uses rdf:resource="http://purl.org/weso/ontologies/tkm#Delicious"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#AcotaPersonalization -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/weso/ontologies/tkm#AcotaPersonalization">
+        <rdf:type rdf:resource="http://purl.org/weso/ontologies/tkm#Personalization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#Delicious -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/weso/ontologies/tkm#Delicious">
+        <rdf:type rdf:resource="http://purl.org/weso/ontologies/tkm#CollaborationApplication"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#Explicit -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/weso/ontologies/tkm#Explicit">
+        <rdf:type rdf:resource="http://purl.org/weso/ontologies/tkm#KnowledgeType"/>
+        <tkm:isFocusOn rdf:resource="http://purl.org/weso/ontologies/tkm#J2EEGUITechnology"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#J2EEGUITechnology -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/weso/ontologies/tkm#J2EEGUITechnology">
+        <rdf:type rdf:resource="http://purl.org/weso/ontologies/tkm#Focus"/>
+    </owl:NamedIndividual>
+    
+
+    <owl:NamedIndividual rdf:about="http://purl.org/weso/ontologies/tkm#JSFKnowledgeResource">
+        <rdf:type rdf:resource="http://purl.org/weso/ontologies/tkm#ExistingKnowledgeResource"/>
+        <createdBy rdf:resource="http://purl.org/weso/ontologies/tkm#AcotaCreation"/>
+        <tags:taggedOn rdf:resource="http://purl.org/weso/ontologies/tkm#AcotaPersonalization"/>
+        <tkm:developedBy rdf:resource="http://purl.org/weso/ontologies/tkm#AcotaPersonalization"/>
+        <tkm:hasType rdf:resource="http://purl.org/weso/ontologies/tkm#Explicit"/>
+        <tkm:isFocusOn rdf:resource="http://purl.org/weso/ontologies/tkm#J2EEGUITechnology"/>
+        <compares rdf:resource="http://purl.org/weso/ontologies/tkm#RichFacesKnowledgeResource"/>
+    </owl:NamedIndividual>
+    
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/weso/ontologies/tkm#RichFacesAnnotation">
+        <rdf:type rdf:resource="http://purl.org/weso/ontologies/tkm#Annotation"/>
+        <tags:taggedResource rdf:resource="http://purl.org/weso/ontologies/tkm#RichFacesKnowledgeResource"/>
+        <tags:associatedTag rdf:resource="http://purl.org/weso/ontologies/tkm#RichFacesTag"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#RichFacesKnowledgeResource -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/weso/ontologies/tkm#RichFacesKnowledgeResource">
+        <rdf:type rdf:resource="http://purl.org/weso/ontologies/tkm#RequiredKnowledgeResource"/>
+        <createdBy rdf:resource="http://purl.org/weso/ontologies/tkm#AcotaCreation"/>
+        <tkm:developedBy rdf:resource="http://purl.org/weso/ontologies/tkm#AcotaPersonalization"/>
+        <supportedBy rdf:resource="http://purl.org/weso/ontologies/tkm#Delicious"/>
+        <tkm:hasType rdf:resource="http://purl.org/weso/ontologies/tkm#Explicit"/>
+        <tkm:isFocusOn rdf:resource="http://purl.org/weso/ontologies/tkm#J2EEGUITechnology"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#RichFacesTag -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/weso/ontologies/tkm#RichFacesTag">
+        <rdf:type rdf:resource="http://purl.org/weso/ontologies/tkm#Tag"/>
+        <rdfs:label>richfaces</rdfs:label>
+        <tags:taggedOn rdf:resource="http://purl.org/weso/ontologies/tkm#RichFacesTag"/>
+        <tags:associatedTag rdf:resource="http://purl.org/weso/ontologies/tkm#RichFacesTag"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#AcotaApproach -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/weso/ontologies/tkm#AcotaApproach">
+        <tkm:hasType rdf:resource="http://purl.org/weso/ontologies/tkm#Explicit"/>
+        <tkm:isFocusOn rdf:resource="http://purl.org/weso/ontologies/tkm#J2EEGUITechnology"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#AcotaDevelopmentStrategy -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/weso/ontologies/tkm#AcotaDevelopmentStrategy">
+        <rdf:type rdf:resource="http://purl.org/weso/ontologies/tkm#Strategy"/>
+        <comprises rdf:resource="http://purl.org/weso/ontologies/tkm#AcotaDevelopmentKnowledgeStrategy"/>
+        <comprises rdf:resource="http://purl.org/weso/ontologies/tkm#AcotaImplementationStrategy"/>
+        <comprises rdf:resource="http://purl.org/weso/ontologies/tkm#AcotaApproach"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/weso/ontologies/tkm#TechJ2EEDevelopment -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/weso/ontologies/tkm#TechJ2EEDevelopment">
+        <rdf:type rdf:resource="http://purl.org/weso/ontologies/tkm#KnowledgeDomain"/>
+        <contains rdf:resource="http://purl.org/weso/ontologies/tkm#JSFKnowledgeResource"/>
+        <contains rdf:resource="http://purl.org/weso/ontologies/tkm#RichFacesKnowledgeResource"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.1.0.20069) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,796 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:owl="http://www.w3.org/2002/07/owl#"
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:tkm="http://purl.org/weso/ontologies/tkm#"
+xmlns:event="http://purl.org/NET/c4dm/event.owl#"
+xmlns:vann="http://purl.org/vocab/vann/"
+xmlns:bibo="http://purl.org/ontology/bibo/"
+xmlns:foaf="http://xmlns.com/foaf/0.1/"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+typeof="bibo:Document"
+about="http://purl.org/weso/ontologies/tkm.html"
+version="XHTML+RDFa 1.0">
+<head>
+  <title about="http://purl.org/weso/ontologies/tkm.html" property="dc:title">Technological Knowledge Management Ontology Specification</title>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+<!--  OJO. Incluir cuando se publique: <base href="http://purl.org/weso/ontologies/tkm.html" /> -->
+
+<!-- OJO . Revisar cambios en CSS's -->
+  <link href="http://smiy.sourceforge.net/css/xmlns-style.css" rel="stylesheet"  type="text/css" />
+  <link href="http://smiy.sourceforge.net/css/style.css" rel="stylesheet"  type="text/css" />  
+ 
+ <link rel="stylesheet" type="text/css" href="css/tkm-spec.css" />
+  
+  <!-- OJO --- cambiar para que apunte a WESO -->
+  <link about="http://purl.org/weso/ontologies/tkm#" typeof="owl:Ontology" rel="dc:creator" href="http://moustaki.org/foaf.rdf#moustaki" />
+  <link about="http://purl.org/weso/ontologies/tkm#" rel="dc:creator" href="http://foaf.me/intrz#me" />
+  <link about="http://purl.org/weso/ontologies/tkm#" rel="dc:creator" href="http://foaf.me/zazi#me" />
+  <link about="http://purl.org/weso/ontologies/tkm.html" rel="dc:creator" href="http://foaf.me/zazi#me" />
+  <link about="http://purl.org/weso/ontologies/tkm.html" rel="foaf:primaryTopic" rev="foaf:isPrimaryTopicOf" href="http://purl.org/weso/ontologies/tkm#" />
+  <link about="http://purl.org/weso/ontologies/tkm.html" href="http://purl.org/weso/ontologies/tkm.owl" rel="alternate dcterms:hasFormat"  type="application/rdf+xml" />
+  <link about="http://purl.org/weso/ontologies/tkm.html" href="http://purl.org/weso/ontologies/tkm.n3" rel="alternate dcterms:hasFormat"  type="application/rdf+n3" />
+
+</head>
+
+<body>
+  <h1><span about="http://purl.org/weso/ontologies/tkm#" property="dc:title">Technological Knowledge Management Specification</span> 
+   <span about="http://purl.org/weso/ontologies/tkm#" property="owl:versionInfo" datatype="xsd:decimal">0.1</span></h1>
+
+  <div about="http://purl.org/weso/ontologies/tkm.html" rel="dc:conformsTo"
+     resource="http://www.w3.org/TR/rdfa-syntax"></div>
+
+      <dl>
+
+      <dt>Current version:</dt>
+      <dd><a href="http://purl.org/weso/ontologies/TKM-20101228/">http://purl.org/weso/ontologies/tkm-20110102/</a></dd>
+
+      <dt>Last version:</dt>
+      <dd><a href="http://purl.org/weso/ontologies/TKM/">http://purl.org/weso/ontologies/tkm</a></dd>
+
+      <dt>Last update:</dt>
+      <dd>Date: 2010-01-02</dd>
+
+      <dt>Editors:</dt>
+      <dd>Jose María Alvarez Rodríguez, WESO-Universidad de Oviedo</dd>
+      <dd>Pablo Abella Vallina, WESO-Universidad de Oviedo</dd>
+      <dd><a href="http://www.di.uniovi.es/~labra">Jose Emilio Labra Gayo</a>, WESO-Universidad de Oviedo</dd>
+
+      <dt>Authors:</dt>
+      <dd>Jose María Alvarez Rodríguez, WESO-Universidad de Oviedo</dd>
+      <dd>Pablo Abella Vallina, WESO-Universidad de Oviedo</dd>
+      <dd><a href="http://www.di.uniovi.es/~labra">Jose Emilio Labra Gayo</a>, WESO-Universidad de Oviedo</dd>
+
+      <dt>Contribuciones:</dt>
+      <dd>See <a href="#sec-ack">acknowledgements</a></dd>
+
+    </dl>
+
+     <p>
+    <a href="http://validator.w3.org/check?uri=referer"><img style="border: 0; float: right; padding: 5px;"
+        src="http://www.w3.org/Icons/valid-xhtml-rdfa"
+        alt="Valid XHTML + RDFa" height="31" width="88" /></a>
+
+  <!-- Creative Commons License -->
+   <a href="http://creativecommons.org/licenses/by/1.0/"><img alt=
+  "Creative Commons License" style="border: 0; float: right; padding: 5px;" src=
+  "http://i.creativecommons.org/l/by/3.0/88x31.png" /></a> This work is licensed under a <a about="http://purl.org/weso/ontologies/tkm.html" rel="license dc:license" href= 
+  "http://creativecommons.org/licenses/by/3.0/" title="Creative Commons
+  Attribution License">Creative Commons
+  Attribution License</a>. This copyright applies to the <em>TKM Ontology Specification</em> 
+  and accompanying documentation in RDF.
+ Regarding underlying technology, the <em>TKM Ontology</em> uses W3C's <a href="http://www.w3.org/RDF/">RDF</a> technology, an
+  open Web standard that can be freely used by anyone.</p>
+  
+  <hr />
+
+
+<h2 id="sec-status">Abstract</h2>
+<p about="http://purl.org/weso/ontologies/tkm#" property="dc:decription">
+The <em>TKM Ontology</em> specification provides basic concepts and properties 
+for describing technological knowledge management concepts. This document contains a RDFa description of the <em>TKM Ontology</em> and some additional information and examples.
+</p>
+
+  <div class="status">
+    <h2>Status of This Document</h2>
+
+    <p>
+The template 
+of this specification is derived from the <a about="http://purl.org/weso/ontologies/tkm.html" rel="rdfs:seeAlso" href="http://xmlns.com/foaf/spec/">FOAF Vocabulary
+Specification</a>, which was created by <a about="http://purl.org/weso/ontologies/tkm.html" rel="rdfs:seeAlso" href="http://danbri.org/">Dan Brickley</a> and 
+<a about="http://purl.org/weso/ontologies/tkm.html" rel="rdfs:seeAlso" href="http://nicecupoftea.org/">Libby Miller</a>, and the <a 
+about="http://purl.org/weso/ontologies/tkm.html" rel="rdfs:seeAlso" href="http://musicontology.com/">Music Ontology Specification</a>, which was created by Yves Raimond. 
+It was modified and extended by Bob Ferris. Furthermore, a modified and extended version of <a about="http://purl.org/weso/ontologies/tkm.html" rel="rdfs:seeAlso" 
+href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's SpecGen version</a> was used to generate most of the RDFa statements of the Counter Ontology for this specification 
+(see <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/trunk/">here</a> for SpecGen version 
+6 by Bob Ferris).
+</p>
+
+
+<p> This document is created by combining the <a href="http://purl.org/weso/ontologies/tkm.owl">RDFS/OWL</a> machine-readable
+    <em>TKM Ontology</em> with a human-readable <em>HTML</em> representation that includes RDFa annotations. Future versions may 
+    incorporate <em>multilingual translations</em> of term definitions. The RDF/XML version of the specification is also available directly 
+    from the namespace URI. RDF/N3 representations could be access via the links above.
+</p>
+    <p>The authors welcome comments on this document, preferably via the author's email addresses.
+   </p>
+
+  <h2 id="sec-toc">Table of Contents</h2>
+
+  <ul>
+    <li><a href="#sec-glance">The TKM Ontology at a glance</a></li>
+    <li><a href="#sec-intro">Background</a></li>
+    <li><a href="#sec-evolution">Evolution and Extension of the TKM Ontology</a></li>
+    <li><a href="#sec-crossref">The Counter Ontology cross-reference: Listing the Counter Ontology Classes and Properties</a></li>
+    <li><a href="#sec-extrefs">External Vocabulary References</a></li>
+    <li><a href="#sec-ack">Acknowledgments</a></li>
+    <li><a href="#sec-changes">Recent Changes</a></li>
+  </ul>
+
+
+  <a id="sec-glance"></a>
+  <h2 id="glance">The TKM Ontology at a glance</h2>
+
+ <p>An a-z index of the <em>TKM Ontology</em> terms, by class (categories or types) and by property.</p>
+ 
+ 
+ <div class="azlist">
+<p>Classes: | <a href="#Application">Application</a> |  <a href="#BusinessApplication">BusinessApplication</a> |  <a href="#Codification">Codification</a> |  <a href="#CollaborationApplication">CollaborationApplication</a> |  <a href="#CollaborationTechnology">CollaborationTechnology</a> |  <a href="#ComponentTechnology">ComponentTechnology</a> |  <a href="#Creation">Creation</a> |  <a href="#DiscoveryApplication">DiscoveryApplication</a> |  <a href="#DiscoveryTechnology">DiscoveryTechnology</a> |  <a href="#DisseminationApplication">DisseminationApplication</a> |  <a href="#DisseminationTechnology">DisseminationTechnology</a> |  <a href="#EvaluationCriteria">EvaluationCriteria</a> |  <a href="#ExistingKnowledgeResource">ExistingKnowledgeResource</a> |  <a href="#Focus">Focus</a> |  <a href="#Goal">Goal</a> |  <a href="#ImplementationStrategy">ImplementationStrategy</a> |  <a href="#Initiative">Initiative</a> |  <a href="#Instrument">Instrument</a> |  <a href="#KnowledgeDomain">KnowledgeDomain</a> |  <a href="#KnowledgeStrategy">KnowledgeStrategy</a> |  <a href="#KnowledgeType">KnowledgeType</a> |  <a href="#Personalization">Personalization</a> |  <a href="#Practice">Practice</a> |  <a href="#Process">Process</a> |  <a href="#RepositoryApplication">RepositoryApplication</a> |  <a href="#RepositoryTechnology">RepositoryTechnology</a> |  <a href="#RequiredKnowledgeResource">RequiredKnowledgeResource</a> |  <a href="#Resource">Resource</a> |  <a href="#Strategy">Strategy</a> |  <a href="#Support">Support</a> |  <a href="#Tag">Tag</a> |  <a href="#Technology">Technology</a> |  <a href="#Transfer">Transfer</a> | 
+</p>
+<p>Properties: |
+</p>
+</div>
+
+  <div style="clear: left;"></div>
+
+  <!-- ================================================================== -->
+
+
+ <h2 id="sec-intro">Introduction: TKM Ontology Basics</h2>
+ More background information (in spanish) can be obtained <a href="documentation.html">here</a>.
+
+ <h2 id="sec-evolution">Evolution and Extension of the TKM Ontology</h2>
+
+  <h2 id="sec-crossref">The Counter Ontology cross-reference: Listing the Counter Ontology Classes and
+  Properties</h2>
+
+  <p>The <em>TKM Ontology</em> introduces the following classes and properties. There is a link at the 
+    top of this document to the RDF/XML and RDF/N3 versions.</p>
+
+  <!-- the following is the script-generated list of classes and properties -->
+ 
+
+<!-- this is the a-z listing -->
+<div class="azlist">
+<p>Classes: | <a href="#Application">Application</a> |  <a href="#BusinessApplication">BusinessApplication</a> |  <a href="#Codification">Codification</a> |  <a href="#CollaborationApplication">CollaborationApplication</a> |  <a href="#CollaborationTechnology">CollaborationTechnology</a> |  <a href="#ComponentTechnology">ComponentTechnology</a> |  <a href="#Creation">Creation</a> |  <a href="#DiscoveryApplication">DiscoveryApplication</a> |  <a href="#DiscoveryTechnology">DiscoveryTechnology</a> |  <a href="#DisseminationApplication">DisseminationApplication</a> |  <a href="#DisseminationTechnology">DisseminationTechnology</a> |  <a href="#EvaluationCriteria">EvaluationCriteria</a> |  <a href="#ExistingKnowledgeResource">ExistingKnowledgeResource</a> |  <a href="#Focus">Focus</a> |  <a href="#Goal">Goal</a> |  <a href="#ImplementationStrategy">ImplementationStrategy</a> |  <a href="#Initiative">Initiative</a> |  <a href="#Instrument">Instrument</a> |  <a href="#KnowledgeDomain">KnowledgeDomain</a> |  <a href="#KnowledgeStrategy">KnowledgeStrategy</a> |  <a href="#KnowledgeType">KnowledgeType</a> |  <a href="#Personalization">Personalization</a> |  <a href="#Practice">Practice</a> |  <a href="#Process">Process</a> |  <a href="#RepositoryApplication">RepositoryApplication</a> |  <a href="#RepositoryTechnology">RepositoryTechnology</a> |  <a href="#RequiredKnowledgeResource">RequiredKnowledgeResource</a> |  <a href="#Resource">Resource</a> |  <a href="#Strategy">Strategy</a> |  <a href="#Support">Support</a> |  <a href="#Tag">Tag</a> |  <a href="#Technology">Technology</a> |  <a href="#Transfer">Transfer</a> | 
+</p>
+<p>Properties: |
+</p>
+</div>
+
+<!-- and this is the bulk of the vocab descriptions -->
+<div class="termlist"><h3>Classes and Properties (full detail)</h3>
+<div class='termdetails'><br />
+
+<h2>Classes</h2>
+ 
+
+<div class="specterm" id="Application" about="http://purl.org/weso/ontologies/tkm#Application" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:Application</h3> 
+  			<em property="rdfs:label" >Aplicaciones.</em> - <span property="rdfs:comment" >Aplicaciones para la gesti\xf3n del conocimiento tecnol\xf3gico.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Technology"><a href="#Technology">Tecnologías.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Technology"><a href="#Technology">Tecnologías.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Technology"><a href="#Technology">Tecnologies.</a></span>
+ </td></tr><tr><th>Has sub class</th>
+ <td>  <a href="#RepositoryApplication">Repositorio de aplicaciones.</a>
+ <a href="#RepositoryApplication">Repository applications.</a>
+ <a href="#RepositoryApplication">Repositorio de aplicaciones.</a>
+ <a href="#DiscoveryApplication">Aplicaciones de descubrimiento.</a>
+ <a href="#DiscoveryApplication">Discovery applications.</a>
+ <a href="#DiscoveryApplication">Aplicaciones de descubrimiento.</a>
+ <a href="#DisseminationApplication">Dissemination applications.</a>
+ <a href="#DisseminationApplication">Aplicaciones de difusión.</a>
+ <a href="#DisseminationApplication">Aplicaciones de difusión.</a>
+ <a href="#CollaborationApplication">Collaborative Applications.</a>
+ <a href="#CollaborationApplication">Aplicaciones Colaborativas.</a>
+ <a href="#CollaborationApplication">Aplicaciones Colaborativas.</a>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Application">#</a>] <!-- Application --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="BusinessApplication" about="http://purl.org/weso/ontologies/tkm#BusinessApplication" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:BusinessApplication</h3> 
+  			<em property="rdfs:label" >Aplicaciones de negocio.</em> - <span property="rdfs:comment" >Business applications: ERP, etc.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Technology"><a href="#Technology">Tecnologías.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Technology"><a href="#Technology">Tecnologías.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Technology"><a href="#Technology">Tecnologies.</a></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#BusinessApplication">#</a>] <!-- BusinessApplication --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Codification" about="http://purl.org/weso/ontologies/tkm#Codification" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:Codification</h3> 
+  			<em property="rdfs:label" >Codification.</em> - <span property="rdfs:comment" >Soporte a la creaci\xf3n de conocimiento a trav\xe9s de la codificaci\xf3n.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Support"><a href="#Support">Soporte a TKM.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Support"><a href="#Support">Soporte a TKM.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Support"><a href="#Support">Support.</a></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Codification">#</a>] <!-- Codification --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="CollaborationApplication" about="http://purl.org/weso/ontologies/tkm#CollaborationApplication" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:CollaborationApplication</h3> 
+  			<em property="rdfs:label" >Aplicaciones Colaborativas.</em> - <span property="rdfs:comment" >Collaborative Applications for the technological knowledge management: project management, community support, etc.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Application"><a href="#Application">Aplicaciones.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Application"><a href="#Application">Aplicaciones.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Application"><a href="#Application">Applications.</a></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#CollaborationApplication">#</a>] <!-- CollaborationApplication --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="CollaborationTechnology" about="http://purl.org/weso/ontologies/tkm#CollaborationTechnology" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:CollaborationTechnology</h3> 
+  			<em property="rdfs:label" >Componentes de Colaboraci\xf3n.</em> - <span property="rdfs:comment" >Componentes de colaboraci\xf3n: creatividad, conectividad, comunicaci\xf3n, etc.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#ComponentTechnology"><a href="#ComponentTechnology">Componentes tecnológicos.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#ComponentTechnology"><a href="#ComponentTechnology">Component technologies.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#ComponentTechnology"><a href="#ComponentTechnology">Componentes tecnológicos.</a></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#CollaborationTechnology">#</a>] <!-- CollaborationTechnology --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="ComponentTechnology" about="http://purl.org/weso/ontologies/tkm#ComponentTechnology" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:ComponentTechnology</h3> 
+  			<em property="rdfs:label" >Componentes tecnol\xf3gicos.</em> - <span property="rdfs:comment" >Technologies used.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Technology"><a href="#Technology">Tecnologías.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Technology"><a href="#Technology">Tecnologías.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Technology"><a href="#Technology">Tecnologies.</a></span>
+ </td></tr><tr><th>Has sub class</th>
+ <td>  <a href="#RepositoryTechnology">Repository components.</a>
+ <a href="#RepositoryTechnology">Componentes de repositorio.</a>
+ <a href="#RepositoryTechnology">Componentes de repositorio.</a>
+ <a href="#DiscoveryTechnology">Componentes de descubrimiento.</a>
+ <a href="#DiscoveryTechnology">Componentes de descubrimiento.</a>
+ <a href="#DiscoveryTechnology">Discovery Components.</a>
+ <a href="#CollaborationTechnology">Collaboration Components.</a>
+ <a href="#CollaborationTechnology">Componentes de Colaboración.</a>
+ <a href="#CollaborationTechnology">Componentes de Colaboración.</a>
+ <a href="#DisseminationTechnology">Dissemination Components.</a>
+ <a href="#DisseminationTechnology">Componentes de Difusión.</a>
+ <a href="#DisseminationTechnology">Componentes de Difusión.</a>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#ComponentTechnology">#</a>] <!-- ComponentTechnology --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Creation" about="http://purl.org/weso/ontologies/tkm#Creation" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:Creation</h3> 
+  			<em property="rdfs:label" >Objetivo de conocimiento por creaci\xf3n.</em> - <span property="rdfs:comment" >Modo mediante el cual se alcanza un objetivo de conocimiento a trav\xe9s de los recursos de conocimiento asociados a un dominio por creaci\xf3n.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Goal"><a href="#Goal">Knowledge Goal</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Goal"><a href="#Goal">Objetivo de Conocimiento.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Goal"><a href="#Goal">Objetivo de Conocimiento.</a></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Creation">#</a>] <!-- Creation --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="DiscoveryApplication" about="http://purl.org/weso/ontologies/tkm#DiscoveryApplication" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:DiscoveryApplication</h3> 
+  			<em property="rdfs:label" >Discovery applications.</em> - <span property="rdfs:comment" >Aplicaciones de descubrimiento de conocimiento tecnol\xf3gico: DSS, Organizaci\xf3n y b\xfasqueda, etc.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Application"><a href="#Application">Aplicaciones.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Application"><a href="#Application">Aplicaciones.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Application"><a href="#Application">Applications.</a></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#DiscoveryApplication">#</a>] <!-- DiscoveryApplication --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="DiscoveryTechnology" about="http://purl.org/weso/ontologies/tkm#DiscoveryTechnology" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:DiscoveryTechnology</h3> 
+  			<em property="rdfs:label" >Componentes de descubrimiento.</em> - <span property="rdfs:comment" >Discovery Components: data mining, text mining, etc.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#ComponentTechnology"><a href="#ComponentTechnology">Componentes tecnológicos.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#ComponentTechnology"><a href="#ComponentTechnology">Component technologies.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#ComponentTechnology"><a href="#ComponentTechnology">Componentes tecnológicos.</a></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#DiscoveryTechnology">#</a>] <!-- DiscoveryTechnology --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="DisseminationApplication" about="http://purl.org/weso/ontologies/tkm#DisseminationApplication" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:DisseminationApplication</h3> 
+  			<em property="rdfs:label" >Aplicaciones de difusi\xf3n.</em> - <span property="rdfs:comment" >Dissemination applications: Portals, LMS, etc.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Application"><a href="#Application">Aplicaciones.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Application"><a href="#Application">Aplicaciones.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Application"><a href="#Application">Applications.</a></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#DisseminationApplication">#</a>] <!-- DisseminationApplication --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="DisseminationTechnology" about="http://purl.org/weso/ontologies/tkm#DisseminationTechnology" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:DisseminationTechnology</h3> 
+  			<em property="rdfs:label" >Dissemination Components.</em> - <span property="rdfs:comment" >Componentes de difusi\xf3n: publicaci\xf3n de contenidos, e-learning, etc.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#ComponentTechnology"><a href="#ComponentTechnology">Componentes tecnológicos.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#ComponentTechnology"><a href="#ComponentTechnology">Component technologies.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#ComponentTechnology"><a href="#ComponentTechnology">Componentes tecnológicos.</a></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#DisseminationTechnology">#</a>] <!-- DisseminationTechnology --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="EvaluationCriteria" about="http://purl.org/weso/ontologies/tkm#EvaluationCriteria" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:EvaluationCriteria</h3> 
+  			<em property="rdfs:label" >Criterios de Evaluaci\xf3n.</em> - <span property="rdfs:comment" >Criterios de evaluaci\xf3n de la estrategia de gesti\xf3n del conocimiento tecnol\xf3gico.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#EvaluationCriteria">#</a>] <!-- EvaluationCriteria --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="ExistingKnowledgeResource" about="http://purl.org/weso/ontologies/tkm#ExistingKnowledgeResource" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:ExistingKnowledgeResource</h3> 
+  			<em property="rdfs:label" >Recurso de Conocimiento Existente.</em> - <span property="rdfs:comment" >It refers to a existing knowledge resource.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Resource"><a href="#Resource">Recurso de conocimiento.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Resource"><a href="#Resource">Knowledge Resource..</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Resource"><a href="#Resource">Recurso de conocimiento.</a></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#ExistingKnowledgeResource">#</a>] <!-- ExistingKnowledgeResource --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Focus" about="http://purl.org/weso/ontologies/tkm#Focus" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:Focus</h3> 
+  			<em property="rdfs:label" >Focus.</em> - <span property="rdfs:comment" >It defines the goal of the approach used in the strategy: People, Technology, etc.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Focus">#</a>] <!-- Focus --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Goal" about="http://purl.org/weso/ontologies/tkm#Goal" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:Goal</h3> 
+  			<em property="rdfs:label" >Objetivo de Conocimiento.</em> - <span property="rdfs:comment" >Es el objetivo de conocimiento que se intenta conseguir a trav\xe9s de los recursos de conocimiento en un dominio determinado y que pueden ser alcanzados por creaci\xf3n o por transferencia.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Has sub class</th>
+ <td>  <a href="#Creation">Objetivo de conocimiento por creación.</a>
+ <a href="#Creation">Creation Knowledge Intent.</a>
+ <a href="#Creation">Objetivo de conocimiento por creación.</a>
+ <a href="#Transfer">Objetivo de conocimiento mediante transferencia.</a>
+ <a href="#Transfer">Objetivo de conocimiento mediante transferencia.</a>
+ <a href="#Transfer">Knowledge intent by transfer.</a>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Goal">#</a>] <!-- Goal --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="ImplementationStrategy" about="http://purl.org/weso/ontologies/tkm#ImplementationStrategy" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:ImplementationStrategy</h3> 
+  			<em property="rdfs:label" >Estrategia de Implementaci\xf3n.</em> - <span property="rdfs:comment" >Implementation of the technological knowledge management.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Strategy"><a href="#Strategy">Strategy</a></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#ImplementationStrategy">#</a>] <!-- ImplementationStrategy --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Initiative" about="http://purl.org/weso/ontologies/tkm#Initiative" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:Initiative</h3> 
+  			<em property="rdfs:label" >Iniciativa.</em> - <span property="rdfs:comment" >Initiatives to implement the strategy of technological knowledge management.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Initiative">#</a>] <!-- Initiative --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Instrument" about="http://purl.org/weso/ontologies/tkm#Instrument" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:Instrument</h3> 
+  			<em property="rdfs:label" >Instrumentos.</em> - <span property="rdfs:comment" >Instrumentos para implementar las iniciativas llevadas a cabo durante la implementaci\xf3n de la estrategia de gesti\xf3n del conocimiento tecnol\xf3gico.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Has sub class</th>
+ <td>  <a href="#Technology">Tecnologías.</a>
+ <a href="#Technology">Tecnologías.</a>
+ <a href="#Technology">Tecnologies.</a>
+ <a href="#Practice">Practices.</a>
+ <a href="#Practice">Prácticas.</a>
+ <a href="#Practice">Prácticas.</a>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Instrument">#</a>] <!-- Instrument --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="KnowledgeDomain" about="http://purl.org/weso/ontologies/tkm#KnowledgeDomain" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:KnowledgeDomain</h3> 
+  			<em property="rdfs:label" >Dominio de Conocimiento.</em> - <span property="rdfs:comment" >La estrategia se implementa sobre un determinado dominio de conocimiento. En este caso, la tecnolog\xeda puede ser uno de ellos.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#KnowledgeDomain">#</a>] <!-- KnowledgeDomain --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="KnowledgeStrategy" about="http://purl.org/weso/ontologies/tkm#KnowledgeStrategy" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:KnowledgeStrategy</h3> 
+  			<em property="rdfs:label" >Estrategia de Conocimiento.</em> - <span property="rdfs:comment" >Identifica los distintos dominios de conocimiento asociados a una estrategia de gesti\xf3n del conocimiento tecnol\xf3gico comparando los recursos de conocimiento existentes y necesarios para conseguir unos determinados objetivos.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Strategy"><a href="#Strategy">Strategy</a></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#KnowledgeStrategy">#</a>] <!-- KnowledgeStrategy --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="KnowledgeType" about="http://purl.org/weso/ontologies/tkm#KnowledgeType" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:KnowledgeType</h3> 
+  			<em property="rdfs:label" >KnowledgeType.</em> - <span property="rdfs:comment" >Type of knowledge to be used: Explicit, Implicit, Human, etc.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#KnowledgeType">#</a>] <!-- KnowledgeType --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Personalization" about="http://purl.org/weso/ontologies/tkm#Personalization" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:Personalization</h3> 
+  			<em property="rdfs:label" >Personalizaci\xf3n.</em> - <span property="rdfs:comment" >Soporte a la creaci\xf3n de conocimiento a trav\xe9s de la personalizaci\xf3n.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Support"><a href="#Support">Soporte a TKM.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Support"><a href="#Support">Soporte a TKM.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Support"><a href="#Support">Support.</a></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Personalization">#</a>] <!-- Personalization --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Practice" about="http://purl.org/weso/ontologies/tkm#Practice" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:Practice</h3> 
+  			<em property="rdfs:label" >Practices.</em> - <span property="rdfs:comment" >Pr\xe1cticas utilizadas: lecciones aprendidas, trabajo en equipo, repositorios de informaci\xf3n, etc.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Instrument"><a href="#Instrument">Instruments.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Instrument"><a href="#Instrument">Instrumentos.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Instrument"><a href="#Instrument">Instrumentos.</a></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Practice">#</a>] <!-- Practice --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Process" about="http://purl.org/weso/ontologies/tkm#Process" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:Process</h3> 
+  			<em property="rdfs:label" >Proceso.</em> - <span property="rdfs:comment" >Proceso de gesti\xf3n del conocimiento tecnol\xf3gico.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Process">#</a>] <!-- Process --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="RepositoryApplication" about="http://purl.org/weso/ontologies/tkm#RepositoryApplication" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:RepositoryApplication</h3> 
+  			<em property="rdfs:label" >Repositorio de aplicaciones.</em> - <span property="rdfs:comment" >Repositorio de aplicaciones de gesti\xf3n del conocimiento tecnol\xf3gico: DMS, CMS, etc.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Application"><a href="#Application">Aplicaciones.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Application"><a href="#Application">Aplicaciones.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Application"><a href="#Application">Applications.</a></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#RepositoryApplication">#</a>] <!-- RepositoryApplication --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="RepositoryTechnology" about="http://purl.org/weso/ontologies/tkm#RepositoryTechnology" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:RepositoryTechnology</h3> 
+  			<em property="rdfs:label" >Repository components.</em> - <span property="rdfs:comment" >Componentes de repositorios: alm\xe1cenes, razonamiento, etc.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#ComponentTechnology"><a href="#ComponentTechnology">Componentes tecnológicos.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#ComponentTechnology"><a href="#ComponentTechnology">Component technologies.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#ComponentTechnology"><a href="#ComponentTechnology">Componentes tecnológicos.</a></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#RepositoryTechnology">#</a>] <!-- RepositoryTechnology --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="RequiredKnowledgeResource" about="http://purl.org/weso/ontologies/tkm#RequiredKnowledgeResource" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:RequiredKnowledgeResource</h3> 
+  			<em property="rdfs:label" >Recurso de Conocimiento Requerido.</em> - <span property="rdfs:comment" >Expresa la informaci\xf3n sobre un recurso de conocimiento requerido.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Resource"><a href="#Resource">Recurso de conocimiento.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Resource"><a href="#Resource">Knowledge Resource..</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Resource"><a href="#Resource">Recurso de conocimiento.</a></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#RequiredKnowledgeResource">#</a>] <!-- RequiredKnowledgeResource --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Resource" about="http://purl.org/weso/ontologies/tkm#Resource" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:Resource</h3> 
+  			<em property="rdfs:label" >Knowledge Resource..</em> - <span property="rdfs:comment" >Expresa la informaci\xf3n sobre un recurso de conocimiento utilizado en un momento determinado dentro de un dominio para conseguir un nuevo objetivo de conocimiento.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Has sub class</th>
+ <td>  <a href="#ExistingKnowledgeResource">Existing Knowledge Resource.</a>
+ <a href="#ExistingKnowledgeResource">Recurso de Conocimiento Existente.</a>
+ <a href="#ExistingKnowledgeResource">Recurso de Conocimiento Existente.</a>
+ <a href="#RequiredKnowledgeResource">Required Knowledge Resource.</a>
+ <a href="#RequiredKnowledgeResource">Recurso de Conocimiento Requerido.</a>
+ <a href="#RequiredKnowledgeResource">Recurso de Conocimiento Requerido.</a>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Resource">#</a>] <!-- Resource --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Strategy" about="http://purl.org/weso/ontologies/tkm#Strategy" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:Strategy</h3> 
+  			<em property="rdfs:label" >Strategy</em> - <span property="rdfs:comment" >Strategy</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Has sub class</th>
+ <td>  <a href="#KnowledgeStrategy">Knowledge Strategy.</a>
+ <a href="#KnowledgeStrategy">Estrategia de Conocimiento.</a>
+ <a href="#KnowledgeStrategy">Strategy.</a>
+ <a href="#KnowledgeStrategy">Estrategia de gestión del conocimiento tecnológico.</a>
+ <a href="#KnowledgeStrategy">Estrategia de Conocimiento.</a>
+ <a href="#ImplementationStrategy">Implementation Strategy.</a>
+ <a href="#ImplementationStrategy">Estrategia de Implementación.</a>
+ <a href="#ImplementationStrategy">Estrategia de Implementación.</a>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Strategy">#</a>] <!-- Strategy --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Support" about="http://purl.org/weso/ontologies/tkm#Support" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:Support</h3> 
+  			<em property="rdfs:label" >Support.</em> - <span property="rdfs:comment" >Modos de soporte al conocimiento.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Has sub class</th>
+ <td>  <a href="#Personalization">Personalization.</a>
+ <a href="#Personalization">Personalización.</a>
+ <a href="#Personalization">Personalización.</a>
+ <a href="#Codification">Codification.</a>
+ <a href="#Codification">Codificación.</a>
+ <a href="#Codification">Codificación.</a>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Support">#</a>] <!-- Support --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Tag" about="http://purl.org/weso/ontologies/tkm#Tag" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:Tag</h3> 
+  			<em property="rdfs:label" >Tag.</em> - <span property="rdfs:comment" >Tags for the resources in the scope of the technological knowledge management.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://www.holygoat.co.uk/owl/redwood/0.1/tags/Tag"><a href="http://www.holygoat.co.uk/owl/redwood/0.1/tags/Tag">http://www.holygoat.co.uk/owl/redwood/0.1/tags/:Tag</a></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Tag">#</a>] <!-- Tag --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Technology" about="http://purl.org/weso/ontologies/tkm#Technology" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:Technology</h3> 
+  			<em property="rdfs:label" >Tecnologies.</em> - <span property="rdfs:comment" >Tecnolog\xedas utilizadas: internet, libros, etc.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Instrument"><a href="#Instrument">Instruments.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Instrument"><a href="#Instrument">Instrumentos.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Instrument"><a href="#Instrument">Instrumentos.</a></span>
+ </td></tr><tr><th>Has sub class</th>
+ <td>  <a href="#ComponentTechnology">Componentes tecnológicos.</a>
+ <a href="#ComponentTechnology">Component technologies.</a>
+ <a href="#ComponentTechnology">Componentes tecnológicos.</a>
+ <a href="#BusinessApplication">Aplicaciones de negocio.</a>
+ <a href="#BusinessApplication">Aplicaciones de negocio.</a>
+ <a href="#BusinessApplication">Business application.</a>
+ <a href="#Application">Aplicaciones.</a>
+ <a href="#Application">Aplicaciones.</a>
+ <a href="#Application">Applications.</a>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Technology">#</a>] <!-- Technology --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Transfer" about="http://purl.org/weso/ontologies/tkm#Transfer" typeof="owl:Class">
+  			<h3>Class: http://purl.org/weso/ontologies/tkm#:Transfer</h3> 
+  			<em property="rdfs:label" >Knowledge intent by transfer.</em> - <span property="rdfs:comment" >The way used to get a knowledge intent using the knowledge resources in a specific domain.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Goal"><a href="#Goal">Knowledge Goal</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Goal"><a href="#Goal">Objetivo de Conocimiento.</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/weso/ontologies/tkm#Goal"><a href="#Goal">Objetivo de Conocimiento.</a></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Transfer">#</a>] <!-- Transfer --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div>
+<h2>Properties</h2>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<h2 id="sec-extrefs">External Vocabulary References</h2>
+
+<h3 id="sec-ack">Acknowledgments</h3>
+
+<h2 id="sec-changes">Recent Changes</h2>
+
+<pre>
+=========================
+Version 0.1 (Jan 2011)
+=========================
+ * Initial version based on the Counter Ontology template
+
+</pre>
+
+</body>
+</html>
+
+
