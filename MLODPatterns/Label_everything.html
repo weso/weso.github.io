@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MLOD Patterns - Label Everything</title>
+<meta charset="utf-8" >
+<link href="images/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="css/960.css" />
+<link rel="stylesheet" type="text/css" href="css/general.css" />
+<link rel="stylesheet" type="text/css" href="css/basic-jquery-slider.css" />	
+<link rel="stylesheet" type="text/css" href="MLODPatterns.css" />
+</head>
+<body>
+<header>
+ <h1>Multilingual Linked Open Data Patterns</h1>
+ <nav>
+   <ul>
+     <li><a href="index.html">Main</a></li>
+     <li><a href="catalog.html">Catalog</a></li>
+     <li><a href="references.html">References</a></li>
+	 <li><a href="index.html#MoreInfo">More information</a></li>
+ 	 <li><a href="index.html#Ack">Acknowledgments</a></li>
+   </ul>
+ </nav> 
+</header>
+
+<h1>Label Everything</h1>
+
+<h2>Description</h2>
+
+<p>Linked data datasets should provide labels for all 
+ resources: individuals, concepts and properties, not just the main entities.
+
+<h2>Context</h2>
+
+<p>Linked data applications that contain data which is supposed 
+ to be exposed to an end-user in some natural language.
+</p> 
+
+<p>Although URIs may be human-readable, they are not expected to 
+ be seen by the end user. In order to improve user experience it 
+ is necessary to expose data and entities in human-readable ways. 
+ 
+<p>Labels facilitate:
+<ul>
+<li>displaying data to end-users, instead of URIs
+<li>searching over the Web of Data
+<li>indexing purposes, training, use of annotation tools, etc.
+</ul>
+
+<h2>Discussion</h2>
+  
+<p>In general, associating labels is a good idea. It is
+always better to offer a textual information to the end user than a URI.
+However, in some applications it can be difficult to find the right 
+label for a resource, specially when resources are
+automatically generated.
+</p>
+
+<p>When labeling resources, one must take into account that  
+the purpose of those labels is mainly for humans. 
+Using camel-case or similar notations should be avoided and the use 
+of uppercase, space delimiters etc. should be 
+consistent <a href="references.html#Montiel11">[Montiel 11]</a>.
+
+<h2>See also</h2>
+
+<p><a href="references.html#Ell11">[Ell 11]</a> enumerates some uses for labels and 
+ contains a thorough study on the use of labels in popular datasets.</p>
+ 
+<p>This pattern also appears with 
+ <a href="http://patterns.dataincubator.org/book/label-everything.html">the same name</a> 
+ in the <a href="http://patterns.dataincubator.org/book/">linked data patterns book</a>,  
+where dataset creators are urged to 
+<em>Ensure that every resource in a dataset has 
+ an <code>rdfs:label</code> property</em>.
+
+  
+<footer>
+ <address>Author: <a href="http://www.di.uniovi.es/~labra">Jose Emilio Labra</a> 
+ <a href="http://www.weso.es"><img src="images/logo_small2.png" alt="WESO Web Semantics Oviedo Logo" id="Logo Weso" /></a> 
+ </address>
+</footer>
+</body>
+</html>

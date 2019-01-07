@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MLOD Patterns - Internationalized local names</title>
+<meta charset="utf-8" >
+<link href="images/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="css/960.css" />
+<link rel="stylesheet" type="text/css" href="css/general.css" />
+<link rel="stylesheet" type="text/css" href="css/basic-jquery-slider.css" />	
+<link rel="stylesheet" type="text/css" href="MLODPatterns.css" />
+</head>
+<body>
+<header>
+ <h1>Multilingual Linked Open Data Patterns</h1>
+ <nav>
+   <ul>
+     <li><a href="index.html">Main</a></li>
+     <li><a href="catalog.html">Catalog</a></li>
+     <li><a href="references.html">References</a></li>
+	 <li><a href="index.html#MoreInfo">More information</a></li>
+ 	 <li><a href="index.html#Ack">Acknowledgments</a></li>
+   </ul>
+ </nav> 
+</header>
+
+<h1>Internationalized Local Names</h1>
+
+<h2>Description</h2>
+
+<p>Internationalized local names are IRIs where 
+  the domain part is restricted to ASCII characters 
+  while the local name can use Unicode characters.
+
+<h2>Context</h2>
+<p>This pattern can offer a trade-off between security 
+  and readability. On one hand, it limits ASCII characters 
+  for the domain part, which may be subject to homograph attacks. 
+  
+<p>On the other hand, the use of local names with Unicode 
+   characters improves readability.
+ 
+<h2>Example</h2>
+
+Armenia can be identified with this hybrid approach by:
+
+<pre>
+<code>
+http://example.org#Հայաստան
+</code>
+</pre>
+
+<h2>Discussion</h2>
+<p>This pattern avoids the problems associated 
+with domain name spoofing while it offers more 
+human-friendly resource identifiers. 
+
+<p>While this partially solves the problem, the possibility 
+ of spoofing using visual equivalent IRIs for different 
+  purposes remains. 
+  
+<p>However, as the domain name is preserved as the 
+ authoritative source, it is much more difficult to 
+ accomplish such attacks.
+  
+<h2>See also</h2>
+
+This pattern is opposed to the 
+<a href="Opaque_URIs.html">Opaque URIs pattern</a>. 
+It extends the <a href="Descriptive_URIs.html">Descriptive URIs pattern</a> but is 
+ more restrictive than the 
+ <a href="Full_IRIs.html">Full IRIs pattern</a>. 
+ This patterns is employed in 
+  <a href="http://dbpedia.org/internationalization">DBpedia International</a>.
+  
+<footer>
+ <address>Author: <a href="http://www.di.uniovi.es/~labra">Jose Emilio Labra</a> 
+ <a href="http://www.weso.es"><img src="images/logo_small2.png" alt="WESO Web Semantics Oviedo Logo" id="Logo Weso" /></a> 
+ </address>
+</footer>
+</body>
+</html>

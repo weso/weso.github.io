@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MLOD Patterns - No language negotiation</title>
+<meta charset="utf-8" >
+<link href="images/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="css/960.css" />
+<link rel="stylesheet" type="text/css" href="css/general.css" />
+<link rel="stylesheet" type="text/css" href="css/basic-jquery-slider.css" />	
+<link rel="stylesheet" type="text/css" href="MLODPatterns.css" />
+</head>
+<body>
+<header>
+ <h1>Multilingual Linked Open Data Patterns</h1>
+ <nav>
+   <ul>
+     <li><a href="index.html">Main</a></li>
+     <li><a href="catalog.html">Catalog</a></li>
+     <li><a href="references.html">References</a></li>
+	 <li><a href="index.html#MoreInfo">More information</a></li>
+ 	 <li><a href="index.html#Ack">Acknowledgments</a></li>
+   </ul>
+ </nav> 
+</header>
+
+<h1>No language negotiation</h1>
+
+<h2>Description</h2>
+
+<p>Return always the same triples without taking into account 
+  the HTTP <code>Accept-language</code> header.
+
+<h2>Context</h2>
+
+ <p>RDF is meant for machines which are natural language agnostic, so ignoring 
+ the language preferences seems a reasonable option. 
+ 
+ <p>This pattern can be employed when the amount of multilingual data is 
+  manageable and there are no big constraints on datasets consumers.
+  
+<h2>Discussion</h2>
+  
+<p>Implementations that always return the same data could be considered more 
+ consistent. 
+ 
+<p>Ignoring the <code>Accept-language</code> header and returning all the 
+ information available for a given resource seems a valid solution for 
+ software agents that will select the triples that are of interest to 
+ their end-users.
+
+ <p>With this pattern the data representation of a resource offered is 
+  independent of the language preferences, so there is no need to care 
+  about semantic equivalence of textual information.
+  
+ <p>However, localized client applications may receive unnecessary triples 
+  that could create a computation and network overhead. This overhead 
+  could have an impact in low computation and bandwidth devices 
+  such as smart-phones and sensors.
+
+<h2>See also</h2>
+
+<p>This is the opposite pattern to 
+ <a href="Language_Content_Negotiation.html">Language Content Negotiation</a>
+
+  
+<footer>
+ <address>Author: <a href="http://www.di.uniovi.es/~labra">Jose Emilio Labra</a> 
+ <a href="http://www.weso.es"><img src="images/logo_small2.png" alt="WESO Web Semantics Oviedo Logo" id="Logo Weso" /></a> 
+ </address>
+</footer>
+</body>
+</html>

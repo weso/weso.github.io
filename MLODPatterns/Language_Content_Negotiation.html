@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MLOD Patterns - Language Content Negotiation</title>
+<meta charset="utf-8" >
+<link href="images/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="css/960.css" />
+<link rel="stylesheet" type="text/css" href="css/general.css" />
+<link rel="stylesheet" type="text/css" href="css/basic-jquery-slider.css" />	
+<link rel="stylesheet" type="text/css" href="MLODPatterns.css" />
+</head>
+<body>
+<header>
+ <h1>Multilingual Linked Open Data Patterns</h1>
+ <nav>
+   <ul>
+     <li><a href="index.html">Main</a></li>
+     <li><a href="catalog.html">Catalog</a></li>
+     <li><a href="references.html">References</a></li>
+	 <li><a href="index.html#MoreInfo">More information</a></li>
+ 	 <li><a href="index.html#Ack">Acknowledgments</a></li>
+   </ul>
+ </nav> 
+</header>
+
+<h1>Language Content Negotiation</h1>
+
+<h2>Description</h2>
+
+<p>In this pattern, the server attends the language preferences of the user agent, 
+ presented in the <code>Accept-language</code> header and returns 
+ different data for each language preference.
+
+
+<h2>Context</h2>
+
+<p>This pattern can be used to reduce network bandwidth and client processing. 
+
+<p>Notice that a user agent retrieves a subset of all the triples in languages 
+   that he has included in the header.
+    
+<h2>Example</h2>
+
+Imagine that the server contains the following triples
+
+<pre>
+<code style="Turtle">
+:juan :position "Professor"@en . 
+:juan :position "Catedrático"@es . 
+:juan :workPlace "León Universiy"@en . 
+:juan :workPlace "Universidad de León"@es .
+</code>
+</pre> 
+
+If we try to obtain those triples from a server, 
+ which does language-content negotiation, and the header 
+  contains <code>Accept-language:es</code> then the server returns:
+  
+<pre>
+<code style="Turtle">
+:juan :position "Catedrático"@es . 
+:juan :workPlace "Universidad de León"@es .
+</code>
+</pre>
+
+while if the header is <code>Accept-language:en</code>, it returns:
+
+<pre>
+<code style="Turtle">
+:juan :position "Professor"@en . 
+:juan :workPlace "Len Universiy"@en .
+</code>
+</pre>
+
+Notice that the semantics of the HTTP content negotiation mechanism should 
+ return the whole dataset, if there is no language preference.
+
+
+<h2>Discussion</h2>
+  
+<p>This feature reduces network traffic and the load of client applications 
+ as the server would only send triples of a given language.
+ 
+<p>Content negotiation is part of the Web architecture. 
+ This solution can improve the performance of clients limiting the number 
+ of triples in languages that they are not interested.
+ 
+<p>Nevertheless, implementing language content negotiation complicates 
+ the development. 
+ Another problem is that if we return different representations in different 
+  languages, we should ensure that the content represented in one language 
+  is equivalent to the content represented in other language. 
+
+<p>This can raise problems on semantic equivalence between natural 
+  language text.
+
+<h2>See also</h2>
+
+<p>This pattern is related to the content negotiation exposed as a 
+ best practice recipe for publishing RDF vocabularies 
+ in <a href="references.html#Berrueta08">[Berrueta 08]</a> 
+ where language content negotiation is applied to offer 
+ different representations for HTML or RDF content. </p>
+
+<p>Although this pattern is meant for human oriented representations, 
+ like HTML, for RDF there is no such specification. </p>
+ 
+<p>There are non-standard implementations by triple-stores 
+ (like the <code>sql:BEST_LANGMATCH</code> function 
+ in <a href="http://virtuoso.openlinksw.com/">Virtuoso</a>) 
+ that can provide the above mentioned functionality.</p>
+  
+<footer>
+ <address>Author: <a href="http://www.di.uniovi.es/~labra">Jose Emilio Labra</a> 
+ <a href="http://www.weso.es"><img src="images/logo_small2.png" alt="WESO Web Semantics Oviedo Logo" id="Logo Weso" /></a> 
+ </address>
+</footer>
+</body>
+</html>

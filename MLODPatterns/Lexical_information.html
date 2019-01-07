@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MLOD Patterns - Lexical information</title>
+<meta charset="utf-8" >
+<link href="images/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="css/960.css" />
+<link rel="stylesheet" type="text/css" href="css/general.css" />
+<link rel="stylesheet" type="text/css" href="css/basic-jquery-slider.css" />	
+<link rel="stylesheet" type="text/css" href="MLODPatterns.css" />
+</head>
+<body>
+<header>
+ <h1>Multilingual Linked Open Data Patterns</h1>
+ <nav>
+   <ul>
+     <li><a href="index.html">Main</a></li>
+     <li><a href="catalog.html">Catalog</a></li>
+     <li><a href="references.html">References</a></li>
+	 <li><a href="index.html#MoreInfo">More information</a></li>
+ 	 <li><a href="index.html#Ack">Acknowledgments</a></li>
+   </ul>
+ </nav> 
+</header>
+
+<h1>Provide Lexical Information</h1>
+
+<h2>Description</h2>
+
+<p>Using this pattern, we can describe the lexical content of 
+longer descriptions. </p>
+
+
+<h2>Context</h2>
+
+<p>Longer descriptions that can not be modified or that are preferred to
+be kept untouched, can be enriched with lexical information.
+</p>
+
+
+<h2>Example</h2>
+
+The following triples describe <em>University of León</em>
+using external descriptions
+
+<pre>
+<code style="Turtle">
+:unileón  a  lemon:LexicalEntry ;
+  lemon:decomposition (
+    [ lemon:element  :University ]
+    [ lemon:element  :Of ]
+    [ lemon:element  :León ]
+ );
+ rdfs:label  "University of León"@en  .
+
+:University  a  lemon:LexicalEntry ;
+   lexinfo:partOfSpeech  lexinfo:commonNoun ;
+   rdfs:label  "University"@en ; 
+   rdfs:label  "Universidad"@es .
+
+:Of  a  lemon:LexicalEntry ; 
+   lexinfo:partOfSpeech  lexinfo:preposition ;
+   rdfs:label  "of"@en ;
+   rdfs:label  "de"@es . 
+   
+:León  a  lemon:LexicalEntry ; 
+   lexinfo:partOfSpeech  lexinfo:properNoun ;
+   rdfs:label  "León"
+</code>
+ </pre>
+
+
+<h2>Discussion</h2>
+ 
+<p>Providing lexical metadata for a resource supports
+fully automated software agents.
+However, this can also add a complexity overhead to the dataset that may be
+undesired.
+
+
+<h2>See also</h2>
+
+<p>There are several ways to describe lexical information. 
+<a href="references.html#Gananis07">[Gananis 07]</a> propose <em>NaturalOWL</em> 
+to linguistically annotate ontology concepts while
+<a href="references.html#Hellman12">[Hellman 12]</a> propose a URI scheme 
+to refer to fragments of a text. 
+In this way, it is possible to annotate text fragment with 
+assertions about their lexical structure.
+
+<p>Metadata attached to textual information can even be applied to support natural
+language user interfaces. 
+Much research work is being done regarding the generation of natural language
+descriptions for RDF and for SPARQL querying 
+[<a href="references.html#Ell12">Ell 12</a>,<a href="references.html#Shekarpour11">Shekarpour 11</a>]
+which can benefit from lexical metadata.
+
+
+<footer>
+ <address>Author: <a href="http://www.di.uniovi.es/~labra">Jose Emilio Labra</a> 
+ <a href="http://www.weso.es"><img src="images/logo_small2.png" alt="WESO Web Semantics Oviedo Logo" id="Logo Weso" /></a> 
+ </address>
+</footer>
+</body>
+</html>

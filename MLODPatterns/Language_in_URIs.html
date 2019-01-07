@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MLOD Patterns - Language in URIs</title>
+<meta charset="utf-8" >
+<link href="images/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="css/960.css" />
+<link rel="stylesheet" type="text/css" href="css/general.css" />
+<link rel="stylesheet" type="text/css" href="css/basic-jquery-slider.css" />	
+<link rel="stylesheet" type="text/css" href="MLODPatterns.css" />
+</head>
+<body>
+<header>
+ <h1>Multilingual Linked Open Data Patterns</h1>
+ <nav>
+   <ul>
+     <li><a href="index.html">Main</a></li>
+     <li><a href="catalog.html">Catalog</a></li>
+     <li><a href="references.html">References</a></li>
+	 <li><a href="index.html#MoreInfo">More information</a></li>
+ 	 <li><a href="index.html#Ack">Acknowledgments</a></li>
+   </ul>
+ </nav> 
+</header>
+
+<h1>Include Language in URIs</h1>
+
+<h2>Description</h2>
+
+<p>This pattern proposes to insert a language identifier in the URI. 
+ Thus, datasets of different languages can be easily recognized 
+ by the URI.
+
+<h2>Context</h2>
+
+ It can be applied when datasets are clearly separated by language. 
+ In this way, the different datasets may be generated, 
+ and even maintained by different servers which publish 
+ their corresponding language dependent datasets separately.
+ 
+<h2>Example</h2>
+
+The Armenian version of the country Armenia could be:
+
+<pre>
+<code>
+http://hy.example.org#Հայաստան
+</code>
+</pre>
+
+where <code>hy</code> represents the Armenian language (Hayeren).
+All the triples in Armenian could be hosted in <code>hy.example.org</code>
+ while the triples in other languages, 
+ for example Spanish, could reside in
+<code>es.example.org</code>.
+
+
+<h2>Discussion</h2>
+  
+<p>In a multilingual setting, being able to easily recognize the language
+of a resource may facilitate the development. A more practical benefit is to
+separate different datasets, which can be obtained from different sources, by
+language.
+
+<p>However, notice that the employment of a language tag in the URI may 
+contradict the <a href="http://www.w3.org/TR/cooluris/">Cool URIs</a> 
+lemma in the sense that we are encoding extra information in the URI that may be 
+subject to changes in the future.
+
+<p>Adding languages to the URI can become unwieldy if we
+consider sub-languages, dialects and regions. 
+There are <a href="http://www.iana.org/assignments/language-subtag-registry">more than 7000 languages</a> 
+already registered which can be very specialized. 
+
+<p>For example, <code>hy-Latin-IT-arevela</code>
+represents eastern Armenian written in Latin script as used in Italy. 
+Including such a detailed information in the URI may not be reasonable. 
+
+<p>Another design decision is where to put the language tag inside the URI.
+
+It is possible to have alternative URI schemes depending on where we include the
+language tag. 
+
+<p>For example, it is possible to have alternative URI schemes depending on where we include the
+language tag in the URI:
+
+<pre>
+<code>http://example.org/hy#Հայաստան</code>
+<code>http://example.org/Հայաստան/hy</code>
+</pre>
+
+<p>The last pattern is less convenient as it mixes the Unicode 
+ characters of the local name with the ASCII characters of the 
+ language tag. 
+
+  
+<h2>See also</h2>
+
+<p>This pattern can be combined with the 
+ <a href="Language_Content_Negotiation.html">language content negotiation</a> pattern. 
+It is possible to have a language agnostic URI for a concept without 
+ language tag and to use HTTP language content negotiation 
+ to redirect to the preferred dataset.
+
+<p>This pattern is also related to the 
+<a href="http://patterns.dataincubator.org/book/patterned-uris.html">Patterned URIs</a>.
+in the sense that URIs are defined to follow a naming
+pattern (including the language). 
+
+<p>It is also related to <a href="http://patterns.dataincubator.org/book/hierarchical-uris.html">Hierarchical URIs</a>.
+  
+<footer>
+ <address>Author: <a href="http://www.di.uniovi.es/~labra">Jose Emilio Labra</a> 
+ <a href="http://www.weso.es"><img src="images/logo_small2.png" alt="WESO Web Semantics Oviedo Logo" id="Logo Weso" /></a> 
+ </address>
+</footer>
+</body>
+</html>

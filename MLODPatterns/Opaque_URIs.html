@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MLOD Patterns - Opaque URIs</title>
+<link href="images/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="css/960.css" />
+<link rel="stylesheet" type="text/css" href="css/general.css" />
+<link rel="stylesheet" type="text/css" href="css/basic-jquery-slider.css" />	
+<link rel="stylesheet" type="text/css" href="MLODPatterns.css" />
+</head>
+<body>
+<header>
+ <h1>Multilingual Linked Open Data Patterns</h1>
+ <nav>
+   <ul>
+     <li><a href="index.html">Main</a></li>
+     <li><a href="catalog.html">Catalog</a></li>
+     <li><a href="references.html">References</a></li>
+	 <li><a href="index.html#MoreInfo">More information</a></li>
+ 	 <li><a href="index.html#Ack">Acknowledgments</a></li>
+   </ul>
+ </nav> 
+</header>
+
+<h1>Opaque URIs</h1>
+
+<h2>Description</h2>
+
+Opaque URIs are resource identifiers which are not intended to 
+ represent terms in a natural language.
+
+<h2>Context</h2>
+<p>Opaque URIs can be a good solution when most of the resources 
+are obtained automatically from other systems 
+like relational databases, tables, etc. 
+
+<p>This pattern can also be applied when there is a need to 
+ have multilingual concepts and it is preferred not to have 
+ any language bias.
+  
+ <p> Using opaque URIs may help to separate the concept from 
+  its different labels.
+  
+<h2>Example</h2>
+
+An opaque URI can be:
+
+<pre>
+<code>
+http://example.org#I23AX45
+</code>
+</pre>
+
+<h2>Discussion</h2>
+
+<p>Opaque URIs can help to emphasize the independence of 
+a resource from its natural language representation. 
+This pattern emphasizes that URIs are not meant for end 
+users but for internal applications. 
+
+<p>Depending on the context, URIs with human-readable 
+ local names can help users and application developers 
+ to manage and debug linked data applications.
+  
+<p>Resources with opaque URIs usually depend on labels to 
+ hide the URI from the end user.
+ 
+<h2>See also</h2>
+
+Opaque URIs are described in 
+<a href="references.html#Montiel11">[Montiel 11]</a>. 
+There are some well-known vocabularies that employ opaque URIs, 
+ like EuroWordnet <a href="references.html#Vossen98">[Vossen 98]</a> 
+ or 
+ Agrovoc <a href="references.html#Caracciolo12">[Caracciolo 12]</a>. 
+ This pattern is associated to the 
+  <a href="Label_everything.html">Label everything</a> pattern 
+  so that the application can show some information to the end user. 
+  This pattern is also related to the 
+   <a href="http://patterns.dataincubator.org/book/natural-keys.html">Natural Keys</a> pattern, 
+   in the sense that Opaque URIs are often the result of a mapping process 
+   between some external identifiers which are algorithmically converted 
+   to linked data URIs.
+
+<footer>
+ <address>Author: <a href="http://www.di.uniovi.es/~labra">Jose Emilio Labra</a> 
+ <a href="http://www.weso.es"><img src="images/logo_small2.png" alt="WESO Web Semantics Oviedo Logo" id="Logo Weso" /></a> 
+ </address>
+</footer>
+</body>
+</html>

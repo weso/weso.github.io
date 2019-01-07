@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MLOD Patterns - Linguistic Metadata</title>
+<meta charset="utf-8" >
+<link href="images/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="css/960.css" />
+<link rel="stylesheet" type="text/css" href="css/general.css" />
+<link rel="stylesheet" type="text/css" href="css/basic-jquery-slider.css" />	
+<link rel="stylesheet" type="text/css" href="MLODPatterns.css" />
+</head>
+<body>
+<header>
+ <h1>Multilingual Linked Open Data Patterns</h1>
+ <nav>
+   <ul>
+     <li><a href="index.html">Main</a></li>
+     <li><a href="catalog.html">Catalog</a></li>
+     <li><a href="references.html">References</a></li>
+	 <li><a href="index.html#MoreInfo">More information</a></li>
+ 	 <li><a href="index.html#Ack">Acknowledgments</a></li>
+   </ul>
+ </nav> 
+</header>
+
+<h1>Linguistic Metadata</h1>
+
+<h2>Description</h2>
+
+<p>Add linguistic metadata, like localization information or the default language
+of the dataset.
+</p>
+
+<h2>Context</h2>
+
+<p>Some linked data applications, like thesaurus, controlled vocabularies, etc. 
+need to have a finer control on the linguistic terms that they are handling. 
+They may need, for example, to express the linguistic relationship between
+two concepts or the language in which they are expressed.</p>
+
+<p>Given that it is not possible to
+have literals as subjects in the RDF model, it is necessary to employ resources
+as literal representatives and to assert declarations between those resources.
+</p>
+
+<h2>Example</h2>
+
+The following example shows how we can declare that <em>Catedrático</em>
+means <em>Professor</em> and that it is a Spanish term (represented by
+the code <code>spa</code> in ISO-693-3.
+
+<pre>
+<code style="Turtle">
+:Catedrático  
+    lexvo:means wordnet:Professor ;
+    lexvo:language 
+      &lt;http://lexvo.org/id/iso639-3/spa&gt; .
+</code>
+</pre>
+
+
+<h2>Discussion</h2>
+ 
+<p>This pattern exposes the semantic relationships between multilingual labels,
+so they can be connected with other resources. </p>
+
+<p>Using the property <code>lexvo:language</code> it is also possible to 
+declare the language of a dataset, so one can use the
+<a href="Labels_without_language_tag.html">Labels without language tag</a> pattern. 
+However, this option is not a standard practice and users may not be aware 
+of those global declarations.</p>
+
+<p>Although it has been proposed to add a property to declare the default
+language of a named graph in 
+<a href="http://www.w3.org/TR/rdf11-concepts/">RDF 1.1</a>, 
+<a href="http://lists.w3.org/Archives/Public/public-rdf-wg/2012Oct/0001.html">it was rejected</a>.</p> 
+
+<p>In <a href="http://json-ld.org/">JSON-LD</a>, it is possible to declare the default
+language of a given context. </p>
+
+
+<h2>See also</h2>
+<p>The <a href="http://lexvo.org">Lexvo</a> project defines an ontology 
+of linguistic terms.
+Lexvo proposes a general framework to publish multilingual knowledge bases. 
+For example, it declares a property <code>language</code> 
+and contains URIs for the different languages.</p>
+
+<p>In this way, language declarations can be part of the RDF model as well as the
+relationships between terms.  </p>
+
+<footer>
+ <address>Author: <a href="http://www.di.uniovi.es/~labra">Jose Emilio Labra</a> 
+ <a href="http://www.weso.es"><img src="images/logo_small2.png" alt="WESO Web Semantics Oviedo Logo" id="Logo Weso" /></a> 
+ </address>
+</footer>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MLOD Patterns - Catalog of MLOD Patterns</title>
+<meta charset="utf-8" >
+<link href="images/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="css/960.css" />
+<link rel="stylesheet" type="text/css" href="css/general.css" />
+<link rel="stylesheet" type="text/css" href="css/basic-jquery-slider.css" />	
+<link rel="stylesheet" type="text/css" href="MLODPatterns.css" />
+</head>
+<body>
+<header>
+ <h1>Multilingual Linked Open Data Patterns</h1>
+ <nav>
+   <ul>
+     <li><a href="index.html">Main</a></li>
+     <li><a href="catalog.html">Catalog</a></li>
+     <li><a href="references.html">References</a></li>
+	 <li><a href="index.html#MoreInfo">More information</a></li>
+ 	 <li><a href="index.html#Ack">Acknowledgments</a></li>
+   </ul>
+ </nav> 
+</header>
+
+<h1>Catalog of Multilingual Linked Open Data Patterns</h1>
+
+<table id="catalog">
+ <tr><th>Classification</th><th>Pattern</th><th>Short Description</th></tr>
+ <tr><td rowspan="5"><span id="Naming">Naming</span></td>
+       <td><a href="Descriptive_URIs.html">Descriptive URIs</a></td><td>Use descriptive URIs with ASCII characters, % encoding extended characters</td></tr>
+ <tr>  <td><a href="Opaque_URIs.html">Opaque URIs</a></td><td>Use non human-readable URIs</td></tr>
+ <tr>  <td><a href="Full_IRIs.html">Full IRIs</a></td><td>Use IRIs with unicode characters</td></tr>
+ <tr>  <td><a href="Internationalized_Local_names.html">Internationalized Local names</a></td><td>Use Unicode characters only for local names</td></tr>
+ <tr>  <td><a href="Language_in_URIs.html">Include language in URIs</a></td><td>Include language information in the URI</td></tr>
+ <tr><td rowspan="2"><span id="Dereferencing">Dereferencing</span></td>
+     <td><a href="Language_Independent_Data.html">No language Negotiation</a></td><td>Return the same triples independently of the <code>Accept-language</code> header</td></tr>
+     <td><a href="Language_Content_Negotiation.html">Language Content Negotiation</a></td><td>Return different triples depending on user agent preferences</td></tr>
+ <tr><td rowspan="3"><span id="Labeling">Labeling</span></td>
+     <td><a href="Label_everything.html">Label everything</a></td><td>Define labels for all the resources</td></tr>
+     <td><a href="Multilingual_labels.html">Multilingual Labels</a></td><td>Add language tags to labels</td></tr>
+     <td><a href="Labels_without_language_tag.html">Labels without language tag</a></td><td>Add labels without language tags in a default language</td></tr>
+ <tr><td rowspan="3"><span id="LongerDescriptions">Longer descriptions</span></td>
+     <td><a href="Divide_long_descriptions.html">Divide long descriptions</a></td><td>Replace long descriptions by more resources with labels</td></tr>
+     <td><a href="Lexical_information.html">Lexical information</a></td><td>Add lexical information to long descriptions</td></tr>
+     <td><a href="Structured_literals.html">Structured Literals</a></td><td>Use HTML/XML literals for longer descriptions</td></tr>
+ <tr><td rowspan="3"><span id="Linking">Linking</span></td>
+     <td><a href="Identity_Links.html">Inter-language identity links</a></td><td>Use <code>owl:sameAs</code> and similar predicates</td></tr>
+     <td><a href="Soft_links.html">Soft Inter-language links</a></td><td>Use predicates with soft semantics</td></tr>
+     <td><a href="Linguistic_metadata.html">Linguistic metadata</a></td><td>Add linguistic metadata about the dataset terms</td></tr>
+ <tr><td rowspan="4"><span id="Reuse">Reuse</span></td>
+     <td><a href="Monolingual_vocabularies.html">Monolingual vocabularies</a></td><td>Attach labels to vocabularies in a single language</td></tr>
+     <td><a href="Multilingual_vocabularies.html">Multilingual vocabularies</a></td><td>Prefer multilingual vocabularies</td></tr>
+     <td><a href="Localize_existing_vocabularies.html">Localize existing vocabularies</a></td><td>Translate labels and other textual information of existing vocabularies</td></tr>
+     <td><a href="Create_new_localized_vocabularies.html">Create new localized vocabularies</a></td><td>Create custom vocabularies and link to existing ones</td></tr>
+ </table>
+
+
+<footer>
+ <address>Author: <a href="http://www.di.uniovi.es/~labra">Jose Emilio Labra</a> 
+ <a href="http://www.weso.es"><img src="images/logo_small2.png" alt="WESO Web Semantics Oviedo Logo" id="Logo Weso" /></a> 
+ </address>
+</footer>
+</body>
+</html>

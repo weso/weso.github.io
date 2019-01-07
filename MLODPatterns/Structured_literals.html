@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MLOD Patterns - Structured literals</title>
+<meta charset="utf-8" >
+<link href="images/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="css/960.css" />
+<link rel="stylesheet" type="text/css" href="css/general.css" />
+<link rel="stylesheet" type="text/css" href="css/basic-jquery-slider.css" />	
+<link rel="stylesheet" type="text/css" href="MLODPatterns.css" />
+</head>
+<body>
+<header>
+ <h1>Multilingual Linked Open Data Patterns</h1>
+ <nav>
+   <ul>
+     <li><a href="index.html">Main</a></li>
+     <li><a href="catalog.html">Catalog</a></li>
+     <li><a href="references.html">References</a></li>
+	 <li><a href="index.html#MoreInfo">More information</a></li>
+ 	 <li><a href="index.html#Ack">Acknowledgments</a></li>
+   </ul>
+ </nav> 
+</header>
+
+<h1>Structured literals</h1>
+
+<h2>Description</h2>
+
+<p>Literals in the RDF model can also be structured values in XML or HTML. </p>
+
+<p>Using structured literals, it is possible to offer longer descriptions 
+leveraging the Internationalization practices that have already been proposed
+for those languages.</p>
+
+
+<h2>Context</h2>
+
+<p>When longer descriptions are obtained from external sources it is better to
+keep them in their original form or to encode them using 
+XML or HTML. </p>
+
+<p>Also, when there are long textual descriptions with lot of internationalization
+information (localization workflows, multilingualism, etc.) it may 
+be better to employ structured literals following the proposed XML
+internationalization techniques.
+</p>
+
+
+<h2>Example</h2>
+
+A description of the <em>University of León</em> could be:
+
+<pre>
+<code style="Turtle">
+:unileón :desc
+  "&lt;p&gt;University of  
+     &lt;span translate="no"&gt;León&lt;/span&gt;,
+     Spain.
+   &lt;/p&gt;"^^rdf:XMLLiteral .
+</code>
+</pre>
+
+Notice that the example uses the <code>translate</code> attribute from
+HTML5 to indicate that <em>León</em> should not be translated.
+
+<h2>Discussion</h2>
+ 
+<p>Using structured literals makes it possible to leverage existing
+Internationalization techniques like bi-directionality, ruby annotations,
+localization notes, etc.</p>
+
+<p>One issue is the interaction between the two abstraction levels: RDF and
+XML/HTML. Including large portions of structured literals can hinder the linked
+data approach.</p>
+
+
+<h2>See also</h2>
+
+<p>The W3c developed a document on <a href="http://www.w3.org/TR/xml-i18n-bp/">Best Practices for XML 
+internationalization</a> which are complemented by 
+the <a href="http://www.w3.org/TR/its/">Internationalization Tag Set (ITS)</a>. 
+</p>
+
+<p>The new version <a href="http://www.w3.org/TR/its20/">ITS 2.0</a> 
+contains categories that are format neutral, supporting both XML, HTML 
+and the RDF based 
+<a href="http://nlp2rdf.org/nif-1-0">NIF (NLP Interchange Format)</a>.
+It also gives support to localization workflows like those expressed in
+<a href="references.html#XLIFF">XLIFF</a>.</p>
+
+<footer>
+ <address>Author: <a href="http://www.di.uniovi.es/~labra">Jose Emilio Labra</a> 
+ <a href="http://www.weso.es"><img src="images/logo_small2.png" alt="WESO Web Semantics Oviedo Logo" id="Logo Weso" /></a> 
+ </address>
+</footer>
+</body>
+</html>

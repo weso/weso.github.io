@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MLOD Patterns - Monolingual vocabularies</title>
+<meta charset="utf-8" >
+<link href="images/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+ <link rel="stylesheet" type="text/css" href="css/960.css" /> 
+ <link rel="stylesheet" type="text/css" href="css/general.css" /> 
+ <link rel="stylesheet" type="text/css" href="css/basic-jquery-slider.css" />
+<link rel="stylesheet" type="text/css" href="MLODPatterns.css" />
+</head>
+<body>
+<header>
+ <h1>Multilingual Linked Open Data Patterns</h1>
+ <nav>
+   <ul>
+     <li><a href="index.html">Main</a></li>
+     <li><a href="catalog.html">Catalog</a></li>
+     <li><a href="references.html">References</a></li>
+	 <li><a href="index.html#MoreInfo">More information</a></li>
+ 	 <li><a href="index.html#Ack">Acknowledgments</a></li>
+   </ul>
+ </nav> 
+</header>
+
+<h1>Monolingual vocabularies</h1>
+
+<h2>Description</h2>
+
+<p>Define vocabularies with terms defined in a single language, usually English</p>
+
+
+<h2>Context</h2>
+
+<p>Vocabularies with a global scope maintain their terms in a single language,
+usually English.</p>
+
+<p>In other domains, users can define their own vocabularies in a local 
+language to facilitate the development of ontologies by domain experts</p>
+
+<h2>Example</h2>
+
+<!-- TODO: add references -->
+<p>Most popular vocabularies and ontologies for the semantic web 
+(<a href="http://xmlns.com/foaf/spec/">FOAF</a>, 
+ <a href="http://purl.org/dc/terms/">Dublin Core</a>,
+ <a href="http://www.w3.org/2002/07/owl#">OWL</a>, 
+ <a href="http://www.w3.org/2000/01/rdf-schema#">RDF Schema</a>, etc.) 
+ are monolingual and only employ one language, English, 
+ both for labels and comments.
+</p>
+
+<h2>Discussion</h2>
+ 
+<p>In monolingual vocabularies, it is easy to control the vocabulary evolution and 
+avoid the appearance of bad translations or ambiguities between language versions. </p>
+
+<p>When using monolingual vocabularies in a multilingual application, it is
+necessary to have a translation layer for those English terms. </p>
+
+<!-- <p>A collaborative translation service like 
+  <a href="http://labels4all.info">Labels4all.info</a>
+ could be used for that end.
+-->
+
+<p>Using a monolingual vocabulary as the central knowledge representation
+system can be constrained by the language used. 
+For example, some languages have different names for one concept that
+refer to only one name in another language. </p>
+
+<p>Also, some concepts in one language might not
+exactly match to a concept in another language. </p>
+
+<p>An example is the concept <em>Professor</em>, 
+ which in certain regions refers only to an academic holding a chair 
+ at a university (e.g. Germany), while it comprises in other regions 
+ also secondary or even primary school teachers (such as in Austria).</p>
+
+<p>This example illustrates, that such ambiguities can even occur in 
+ largely monolingual vocabularies, where the meaning of concepts 
+ differs in various regions.</p>
+
+<h2>See also</h2>
+
+<p>This pattern is opposed to the <a href="Multilingual_vocabularies.html">Multilingual vocabularies</a> pattern.</p>
+ 
+<p>Most of these vocabularies use <a href="Descriptive_URIs.html">descriptive URIs</a> 
+ pattern with English terms.</p>
+
+<footer>
+ <address>Author: <a href="http://www.di.uniovi.es/~labra">Jose Emilio Labra</a> 
+ <a href="http://www.weso.es"><img src="images/logo_small2.png" alt="WESO Web Semantics Oviedo Logo" id="Logo Weso" /></a> 
+ </address>
+</footer>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MLOD Patterns - Create new localized vocabularies</title>
+<meta charset="utf-8" >
+<link href="images/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="css/960.css" />
+<link rel="stylesheet" type="text/css" href="css/general.css" />
+<link rel="stylesheet" type="text/css" href="css/basic-jquery-slider.css" />	
+<link rel="stylesheet" type="text/css" href="MLODPatterns.css" />
+</head>
+<body>
+<header>
+ <h1>Multilingual Linked Open Data Patterns</h1>
+ <nav>
+   <ul>
+     <li><a href="index.html">Main</a></li>
+     <li><a href="catalog.html">Catalog</a></li>
+     <li><a href="references.html">References</a></li>
+	 <li><a href="index.html#MoreInfo">More information</a></li>
+ 	 <li><a href="index.html#Ack">Acknowledgments</a></li>
+   </ul>
+ </nav> 
+</header>
+
+<h1>Create new localized vocabularies</h1>
+
+<h2>Description</h2>
+
+<p>This pattern advocates to create new localized properties and classes and 
+ relate them to existing ones using the 
+ <code>owl:sameAs</code>, 
+ <code>owl:equivalentProperty</code> or 
+ <code>owl:equivalentClass</code> properties.
+</p>
+
+
+<h2>Context</h2>
+
+<p>Linked data applications that need localized versions of existing vocabularies but prefer to keep the original vocabularies untouched.
+</p>
+
+
+<h2>Example</h2>
+
+One can create a custom <code>:colaborador</code> property and
+then state that this property is equivalent to <code>dc:contributor</code>.
+
+<pre>
+<code>
+dc:contributor 
+    owl:equivalentProperty :colaborador .
+:colaborador   
+    rdfs:label "Colaborador"@es .
+</code>
+</pre>
+
+<h2>Discussion</h2>
+ 
+<p>This pattern gives freedom to vocabulary creators to tailor
+the vocabulary according to their exact needs.</p>
+
+<p>However, it can be more difficult for both humans and software agents to
+recognize and consume these new properties and classes.</p>
+
+<h2>See also</h2>
+
+<p>This pattern is related to the 
+<a href="http://patterns.dataincubator.org/book/equivalence-links.html">Equivalence links</a>
+pattern and to the 
+<a href="http://patterns.dataincubator.org/book/link-base.html">Link base</a> pattern
+which proposes to partition the core data from the links.
+
+<footer>
+ <address>Author: <a href="http://www.di.uniovi.es/~labra">Jose Emilio Labra</a> 
+ <a href="http://www.weso.es"><img src="images/logo_small2.png" alt="WESO Web Semantics Oviedo Logo" id="Logo Weso" /></a> 
+ </address>
+</footer>
+</body>
+</html>

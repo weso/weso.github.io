@@ -1,0 +1,54 @@
+h1 {
+ font-size: 2em;	
+}
+
+#authors {
+ font-size: 1em;	
+}
+
+#logo {
+	text-align: right;
+	width: 3em;
+	height: 3em;
+}
+
+#catalog {
+	margin-left: auto;
+	margin-right: auto;
+	border-top: solid 2px;
+	border-bottom: solid 2px; 
+	border-collapse: collapse;
+}
+
+#catalog td {
+	border: solid 1px;
+}
+
+#catalog th {
+	border: solid 1px;
+}
+
+header h1 {
+	font-size: 1.3em;
+}
+
+header ul li {
+	display: inline; 
+	font-size: 1em; 
+}
+
+address {
+	font-size: 1em;
+	font-family: monospace;
+	text-align: right;
+}
+
+code {
+	font-size: 1.3em;
+	color: Navy;
+}
+
+pre {
+	border: 1px solid; 
+	padding-left: 1em;
+}

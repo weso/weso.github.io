@@ -1,0 +1,138 @@
+body {
+    color: #474747;
+    font-family: arial;
+    margin: 0 2em 1em 2em;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+@media all and (min-width: 60em) {
+	body {
+		width: 55em;
+		margin: 0 auto 1em auto;
+	}
+}
+
+header {
+    background-color: #FFF;
+    margin: 0 0 1em 0;
+    padding-bottom: 1em;
+    border-bottom: 0.1em solid #29c7c0;
+    border-top: 1em solid #29c7c0;
+}
+
+a {
+    color: #29c7c0
+}
+
+a:hover {
+	color: red;
+}
+
+p {
+}
+
+a img {
+    border: none
+    }
+
+#logo {
+    height: 70px;
+    width: 80px;
+    }
+
+/*FOOTER*/
+footer {
+    margin-top: 1em;
+    padding: 1em;
+    background-color: #FFF;
+    }
+    
+footer img {
+	border-radius: 50%;
+	margin-left: 1em;
+}
+
+footer ul {
+    color: #f2f2f2;
+    list-style-type: none;
+    padding: 0;
+    margin: 0
+    }
+
+footer ul a {
+    color: #474747;
+    font-weight: bold;
+    text-decoration: none
+    }
+
+footer ul a:visited {
+    color: #474747
+    }
+
+footer ul li.title {
+    padding-left: 1em;
+    font-weight: bold;
+    padding-bottom: 1em;
+    line-height: 1.2em
+    }
+
+footer ul.inner {
+    list-style-type: circle;
+    text-align: left
+    }
+
+footer ul li {
+    padding-left: 0;
+    margin: 0;
+    color: #333
+    }
+
+footer ul.inner li {
+    margin-left: 2em;
+    line-height: 1.2em
+    }
+
+footer .brand {
+    color: #333;
+    padding: 1em 0;
+    margin-top: 1em;
+    text-align: center;
+    border-top: 1px solid #f0f0f0
+    }
+
+footer .brand p {
+    text-align: center;
+    font-weight: bold;
+    line-height: 0.5;
+    font-size: 12px
+    }
+
+/*Location*/
+.address {
+    line-height: 0.5;
+    font-style: italic;
+    padding: 0 0 0.5em 0.5em
+    }
+
+.address p {
+    line-height: 0.5
+    }
+
+header ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+header ul li {
+	margin-right: 1em;
+}
+
+nav ol li {
+	margin-bottom: 1em;
+}
+
+dd {
+	margin: 0.5em 0;
+	padding-left: 1em;
+}

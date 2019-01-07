@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MLOD Patterns - Labels without language tag</title>
+<meta charset="utf-8" >
+<link href="images/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="css/960.css" />
+<link rel="stylesheet" type="text/css" href="css/general.css" />
+<link rel="stylesheet" type="text/css" href="css/basic-jquery-slider.css" />	
+<link rel="stylesheet" type="text/css" href="MLODPatterns.css" />
+</head>
+<body>
+<header>
+ <h1>Multilingual Linked Open Data Patterns</h1>
+ <nav>
+   <ul>
+     <li><a href="index.html">Main</a></li>
+     <li><a href="catalog.html">Catalog</a></li>
+     <li><a href="references.html">References</a></li>
+	 <li><a href="index.html#MoreInfo">More information</a></li>
+ 	 <li><a href="index.html#Ack">Acknowledgments</a></li>
+   </ul>
+ </nav> 
+</header>
+
+<h1>Labels without language tag</h1>
+
+<h2>Description</h2>
+
+<p>Apart of language-tagged labels, one can also associate plain labels 
+   without a language tag.
+
+
+<h2>Context</h2>
+
+<p>This pattern emerges as a practical advice to facilitate SPARQL queries over
+   multilingual linked data. 
+</p> 
+
+<h2>Example</h2>
+
+Using a language without language tag, <a href="Multilingual_labels.html#Example">the previous example</a> can
+be expressed as:
+ 
+<pre>
+<code style="Turtle">
+:juan :position "Professor"@en . 
+:juan :position "Catedrático"@es .
+:juan  :position  "Professor" .
+</code>
+ </pre>
+
+<h2>Discussion</h2>
+  
+<p>Using this pattern SPARQL queries do not need to be aware of 
+the multilingualism of the <code>:position</code> property and 
+can obtain a result. 
+
+<p>Although this practice facilitates SPARQL queries, it is controversial and 
+can be also considered to be an anti-pattern.
+
+<p>For instance, in which language should the literal without language tag be written?
+That would depend on the language spoken by the majority of the linked data users. 
+In most cases it could be English but in other contexts it could be 
+quite a different language.
+
+<h2>See also</h2>
+
+<p>The use of labels without language tags has been
+proposed by <a href="http://www.w3.org/wiki/User:Rcygania2/RulesOfThumb">Richard Cyganiak</a>. 
+
+<p>This pattern can be associated with the 
+ <a href="Language_in_URIs.html">language in URI</a> pattern, so that there is 
+ a hint on what is the default language of a dataset.
+
+<p>It is possible to make assertions about the language of a whole dataset using
+the <code>lexvo:language</code> property which we also describe in the
+<a href="Linguistic_metadata.html">Add linguistic metadata</a> pattern.
+
+
+<footer>
+ <address>Author: <a href="http://www.di.uniovi.es/~labra">Jose Emilio Labra</a> 
+ <a href="http://www.weso.es"><img src="images/logo_small2.png" alt="WESO Web Semantics Oviedo Logo" id="Logo Weso" /></a> 
+ </address>
+</footer>
+</body>
+</html>

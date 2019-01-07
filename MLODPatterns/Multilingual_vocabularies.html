@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MLOD Patterns - Multilingual vocabularies</title>
+<meta charset="utf-8" >
+<link href="images/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="css/960.css" />
+<link rel="stylesheet" type="text/css" href="css/general.css" />
+<link rel="stylesheet" type="text/css" href="css/basic-jquery-slider.css" />	
+<link rel="stylesheet" type="text/css" href="MLODPatterns.css" />
+</head>
+<body>
+<header>
+ <h1>Multilingual Linked Open Data Patterns</h1>
+ <nav>
+   <ul>
+     <li><a href="index.html">Main</a></li>
+     <li><a href="catalog.html">Catalog</a></li>
+     <li><a href="references.html">References</a></li>
+	 <li><a href="index.html#MoreInfo">More information</a></li>
+ 	 <li><a href="index.html#Ack">Acknowledgments</a></li>
+   </ul>
+ </nav> 
+</header>
+
+<h1>Multilingual vocabularies</h1>
+
+<h2>Description</h2>
+
+<p>Define vocabularies and ontologies where the concepts 
+contain translations for several languages.</p>
+
+
+<h2>Context</h2>
+
+<p>In a multilingual linked data application where we want to have more control
+about the translation process, it is better to provide our own translations
+defining multilingual versions of the ontologies.
+</p>
+
+
+<h2>Example</h2>
+
+In our running example, we can define a multilingual vocabulary for university
+positions with declarations like:
+
+<pre>
+<code>
+:position  a  owl:DatatypeProperty ;
+  rdfs:domain  :UniversityStaff ;
+  rdfs:label  "Position"@en ;
+  rdfs:label  "Puesto"@es .
+
+:UniversityStaff  a  owl:Class ;
+  rdfs:label  "University staff"@en ;
+  rdfs:label  "Trabajador universitario"@es .
+</code>
+</pre>
+
+<h2>Discussion</h2>
+ 
+<p>Multilingual vocabularies offer an elegant solution for
+applications that need to express information in local languages. </p>
+
+<p>As labels and comments are already translated, the users 
+of those languages can have access to more standard textual 
+representations in their languages.</p>
+
+<p>Some common vocabularies use only one language, usually English, as a
+canonical textual representation of the different concepts. </p>
+
+<p>Some concepts are difficult to translate and there may appear 
+ ambiguities in the translations. 
+ For example, the label <em>Professor</em> may be translated to 
+ <em>Profesor</em> in Spanish. 
+ However, the meaning of those concepts is different (in Spanish it
+ is usually preferred as <em>Catedrático</em>). </p>
+
+<h2>See also</h2>
+
+<p>There are a number of multilingual vocabularies, like
+<a href="http://aims.fao.org/standards/agrovoc/about">Agrovoc</a> 
+or 
+<a href="http://eurovoc.europa.eu/">Eurovoc</a>.</p>
+
+<p>This pattern is opposed to the 
+<a href="Monolingual_vocabularies.html">Monolingual vocabularies</a>
+pattern.</p>
+
+<p>In <a href="references.html#Hyland12">[Hyland 12]</a> 
+it is proposed as a quality selection criteria
+the use of vocabularies that contain descriptions in more than one language.</p>
+
+<footer>
+ <address>Author: <a href="http://www.di.uniovi.es/~labra">Jose Emilio Labra</a> 
+ <a href="http://www.weso.es"><img src="images/logo_small2.png" alt="WESO Web Semantics Oviedo Logo" id="Logo Weso" /></a> 
+ </address>
+</footer>
+</body>
+</html>

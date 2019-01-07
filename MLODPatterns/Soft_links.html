@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MLOD Patterns - Soft links</title>
+<meta charset="utf-8" >
+<link href="images/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="css/960.css" />
+<link rel="stylesheet" type="text/css" href="css/general.css" />
+<link rel="stylesheet" type="text/css" href="css/basic-jquery-slider.css" />	
+<link rel="stylesheet" type="text/css" href="MLODPatterns.css" />
+</head>
+<body>
+<header>
+ <h1>Multilingual Linked Open Data Patterns</h1>
+ <nav>
+   <ul>
+     <li><a href="index.html">Main</a></li>
+     <li><a href="catalog.html">Catalog</a></li>
+     <li><a href="references.html">References</a></li>
+	 <li><a href="index.html#MoreInfo">More information</a></li>
+ 	 <li><a href="index.html#Ack">Acknowledgments</a></li>
+   </ul>
+ </nav> 
+</header>
+
+<h1>Soft Inter-language links</h1>
+
+<h2>Description</h2>
+
+<p>Use a soft property to state that two resources are inter-language linked.
+</p>
+
+<h2>Context</h2>
+
+<p><code>owl:sameAs</code> is a very
+strong property with logical implications and hence must be used careful. 
+Two resources linked by <code>owl:sameAs</code> are supposed to be really 
+the same and reasoners that infer something about one of the resources, 
+will automatically infer the same for the other. </p>
+
+<p>A soft link can be either a custom property (DBPedia uses, for example,
+<code>dbo:wikiPageInterLanguageLink</code>) 
+or a common property such as <code>rdfs:seeAlso</code>, 
+<code>skos:related</code>, etc.
+
+<h2>Example</h2>
+
+The <a href="Identity_links.html#example_SameAs">example using identity links</a> 
+could be written as follows:
+
+<pre>
+<code style="Turtle">
+&lt;http://hy.example.org#Հայաստան&gt; 
+  rdfs:seeAlso
+    &lt;http://en.example.org#Armenia&gt; .
+</code>
+</pre>
+
+
+<h2>Discussion</h2>
+ 
+<p>Soft links are weaker regarding semantic implications than 
+an <code>owl:sameAs</code> link.</p> 
+
+<p>Using custom properties like <code>dbo:wikiPageInterLanguageLink</code> 
+can provide more freedom but are usually not well recognized by 
+automated software agents. </p>
+
+<p>Thus, the use of more common properties with similar semantics (i.e.
+<code>rdfs:seeAlso</code>, <code>skos:related</code>, etc) should be considered.</p>
+
+
+<h2>See also</h2>
+<p><a href="references.html#Halpin10">[Halpin 10]</a> describes the uses and abuses of
+<code>owl:sameAs</code> and propose to limit its use.
+</p>
+
+<p>The new version <a href="http://www.w3.org/TR/its20/">ITS 2.0</a> 
+contains categories that are format neutral, supporting both XML, HTML 
+and the RDF based 
+<a href="http://nlp2rdf.org/nif-1-0">NIF (NLP Interchange Format)</a>.
+It also gives support to localization workflows like those expressed in
+<a href="references.html#XLIFF">XLIFF</a>.</p>
+
+<footer>
+ <address>Author: <a href="http://www.di.uniovi.es/~labra">Jose Emilio Labra</a> 
+ <a href="http://www.weso.es"><img src="images/logo_small2.png" alt="WESO Web Semantics Oviedo Logo" id="Logo Weso" /></a> 
+ </address>
+</footer>
+</body>
+</html>

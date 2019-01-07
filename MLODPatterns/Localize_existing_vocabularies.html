@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MLOD Patterns - Localize existing vocabularies</title>
+<meta charset="utf-8" >
+<link href="images/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="css/960.css" />
+<link rel="stylesheet" type="text/css" href="css/general.css" />
+<link rel="stylesheet" type="text/css" href="css/basic-jquery-slider.css" />	
+<link rel="stylesheet" type="text/css" href="MLODPatterns.css" />
+</head>
+<body>
+<header>
+ <h1>Multilingual Linked Open Data Patterns</h1>
+ <nav>
+   <ul>
+     <li><a href="index.html">Main</a></li>
+     <li><a href="catalog.html">Catalog</a></li>
+     <li><a href="references.html">References</a></li>
+	 <li><a href="index.html#MoreInfo">More information</a></li>
+ 	 <li><a href="index.html#Ack">Acknowledgments</a></li>
+   </ul>
+ </nav> 
+</header>
+
+<h1>Localize existing vocabularies</h1>
+
+<h2>Description</h2>
+
+<p>Enrich existing vocabularies with local translations.</p>
+
+
+<h2>Context</h2>
+
+<p>Localized applications that need to represent information in their local
+languages from external vocabularies that are not localized can define their own
+translations.
+</p>
+
+
+<h2>Example</h2>
+
+A linked data application in Spanish may use the
+Dublin Core vocabulary to indicate the contributors of a given work. 
+The end-user should see the labels in his own language. 
+To that end, one can add
+a localized label to <code>dc:contributor</code> as:
+
+<pre>
+<code>
+dc:contributor  rdfs:label  "Colaborador"@es .
+</code>
+</pre>
+
+<h2>Discussion</h2>
+ 
+<p>A multilingual linked data application could transparently
+select the tagged literal corresponding to 
+<code>dc:contributor</code> in its preferred language.</p>
+
+<p>Polluting well known vocabularies with localized literals may be
+controversial and should be handled with caution.</p>
+
+<h2>See also</h2>
+
+<p>This pattern follows the <em>Anyone-can-say-Anything-about-Any-topic</em> (AAA) lemma<a href="references.html#Alleman10">[Alleman 10]</a>.
+ 
+<p>This pattern can be considered a special case of the <a href="http://patterns.dataincubator.org/book/annotation.html">Annotation</a>
+pattern which says that <em>it is entirely consistent
+with the Linked Data principles to make statements about third-party resources.</em>
+
+<footer>
+ <address>Author: <a href="http://www.di.uniovi.es/~labra">Jose Emilio Labra</a> 
+ <a href="http://www.weso.es"><img src="images/logo_small2.png" alt="WESO Web Semantics Oviedo Logo" id="Logo Weso" /></a> 
+ </address>
+</footer>
+</body>
+</html>

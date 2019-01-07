@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MLOD Patterns - Multilingual Labels</title>
+<meta charset="utf-8" >
+<link href="images/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="css/960.css" />
+<link rel="stylesheet" type="text/css" href="css/general.css" />
+<link rel="stylesheet" type="text/css" href="css/basic-jquery-slider.css" />	
+<link rel="stylesheet" type="text/css" href="MLODPatterns.css" />
+</head>
+<body>
+<header>
+ <h1>Multilingual Linked Open Data Patterns</h1>
+ <nav>
+   <ul>
+     <li><a href="index.html">Main</a></li>
+     <li><a href="catalog.html">Catalog</a></li>
+     <li><a href="references.html">References</a></li>
+	 <li><a href="index.html#MoreInfo">More information</a></li>
+ 	 <li><a href="index.html#Ack">Acknowledgments</a></li>
+   </ul>
+ </nav> 
+</header>
+
+<h1>Multilingual Labels</h1>
+
+<h2>Description</h2>
+
+<p>In a multilingual setting, it is necessary to attach language 
+ tags to textual information, in order to identify the appropriate 
+ label for localized applications.
+
+<h2>Context</h2>
+
+<p>This pattern can be applied when labels have information 
+ in some natural language.
+</p> 
+
+<h2 id="Example">Example</h2>
+We can declare that Juan’s position is <em>Professor</em> in English and 
+ <em>Catedrático</em> in Spanish.
+ 
+<pre>
+<code style="Turtle">
+:juan :position "Professor"@en . 
+:juan :position "Catedrático"@es .
+</code>
+ </pre>
+
+<h2>Discussion</h2>
+  
+<p>Multilingual labels are part of the RDF standard and well supported by 
+ semantic web tools. 
+
+<p>For example, the following SPARQL query asks for people whose 
+ position is Professor and would return <code>:juan</code>.
+ 
+<pre>
+<code style="SPARQL">
+SELECT * WHERE { 
+ ?x ex:position "Professor"@en . 
+}
+</code>
+</pre>
+
+<p>Dealing with big multilingual linked data repositories where all literals 
+ have a language tag makes SPARQL queries more verbose. 
+ For example, the following SPARQL query for previous example would return no results.</p>
+ 
+<pre>
+<code style="SPARQL">
+SELECT * WHERE { 
+ ?x ex:position "Professor" . 
+}
+</code>
+</pre>
+
+There are some patterns and built-in SPARQL functions that deal with language 
+ tagged literals like:
+
+<ul>
+<li><code>lang()</code> returns the language of a literal
+<li><code>langMatches()</code> checks if the language of a literal matches a given language
+<li><code>str()</code> returns the literal without the language tag 
+</ul>
+
+Using the <code>str()</code> function, the previous query can be rewritten as:
+
+<pre>
+<code style="SPARQL">
+SELECT * WHERE { 
+ ?x ex:position ?p .
+ FILTER ( str(?p)="Professor" )  
+}
+</code>
+</pre>
+
+<h2>See also</h2>
+
+<p>This pattern is the same as the 
+<a href="http://patterns.dataincubator.org/book/multi-lingual-literal.html">Multi-lingual literal</a>. 
+
+<p>This pattern is also related to the <a href="http://patterns.dataincubator.org/book/repeated-property.html">Repeated property</a> pattern 
+where a resource can have several values for the same property. 
+In this case, the values are literals in different languages.
+
+
+<footer>
+ <address>Author: <a href="http://www.di.uniovi.es/~labra">Jose Emilio Labra</a> 
+ <a href="http://www.weso.es"><img src="images/logo_small2.png" alt="WESO Web Semantics Oviedo Logo" id="Logo Weso" /></a> 
+ </address>
+</footer>
+</body>
+</html>

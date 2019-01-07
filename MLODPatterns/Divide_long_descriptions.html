@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MLOD Patterns - Divide long descriptions</title>
+<meta charset="utf-8" >
+<link href="images/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="css/960.css" />
+<link rel="stylesheet" type="text/css" href="css/general.css" />
+<link rel="stylesheet" type="text/css" href="css/basic-jquery-slider.css" />	
+<link rel="stylesheet" type="text/css" href="MLODPatterns.css" />
+</head>
+<body>
+<header>
+ <h1>Multilingual Linked Open Data Patterns</h1>
+ <nav>
+   <ul>
+     <li><a href="index.html">Main</a></li>
+     <li><a href="catalog.html">Catalog</a></li>
+     <li><a href="references.html">References</a></li>
+	 <li><a href="index.html#MoreInfo">More information</a></li>
+ 	 <li><a href="index.html#Ack">Acknowledgments</a></li>
+   </ul>
+ </nav> 
+</header>
+
+<h1>Divide long descriptions</h1>
+
+<h2>Description</h2>
+
+<p>By decomposing long descriptions into new
+resources that can be represented with shorter labels or  
+lexical entities, one can facilitate their future translation 
+to other languages.
+
+
+<h2>Context</h2>
+
+<p>Resources with very long descriptions are usually a symptom that the knowledge 
+base structure (i.e. vocabulary or ontology) is not sufficiently developed. 
+In general, it is good to foresee to associate short labels with resources.
+This way, a model where resources have long descriptions can be further
+decomposed into small pieces with shorter descriptions or labels.</p>
+
+<p>Multilingual applications with more fine grained textual information can be better
+localized and adapted to other languages.</p>
+
+
+<h2>Example</h2>
+
+In order to declare that <em>Juan</em> is a <em>professor</em> from the <em>University of
+León</em>, one can assert:
+
+<pre>
+<code style="Turtle">
+:juan :jobtitle 
+  "Professor at the University of León"@en .
+</code>
+ </pre>
+
+However, the description can be decomposed in two components: 
+the title (<em>Professor</em>) and the University
+(<em>University of León</em>).
+
+<pre>
+<code style="Turtle">
+:juan :position :professor .
+:juan :workPlace :unileón .
+
+:professor rdfs:label "Professor"@en .
+:uniLeón rdfs:label "University of León"@en . 
+</code>
+</pre>
+
+In this way, a multilingual application can recognize the different components
+and create a better user experience.
+
+<h2>Discussion</h2>
+ 
+
+<p>Decomposing the resources of a dataset to more fine grained
+atoms can make the dataset more user-friendly.</p>
+
+<p>Applications can generate more readable information 
+to the end user, especially when they are localized.</p>
+
+<p>However, this pattern increases the complexity of the model. 
+It is necessary to find a good balance between verbose models with fine-grained
+resources and lighter models with a fewer resources and longer descriptions.
+</p> 
+
+
+<h2>See also</h2>
+
+This pattern is related to 
+<a href="http://patterns.dataincubator.org/book/link-not-label.html">Link not label</a>} pattern
+where the authors describe situations in which it is better to use resources 
+instead of labels.
+
+
+
+<footer>
+ <address>Author: <a href="http://www.di.uniovi.es/~labra">Jose Emilio Labra</a> 
+ <a href="http://www.weso.es"><img src="images/logo_small2.png" alt="WESO Web Semantics Oviedo Logo" id="Logo Weso" /></a> 
+ </address>
+</footer>
+</body>
+</html>

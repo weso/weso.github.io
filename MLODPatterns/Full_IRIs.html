@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MLOD Patterns - Full IRIs</title>
+<meta charset="utf-8" >
+<link href="images/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="css/960.css" />
+<link rel="stylesheet" type="text/css" href="css/general.css" />
+<link rel="stylesheet" type="text/css" href="css/basic-jquery-slider.css" />	
+<link rel="stylesheet" type="text/css" href="MLODPatterns.css" />
+</head>
+<body>
+<header>
+ <h1>Multilingual Linked Open Data Patterns</h1>
+ <nav>
+   <ul>
+     <li><a href="index.html">Main</a></li>
+     <li><a href="catalog.html">Catalog</a></li>
+     <li><a href="references.html">References</a></li>
+	 <li><a href="index.html#MoreInfo">More information</a></li>
+ 	 <li><a href="index.html#Ack">Acknowledgments</a></li>
+   </ul>
+ </nav> 
+</header>
+
+<h1>Full IRIs</h1>
+
+<h2>Description</h2>
+
+<p>This patterns consists of using unrestricted IRIs 
+ which can contain Unicode characters outside the ASCII repertoire.
+
+<h2>Context</h2>
+<p>In a multilingual setting, it is necessary to take into 
+ account that human-readability is not a generic aspect, 
+ but depends heavily on people’s culture and background. 
+ URIs employing only ASCII characters are difficult to 
+ handle by people used to non-Latin alphabets. 
+ 
+<p>This pattern can solve that situation by allowing the 
+ application to use Unicode characters in resource identifiers.  
+ 
+<h2>Example</h2>
+
+A full IRI using the Armenian language can be:
+
+<pre>
+<code>
+http://օրինակ.օրգ#Հայաստան
+</code>
+</pre>
+
+<h2>Discussion</h2>
+
+<p>IRIs with Unicode characters are more natural for 
+ people whose primary language is not Latin based. 
+ Since machines should be able to identify resources 
+ in either encoding and the technologies have already been 
+ developed, a further step is to make resource identifiers 
+ human friendly. 
+
+<p> Although it is said that the end user should not be exposed 
+ to URIs and that they should act as internal identifiers, 
+ in practice, they are handled by application developers 
+ and sometimes even by end users.
+
+<p>Human friendly IRIs can facilitate the adoption of linked data 
+ technologies by more people in the long term. 
+  However, the use of IRIs may be exposed to visual spoofing attacks 
+  given that glyphs with the same appearance may refer to different 
+  characters.
+  
+<p>Another important issue is the lack of support of IRIs by 
+ current software libraries. 
+ Although the support is improving, nowadays it is still a 
+ challenge and most of the tools only offer partial support.
+  
+<h2>See also</h2>
+
+<p>Unicode has published some security considerations for IRIs 
+ which should be taken into account <a href="references.html#UTR36">[UTR 36]</a>. 
+ A soft version of this pattern is 
+ <a href="Internationalized_Local_names.html">Internationalized local names</a>. 
+
+<p>According to <a href="references.html#Kontokostas12">[Kontokostas 12, section 6.1]</a>, 
+ IRI dereferencing should be handled carefully as the 
+ HTTP Protocol (<a href="http://www.w3.org/Protocols/rfc2616/rfc2616.html">RFC 2616</a>) can transfer only URIs.
+ 
+<footer>
+ <address>Author: <a href="http://www.di.uniovi.es/~labra">Jose Emilio Labra</a> 
+ <a href="http://www.weso.es"><img src="images/logo_small2.png" alt="WESO Web Semantics Oviedo Logo" id="Logo Weso" /></a> 
+ </address>
+</footer>
+</body>
+</html>

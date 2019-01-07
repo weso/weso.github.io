@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MLOD Patterns - Identity links</title>
+<meta charset="utf-8" >
+<link href="images/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="css/960.css" />
+<link rel="stylesheet" type="text/css" href="css/general.css" />
+<link rel="stylesheet" type="text/css" href="css/basic-jquery-slider.css" />	
+<link rel="stylesheet" type="text/css" href="MLODPatterns.css" />
+</head>
+<body>
+<header>
+ <h1>Multilingual Linked Open Data Patterns</h1>
+ <nav>
+   <ul>
+     <li><a href="index.html">Main</a></li>
+     <li><a href="catalog.html">Catalog</a></li>
+     <li><a href="references.html">References</a></li>
+	 <li><a href="index.html#MoreInfo">More information</a></li>
+ 	 <li><a href="index.html#Ack">Acknowledgments</a></li>
+   </ul>
+ </nav> 
+</header>
+
+<h1>Inter-language identity links</h1>
+
+<h2>Description</h2>
+
+<p>Add an <code>owl:sameAs</code> link between two resources that refer to the
+same entity but contain data in different languages.
+</p>
+
+<h2>Context</h2>
+
+<p>When dealing with resources in a multilingual linked data environment, it may be necessary to keep
+those resources separate and identifiable. </p>
+
+<h2 id="example_SameAs">Example</h2>
+
+Suppose we have information about <em>Armenia</em> in English which is
+identified by 
+<code style="Turtle">
+http://hy.example.org#Հայաստան
+</code>
+
+while the URI 
+
+<code>http://es.example.org#Armenia</code>
+
+contains information
+about Armenia in Spanish.
+We can declare that both URIs refer to the same thing by asserting:
+
+<pre>
+<code>
+&lt;http://hy.example.org#Հայաստան&gt;
+  owl:sameAs
+    &lt;http://en.example.org#Armenia&gt; .
+</code>
+</pre>
+
+<h2>Discussion</h2>
+ 
+<p>
+<code>owl:sameAs</code> is a well-known property which is
+supported by several linked data applications.</p>
+
+<p>However, the semantics of <code>owl:sameAs</code> has some implications which may be
+undesirable.
+For example, it could be that the information about Armenia in the different languages comes from
+different sources and thus, contains different data. 
+Using <code>owl:sameAs</code> can then render inconsistencies.
+</p>
+
+
+<h2>See also</h2>
+
+<p>This pattern is a special case of the 
+<a href="http://patterns.dataincubator.org/book/equivalence-links.html">Equivalence links</a>
+.
+</p>
+
+<p>The new version <a href="http://www.w3.org/TR/its20/">ITS 2.0</a> 
+contains categories that are format neutral, supporting both XML, HTML 
+and the RDF based 
+<a href="http://nlp2rdf.org/nif-1-0">NIF (NLP Interchange Format)</a>.
+It also gives support to localization workflows like those expressed in
+<a href="references.html#XLIFF">XLIFF</a>.</p>
+
+<footer>
+ <address>Author: <a href="http://www.di.uniovi.es/~labra">Jose Emilio Labra</a> 
+ <a href="http://www.weso.es"><img src="images/logo_small2.png" alt="WESO Web Semantics Oviedo Logo" id="Logo Weso" /></a> 
+ </address>
+</footer>
+</body>
+</html>
