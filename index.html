@@ -2,32 +2,55 @@
 <!-- saved from url=(0029)/?language=en -->
 <html class="gr__localhost">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <link href="./index_files/css" rel="stylesheet" type="text/css">
-    <link href="./index_files/font-awesome.css" rel="stylesheet">
-    <title>WESO</title>
-    <link rel="stylesheet" href="./index_files/style.css" type="text/css" media="screen">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>WESO web page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./index_files/style.css" type="text/css" media="screen"> 
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
-<body data-gr-c-s-loaded="true">
+<body>
 
-<div class="navigation">
-    <nav class="navigation">
-        <span class="weso">WESO</span>
-        <img alt="" src="./index_files/circle.png">
-        <a class="home" href="#home">home</a> |
-        <a class="projects" href="#projects">projects</a> |
-        <a class="research" href="#research">research</a> |
-        <a class="software" href="#software">software</a> |
-        <a class="people" href="#people">people</a> |
-        <a class="vacancies" href="#vacancies">vacancies</a> |
-        <a class="contact" href="#contact">contact</a>
+    <header class="navbar">
+     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+         <img src="images/logo-weso.png" alt="WESO Logo" height="50">
+        </a> 
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> 
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#research">Publications</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#software">Software</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#people">People</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://www.weso.es/meetings/">Meetings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+      </div>
     </nav>
-</div>
+  </header>
+        
+<div class="container">
 
-<div class="panel panel-home">
-    <a id="home" class="home">home</a>
+    <h1 id="home">About WESO</h1>
     <!--		<nav class="languages">
                     <a class="language" href="#">
                         en
@@ -37,7 +60,7 @@
                     </a>
             </nav> -->
 
-    <div class="content">
+<!--    <div class="content">
         <div class="weso-headings">
             <h1>Web Semantics Oviedo</h1>
             <h2>University of Oviedo</h2>
@@ -63,130 +86,80 @@
                     <img src="./index_files/twitter.png" alt="" class="circle derecha social twitter">
                 </a>
             </div>
-        </div>
-        <!--			<div id="text" class="columns">  -->
-        <div id="text">
-            <!-- <div class="column1"> -->
-            <div>
-                <p><strong>WESO</strong> is a research group at the University of Oviedo founded in 2004.
-                    As a group, our main research activity involves semantic Web, education and technology transfer.
-                    We are a constantly evolving group, commited to with the development of of reseach proyects that
-                    empowers the use of
-                    semantic technologies and web standards.
-                    <br><strong>Some research Lines</strong>:</p>
-                <ul>
-                    <li>Semantic Architectures. Designing and developing architectures based on domain knowledge.</li>
-                    <li>Collaborative Semantic Services. Improving existing solutions with a semantic collaborative
-                        approach.
-                    </li>
-                    <li>Linked and Open Data. Offering new solutions for combining RDF vocabularies and published
-                        data.
-                    </li>
-                </ul>
-            </div>
+        </div> -->  
+  <p><abbr title="WEb Semantic Oviedo">WESO</abbr> is a research group at the University of Oviedo founded in 2004 by <a href="http://labra.weso.es">Jose Emilio Labra Gayo</a>.
+    As a group, our main research activity involves semantic Web, education and technology transfer.
+    We are a constantly evolving group, commited to the development of reseach proyects that empower the use of semantic technologies and web standards.
 
-            <!--
-                            <div class="column2">
-                                <table class="twitter pages">
-                                </table>
-                            </div>
-            -->
+ <br><strong>Some research Lines</strong>:</p>
+ <ul>
+ <li>RDF data validation: Shapes (ShEx and SHACL) applications and tools</li>    
+ <li>Semantic Architectures. Designing and developing architectures based on domain knowledge.</li>
+ <li>Collaborative Semantic Services. Improving existing solutions with a semantic collaborative approach.</li>
+ <li>Linked and Open Data. Offering new solutions for combining RDF vocabularies and published data.</li>
+ </ul>
 
-        </div>
-    </div>
+ <h3 id="projects" class="display-3">Projects</h3>
 
-    <div class="bottom"><img alt="" src="./index_files/bottom.png"></div>
-</div>
-<a id="projects"></a>
+ WESO has collaborated with several companies and institutions in the development of several projects.
 
-<div class="panel panel1">
-    <div class="content text-marron">
-        <h3 class="projects">projects</h3>
+ <h4>HERCULES</h4>
+  WESO is developing the ASIO part from the <a href="https://www.um.es/web/hercules/">HERCULES</a> project in collaboration with <a href="https://www.izertis.com/">Izertis</a>.
 
-        <div class="projects">
-            <div class="project-element">
-                <h4><a href="http://thewebindex.org/" title=" Web Index">Web Index</a></h4>
-                <p>Designed and produced by the World Wide Web Foundation,
-                    the Web Index is the world’s first measure of the World Wide Web’s contribution to social,
-                    economic and political progress in countries across the world. WESO has contributed to the
-                    project developing the portal and managing linked data for 2014 and older editions.
-                </p>
-            </div>
-            <div class="project-element">
-                <h4><a href="http://landportal.info/" title=" Landportal">Landportal</a></h4>
-                <p>The Portal allows for the collection, sourcing, and searching of otherwise
-                    fragmented and inaccessible data and information on land governance and land use
-                    from diverse sources, produced by governments, academia, international organizations,
-                    indigenous people and NGOs. WESO has participated in the web development.
-                </p>
-            </div>
-            <div class="project-element">
-                <h4>Orbita</h4>
-                <p>In ORBITA we provide a dynamic dataset visualization system in which the information could be
-                    represented in diferentes ways and having into account different user profiles.
-                    This will provide the data management to perform entity reconciliation, filtering, searching and
-                    sorting tasks.
-                </p>
-            </div>
-            <div class="project-element">
-                <h4>Urban-RED</h4>
-                <p>Urban-RED is funded by Call of Energizing Actions "Networks of Excellence" of the Spanish Ministry of
-                    Economy and Competitiveness. Urban-RED aims to promote reserch activity about sustainable urban
-                    development.
-                </p>
-            </div>
-            <div class="project-element"><h4>RETINAS</h4>
-                <p>The main objective of RETINAS consist in research about techonologies of real time video analysis,
-                    semantic technologies and Soft Computing techniques ir order to be used in intelligent monitoring
-                    systems in heterogeneous environments.
-                </p>
-            </div>
+ <h4><abbr title=" Validating RDF Streams using Shapes">VARSSHA</abbr></h4>
 
-            <div class="project-element">
-                <h4>ROCAS (Reasoning in the Cloud Applying Semantics)</h4>
-                <p>The goal of ROCAS is to provide a distributed semantic reasoning system based on cloud computing
-                    where each node is able to cooperate with others in the reasoning process.This approach is
-                    independent of the inference engines used and it suggests division and distribution of task between
-                    nodes to complete inference processes.</p>
-            </div>
-            <div class="project-element">
-                <h4>ORIGIN</h4>
-                <p>This project is focused in increasing the productivity in software development activities in
-                    outsourcing global scenarios as well as the improvement of the quality of the developed software.
-                </p>
-            </div>
-            <div class="project-element">
-                <h4>10ders</h4>
-                <p>The aim of this project is to show the activities to be performed in 10ders Project on e-Procurement.
-                    The platform planned by 10ders Project is intend to fulfill the needs of e-procurement at European,
-                    national and regional levels.</p>
-            </div>
-            <div class="project-element">
-                <h4><a href="http://www.weso.es/MLODPatterns" title=" MLOD Patterns">MLOD Patterns</a></h4>
-                <p>Multilingual Linked Open Data Patterns.</p>
-            </div>
+ Funded by the Spanish Government: Ministerio de Economía, Industria y Competitividad. Proyectos I+D+i (RETOS), 2017 call (ends in 2020)
 
-            <div class="project-element">
-                <h4><a href="https://github.com/weso/computex" title=" Computex">Computex</a></h4>
-                <p>Computex (Computing Statistical Indexes) is an extension of RDF Data Cube vocabulary to represent
-                    statistical indexes.</p>
-            </div>
-        </div>
-    </div>
-    <div class="bottom"><img alt="" src="./index_files/bottom2.png"></div>
 
-</div>
 
-<a id="research"></a>
-<div class="panel panel2">
-    <div class="content">
-        <h3 class="research">research</h3>
-        <div class="center">
-            <a class="mendeley" href="http://www.mendeley.com/groups/748461" title="Mendeley">
-                <img alt="" src="./index_files/mendeley-logo.png">
-            </a>
-        </div>
-        <table class="research">
+ <h4><a href="http://thewebindex.org/" title=" Web Index">Web Index</a></h4>
+ <p>Designed and produced by the World Wide Web Foundation, the Web Index is the world’s first measure of the World Wide Web’s contribution to social,
+           economic and political progress in countries across the world. WESO has contributed to the project developing the portal and managing linked data for 2014 and older editions.
+ </p>
+
+ <h4><a href="http://landportal.info/" title=" Landportal">Landportal</a></h4>
+  <p>The Portal allows for the collection, sourcing, and searching of otherwise fragmented and inaccessible data and information on land governance and land use from diverse sources, 
+    produced by governments, academia, international organizations, indigenous people and NGOs. WESO has participated in the web development.</p>
+
+ <h4>Orbita</h4>
+   <p>In ORBITA we provide a dynamic dataset visualization system in which the information could be
+      represented in diferentes ways and having into account different user profiles.
+      This will provide the data management to perform entity reconciliation, filtering, searching and
+      sorting tasks.</p>
+
+  <h4>Urban-RED</h4>
+    <p>Urban-RED is funded by Call of Energizing Actions "Networks of Excellence" of the Spanish Ministry of Economy and Competitiveness. 
+        Urban-RED aims to promote reserch activity about sustainable urban development.</p>
+
+  <h4>RETINAS</h4>
+     <p>The main objective of RETINAS consist in research about techonologies of real time video analysis, semantic technologies and Soft Computing techniques 
+         in order to be used in intelligent monitoring systems in heterogeneous environments.</p>
+
+  <h4>ROCAS (Reasoning in the Cloud Applying Semantics)</h4>
+    <p>The goal of ROCAS is to provide a distributed semantic reasoning system based on cloud computing where each node is able to cooperate with others in the reasoning process.
+         This approach is independent of the inference engines used and it suggests division and distribution of task between nodes to complete inference processes.</p>
+
+  <h4>ORIGIN</h4>
+    <p>This project is focused in increasing the productivity in software development activities in
+       outsourcing global scenarios as well as the improvement of the quality of the developed software.</p>
+
+  <h4>10ders</h4>
+    <p>The aim of this project is to show the activities to be performed in 10ders Project on e-Procurement. 
+        The platform planned by 10ders Project is intend to fulfill the needs of e-procurement at European,
+        national and regional levels.</p>
+
+  <h4><a href="http://www.weso.es/MLODPatterns" title=" MLOD Patterns">MLOD Patterns</a></h4>
+     <p>Multilingual Linked Open Data Patterns.</p>
+
+   <h4><a href="https://github.com/weso/computex" title=" Computex">Computex</a></h4>
+     <p>Computex (Computing Statistical Indexes) is an extension of RDF Data Cube vocabulary to represent statistical indexes.</p>
+
+
+  <h3 id="research" class="display-3">Publications</h3>
+
+  The following table contains some publications. 
+
+   <table class="research">
             <tbody>
             <tr>
                 <td>
@@ -2160,14 +2133,9 @@
             </tr>
             </tbody>
         </table>
-    </div>
-    <div class="bottom"><img alt="" src="./index_files/bottom2.png"></div>
-</div>
 
-<a id="software"></a>
-<div class="panel panel1">
-    <div class="content text-marron">
-        <h3 class="software">software</h3>
+ <div id="software">
+  <h3 class="software" class="display-3">software</h3>
         <a class="github" href="http://github.com/weso">
             <img src="./index_files/github-logo.png">
         </a>
@@ -2281,15 +2249,10 @@
                 It is the main repository for storing documentation, common source code, etc.
             </p>
         </div>
-    </div>
+ </div>
 
-    <div class="bottom"><img alt="" src="./index_files/bottom2.png"></div>
-</div>
-
-<a id="people"></a>
-<div class="panel panel2">
-  <div class="content">
-  <h3 class="people">people</h3>
+<div id="people">
+  <h3 class="display-3">People</h3>
 
   <h4 class="people">members</h4>
   <div class="circles-people-text">
@@ -2498,7 +2461,9 @@
 
             </div>  <!-- div circle peoples text -->
 
-   <h4 class="people">Past collaborators</h4>
+
+ <h4 class="people">Past collaborators</h4>
+
    <div class="circles-people-text">
 
     <div class="person">
@@ -2512,7 +2477,8 @@
        </div>
    </div>
 
-                <div class="person">
+  
+   <div class="person">
                     <img src="./index_files/guillermo.png" alt="" class="circle imagen">
                     <div><p>Guillermo Infante Hernández</p>
                         <span class="cargo">Engineer</span>
@@ -2520,7 +2486,7 @@
                         <span class="linkedin"><a href="https://es.linkedin.com/in/ginfante" title="Go to LinkedIn"><i
                                 class="fa fa-linkedin"></i>Guillermo Infante</a></span>
                     </div>
-                </div>
+   </div>
 
 
                 <div class="person">
@@ -2539,36 +2505,35 @@
                     </div>
                 </div>
 
-                <div class="person">
-                    <a href="http://www.weenajimenez.com/" title="Go to Weena Jímenez"><img
-                            src="./index_files/weena.jpg" alt="" class="circle imagen"></a>
-                    <div><p><a class="name" href="http://www.weenajimenez.com/" title="Go to Weena Jímenez">Weena
-                        Jímenez</a></p>
-                        <span class="cargo">Engineer</span>
-                        <a href="mailto:weenajimenez@gmail.com"><span class="mail"><i class="fa fa-envelope"></i> weenajimenez@gmail.com</span></a>
-                        <span class="linkedin"><a href="https://es.linkedin.com/in/weenajimenez" title="Go to LinkedIn"><i
-                                class="fa fa-linkedin"></i>Weena Jímenez</a></span>
-                    </div>
-                </div>
+  <div class="person">
+    <a href="http://www.weenajimenez.com/" title="Go to Weena Jímenez"><img
+       src="./index_files/weena.jpg" alt="" class="circle imagen"></a>
+     <div><p><a class="name" href="http://www.weenajimenez.com/" title="Go to Weena Jímenez">Weena Jímenez</a></p>
+     <span class="cargo">Engineer</span>
+     <a href="mailto:weenajimenez@gmail.com"><span class="mail"><i class="fa fa-envelope"></i> weenajimenez@gmail.com</span></a>
+        <span class="linkedin"><a href="https://es.linkedin.com/in/weenajimenez" title="Go to LinkedIn"><i
+              class="fa fa-linkedin"></i>Weena Jímenez</a></span>
+     </div>
+  </div>
 
-                <div class="person">
+  <div class="person">
                     <img src="./index_files/pablo.jpg" alt="" class="circle imagen">
                     <div>
                         <p>Pablo Abella Vallina</p>
                         <span class="cargo">Engineer</span>
                         <a href="mailto:peiblox@gmail.com"><span class="mail"><i class="fa fa-envelope"></i> peiblox@gmail.com</span></a>
                         <span class="linkedin">
-    <a href="https://es.linkedin.com/pub/pablo-abella-vallina/29/544/2a3" title="Go to LinkedIn">
-       <i class="fa fa-linkedin"></i>Pablo Abella</a></span>
-                    </div>
-                </div>
+     <a href="https://es.linkedin.com/pub/pablo-abella-vallina/29/544/2a3" title="Go to LinkedIn">
+     <i class="fa fa-linkedin"></i>Pablo Abella</a></span>
+     </div>
+  </div>
 
 
-                <div class="person">
+   <div class="person">
                     <a href="http://carlosiglesias.es/" title="Go to Carlos Iglesias Moro">
                         <img src="./index_files/carlos.png" alt="" class="circle imagen">
                     </a>
-                    <div>
+   <div>
                         <p><a class="name" href="http://carlosiglesias.es/" title="Go to Carlos Iglesias Moro">Carlos
                             Iglesias Moro</a></p>
                         <span class="cargo">Coordination and Management</span>
@@ -2580,9 +2545,10 @@
                                                   title="Go to LinkedIn"><i
                                 class="fa fa-linkedin"></i>Carlos Iglesias</a></span>
                     </div>
-                </div>
+    </div>
 
-                <div class="person">
+  
+  <div class="person">
                     <img src="./index_files/ignacio.png" alt="" class="circle imagen">
                     <div><p>Ignacio Fuertes Bernardo</p>
                         <span class="cargo">Engineer</span>
@@ -2592,18 +2558,18 @@
                                                   title="Go to LinkedIn"><i
                                 class="fa fa-linkedin"></i>Ignacio Fuertes</a></span>
                     </div>
-                </div>
+  </div>
 
-                <div class="person">
+  <div class="person">
                     <img src="./index_files/bernardo.jpg" alt="" class="circle imagen">
                     <div>
                         <p>Bernardo Martínez Garrido</p>
                         <span class="cargo">Engineer</span>
                         <a href="mailto:programming@wandrell.com"><span class="mail"><i class="fa fa-envelope"></i>programming@wandrell.com</span></a>
                     </div>
-                </div>
+  </div>
 
-                <div class="person">
+  <div class="person">
                     <img src="./index_files/cesar.png" alt="" class="circle imagen">
                     <div><p>César Luis Alvargonzález</p>
                         <span class="cargo">Engineer</span>
@@ -2613,9 +2579,9 @@
                         <span class="linkedin"><a href="https://es.linkedin.com/in/cesarla/es" title="Go to LinkedIn"><i
                                 class="fa fa-linkedin"></i>César Luis</a></span>
                     </div>
-                </div>
+   </div>
 
-                <div class="person">
+   <div class="person">
                     <img src="./index_files/cristian.jpg" alt="" class="circle imagen">
                     <div><p>Cristian Álvarez Belaustegui</p>
                         <span class="cargo">Engineer</span>
@@ -2627,38 +2593,40 @@
 										<i class="fa fa-linkedin"></i>Cristian Álvarez
 									</a>
 								</span>
-                    </div>
-                </div>
+    </div>
+   </div>
 
-                <div class="person">
-                    <img src="./index_files/borja.jpg" alt="" class="circle imagen">
-                    <div><p>Borja Garrido Bear</p>
-                        <span class="cargo">Engineer</span>
-                        <a href="mailto:borja.gbear@gmail.com">
-                            <span class="mail"><i class="fa fa-envelope"></i> borja.gbear@gmail.com</span></a>
-                        <span class="linkedin">
-	<a href="https://es.linkedin.com/pub/borja-garrido/4a/a92/19b" title="Go to LinkedIn">
-	<i class="fa fa-linkedin"></i>Borja Garrido</a>	</span>
-                    </div>
-                </div>
+  <div class="person">
+     <img src="./index_files/borja.jpg" alt="" class="circle imagen">
+     <div><p>Borja Garrido Bear</p>
+      <span class="cargo">Engineer</span>
+      <a href="mailto:borja.gbear@gmail.com">
+      <span class="mail"><i class="fa fa-envelope"></i> borja.gbear@gmail.com</span></a>
+      <span class="linkedin">
+	    <a href="https://es.linkedin.com/pub/borja-garrido/4a/a92/19b" title="Go to LinkedIn">
+	    <i class="fa fa-linkedin"></i>Borja Garrido</a>	</span>
+   </div>
+  </div>
 
-                <div class="person">
-                    <img src="./index_files/otero.jpg" alt="" class="circle imagen">
-                    <div><p>Miguel Otero Gafarelo</p>
+  <div class="person">
+        <img src="./index_files/otero.jpg" alt="" class="circle imagen">
+        <div><p>Miguel Otero Gafarelo</p>
                         <span class="cargo">Engineer</span>
                         <a href="mailto:otero.gafarelo@gmail.com">
                             <span class="mail"><i class="fa fa-envelope"></i> otero.gafarelo@gmail.com</span>
                         </a>
-                        <span class="linkedin"><a href="https://es.linkedin.com/in/gafarelo" title="Go to LinkedIn">
-     <i class="fa fa-linkedin"></i>Miguel Otero</a>
-    </span>
-            </div>
-        </div>
-     </div>
-  </div> <!-- content -->
- </div> <!-- panel panel2 -->
+  <span class="linkedin"><a href="https://es.linkedin.com/in/gafarelo" title="Go to LinkedIn">
+    <i class="fa fa-linkedin"></i>Miguel Otero</a>
+  </span>
+  </div>
+ </div>
+ </div>
 
-<a id="vacancies"></a>
+</div> 
+
+</div> 
+
+<!--<a id="vacancies"></a>
 <div class="panel panel2">
   <div class="content">
   <h3 class="vacancies">vacancies</h3>
@@ -2666,14 +2634,14 @@
         <li>Research position: (<a href="vacancies/OfertaTrabajo.pdf">Spanish</a>)(<a href="vacancies/JobOffer.pdf">English</a>)</li>
     </ul>
   </div>
-  </div>
+  </div> -->
   
  
- <a id="contact"></a>
   <footer>
-        <div class="content">
+    <div class="content">
             <div>
                 <div class="address">
+                    <a id="contact"></a>
                     <h3 class="contact">Where are we?</h3>
                     <div>
                         <p><strong>Facultad de Ciencias</strong></p>
@@ -2681,8 +2649,8 @@
                         <p><strong>Universidad de Oviedo</strong></p>
                     </div>
                     <div>
-                        <p>Calvo Sotelo, S/N,</p>
-                        <p>33005, Oviedo - Principado de Asturias</p>
+                        <p>C/Federico García Lorca, S/N,</p>
+                        <p>33007, Oviedo - Principado de Asturias</p>
                         <p>Spain</p>
                     </div>
                 </div>
@@ -2693,110 +2661,10 @@
                     </div>
                     <div class="phone-mail-circle phone">+34 985 10 33 97</div>
                 </div>
-
-                <!--
-                <div class="form-contact">
-                    <form id="contact-form" method="post" action="php/send.php">
-                        <label for="correo">email</label>
-                        <input type="text" name="email" placeholder="What's your email account?" />
-                        <label for="asunto">subject</label>
-                        <input type="text" name="subject" placeholder="What do you want to ask?" />
-                        <label for="cuerpo">description</label>
-                        <textarea name="description"></textarea>
-
-
-                        <script type="text/javascript">
-                             var RecaptchaOptions = {
-                                theme : 'white'
-                             };
-                         </script>
-                          <script type="text/javascript"
-                             src="http://www.google.com/recaptcha/api/challenge?k=6Lfr9u4SAAAAAN0gsx9BZpvZ7YZW6ay_oQ9mz80X">
-                          </script>
-                          <noscript>
-                             <iframe src="http://www.google.com/recaptcha/api/noscript?k=6Lfr9u4SAAAAAN0gsx9BZpvZ7YZW6ay_oQ9mz80X"
-                                 height="300" width="500" frameborder="0"></iframe><br>
-                             <textarea name="recaptcha_challenge_field" rows="3" cols="40">
-                             </textarea>
-                             <input type="hidden" name="recaptcha_response_field"
-                                 value="manual_challenge">
-                          </noscript>
-
-                        <input id="contact-form-button" type="submit" value="Send" />
-                    </form>
-                </div>
-                -->
             </div>
 
-            <div class="created-by">
-                <img class="html5-css3" alt="created in HTML5 and CSS3" src="./index_files/HTML5-CSS3.png">
-                created by <a href="http://juancastro.es/" title="Go to juancastro.es">
-                <img class="created" alt="created by JUAN CASTRO" src="./index_files/juancastro.png">
-            </a>
-            </div>
-
-        </div>
-    </footer>
-    <script src="./index_files/jquery.js.descarga"></script>
-    <script src="./index_files/scrolledIntoView.js.descarga"></script>
-    <script>
-        $('.content h3, .panel-home #home')
-            .scrolledIntoView()
-            .on('scrolledin', function () {
-                console.log('in ' + $(this).text());
-                $("nav.navigation a").removeClass("selected");
-                $("nav.navigation a." + $(this).attr('class')).addClass("selected");
-            })
-            .on('scrolledout', function () {
-                console.log('out ' + $(this).text());
-            });
-
-        document.getElementById("contact-form").action = "";
-
-        document.getElementById("contact-form-button").onclick = function () {
-            var button = this;
-
-            button.disabled = true;
-            button.value = "Sending...";
-            button.className = "sending";
-
-            function onError(captcha) {
-                if (captcha)
-                    button.value = "Error. Enter verification";
-                else
-                    button.value = "Error. Try again";
-                button.className = "not-sent";
-                button.disabled = false;
-            }
-
-            $.ajax({
-                type: "POST",
-                url: "php/send.php",
-                data: $("#contact-form").serialize(),
-                success: function (msg) {
-                    if (msg != "OK") {
-                        onError(msg == 'captcha');
-                    }
-                    else {
-                        button.value = "Sent";
-                        button.className = "sent";
-                        button.disabled = false;
-                        $('#contact-form')[0].reset();
-
-                        setTimeout(function () {
-                            button.value = "Send";
-                        }, 2000);
-                    }
-                },
-                error: function (xhr, ajaxOptions, thrownError) {
-                    onError();
-                }
-            });
-
-            return false;
-        }
-    </script>
-    <script src="./index_files/richTable.js.descarga"></script>
+   </div>
+ </footer>
     <script type="application/ld+json">
 	{
 		"@context": "http://schema.org",
@@ -2830,5 +2698,9 @@
 
     </script>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  
 </body>
 </html>
